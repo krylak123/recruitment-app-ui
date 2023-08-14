@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { PrimeNGConfig } from 'primeng/api';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { environment } from '@envs/environment';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,9 @@ export class AppComponent implements OnInit {
   public constructor(
     private primengConfig: PrimeNGConfig,
     private translateService: TranslateService
-  ) {}
+  ) {
+    console.log(environment.PRODUCTION);
+  }
 
   public ngOnInit(): void {
     this.translateService.setDefaultLang('pl');
