@@ -8,10 +8,12 @@ import { provideRouterStore } from '@ngrx/router-store';
 import { appReducer } from './store/app.reducer';
 import { CustomSerializer } from './store/router/custom-route-serializer';
 import { provideEffects } from '@ngrx/effects';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
+    provideAnimations(),
     provideStore(appReducer, {}),
     provideRouterStore({ serializer: CustomSerializer }),
     provideEffects(),
