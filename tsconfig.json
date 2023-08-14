@@ -25,7 +25,6 @@
       "dom"
     ],
     "paths": {
-      "@envs/*": ["./src/environments/*"],
       "@core/*": ["./src/app/core/*"]
     }
   },

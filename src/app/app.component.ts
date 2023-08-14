@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { PrimeNGConfig } from 'primeng/api';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { environment } from '@envs/environment';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
