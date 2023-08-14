@@ -24,7 +24,7 @@
       "dom"
     ],
     "paths": {
-      "@globalStore/*": ["./src/app/store/*"]
+      "@core/*": ["./src/app/core/*"]
     }
   },
   "angularCompilerOptions": {
