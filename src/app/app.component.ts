@@ -3,18 +3,25 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { PrimeNGConfig } from 'primeng/api';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ButtonModule],
+  imports: [CommonModule, RouterOutlet, ButtonModule, TranslateModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  public constructor(private primengConfig: PrimeNGConfig) {}
+  public constructor(
+    private primengConfig: PrimeNGConfig,
+    private translateService: TranslateService
+  ) {}
 
   public ngOnInit(): void {
+    this.translateService.setDefaultLang('pl');
+    this.translateService.use('pl');
+
     this.setUpPrimeNGConfig();
   }
 
