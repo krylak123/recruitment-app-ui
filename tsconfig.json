@@ -25,7 +25,8 @@
       "dom"
     ],
     "paths": {
-      "@core/*": ["./src/app/core/*"]
+      "@core/*": ["./src/app/core/*"],
+      "@views/*": ["./src/app/views/*"]
     }
   },
   "angularCompilerOptions": {

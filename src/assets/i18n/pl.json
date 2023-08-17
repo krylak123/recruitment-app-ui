@@ -1,3 +1,6 @@
 {
-  "WELCOME": "ngx translate is working"
+  "UNAUTHORIZED_INFO": "Musisz się zalogować aby przejść dalej...",
+  "BUTTON": {
+    "LOGIN": "Zaloguj"
+  }
 }
