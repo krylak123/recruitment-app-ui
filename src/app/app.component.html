@@ -1,1 +1,5 @@
-<router-outlet />
+<router-outlet>
+  <div *ngIf="isLoading$ | async" class="loader">
+    <p-progressSpinner strokeWidth="5" />
+  </div>
+</router-outlet>
