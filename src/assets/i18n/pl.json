@@ -1,5 +1,8 @@
 {
   "UNAUTHORIZED_INFO": "Musisz się zalogować, aby przejść dalej...",
+  "TITLE": {
+    "UNAUTHORIZED": "Nieautoryzowany"
+  },
   "BUTTON": {
     "LOGIN": "Zaloguj"
   }

@@ -33,6 +33,9 @@
       ],
       "@providers": [
         "./src/app/app.providers.ts"
+      ],
+      "@shared/*": [
+        "./src/app/shared/*"
       ]
     }
   },

@@ -8,6 +8,7 @@ export const routes: Routes = [
   },
   {
     path: 'unauthorized',
+    title: 'TITLE.UNAUTHORIZED',
     loadComponent: () =>
       import('@views/unauthorized/unauthorized.component').then(
         c => c.UnauthorizedComponent
