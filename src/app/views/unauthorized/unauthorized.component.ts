@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./unauthorized.component.scss'],
 })
 export class UnauthorizedComponent {
-  public constructor(
+  constructor(
     private router: Router,
     private aRoute: ActivatedRoute
   ) {}

@@ -6,7 +6,7 @@ import { Title } from '@angular/platform-browser';
   providedIn: 'root',
 })
 export class TitleService extends TitleStrategy {
-  public constructor(private readonly title: Title) {
+  constructor(private readonly title: Title) {
     super();
   }
 

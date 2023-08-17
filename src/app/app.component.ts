@@ -4,7 +4,6 @@ import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { PrimeNGConfig } from 'primeng/api';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +13,10 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  public constructor(
+  constructor(
     private primengConfig: PrimeNGConfig,
     private translateService: TranslateService
-  ) {
-    console.log(environment.PRODUCTION);
-  }
+  ) {}
 
   public ngOnInit(): void {
     this.translateService.setDefaultLang('pl');
