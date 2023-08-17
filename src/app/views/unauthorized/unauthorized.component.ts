@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-unauthorized',
@@ -11,7 +12,12 @@ import { ButtonModule } from 'primeng/button';
   styleUrls: ['./unauthorized.component.scss'],
 })
 export class UnauthorizedComponent {
+  public constructor(
+    private router: Router,
+    private aRoute: ActivatedRoute
+  ) {}
+
   public handleLoginBtnClick(): void {
-    console.log('routing to login component');
+    this.router.navigate(['../auth'], { relativeTo: this.aRoute });
   }
 }
