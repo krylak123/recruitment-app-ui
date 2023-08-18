@@ -13,6 +13,7 @@ import { PrimeNGConfig } from 'primeng/api';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,9 @@ export class AppComponent implements OnInit {
     private primengConfig: PrimeNGConfig,
     private translateService: TranslateService,
     private router: Router
-  ) {}
+  ) {
+    console.log('ProdMode: ', environment.PRODUCTION);
+  }
 
   public get isLoading$(): Observable<boolean> {
     return this.isLoading.asObservable();
