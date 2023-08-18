@@ -13,7 +13,7 @@ import { PrimeNGConfig } from 'primeng/api';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { environment } from '../environments/environment';
+import { environment } from '@envs/environment';
 
 @Component({
   selector: 'app-root',

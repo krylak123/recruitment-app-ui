@@ -1,7 +1,7 @@
 import { EnvironmentProviders, InjectionToken, Provider } from '@angular/core';
 import { TitleStrategy } from '@angular/router';
 import { TitleService } from '@core/services/title.service';
-import { environment } from '../environments/environment';
+import { environment } from '@envs/environment';
 
 export const API_URL: InjectionToken<string> = new InjectionToken<string>(
   'API_URL'

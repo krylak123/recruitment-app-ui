@@ -6,7 +6,9 @@ describe('SignInFormAdapterService', () => {
   let service: SignInFormAdapterService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [SignInFormAdapterService],
+    });
     service = TestBed.inject(SignInFormAdapterService);
   });
 

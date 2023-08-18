@@ -25,17 +25,20 @@
       "dom"
     ],
     "paths": {
+      "@envs/*": [
+        "src/environments/*"
+      ],
       "@core/*": [
-        "./src/app/core/*"
+        "src/app/core/*"
       ],
       "@views/*": [
-        "./src/app/views/*"
+        "src/app/views/*"
       ],
       "@providers": [
-        "./src/app/app.providers.ts"
+        "src/app/app.providers.ts"
       ],
       "@shared/*": [
-        "./src/app/shared/*"
+        "src/app/shared/*"
       ]
     }
   },

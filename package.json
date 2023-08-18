@@ -36,6 +36,7 @@
     "primeicons": "^6.0.1",
     "primeng": "^16.2.0",
     "rxjs": "~7.8.0",
+    "ts-jest": "^29.1.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
@@ -67,6 +68,12 @@
     "preset": "jest-preset-angular",
     "setupFilesAfterEnv": [
       "<rootDir>/setup-jest.ts"
-    ]
+    ],
+    "moduleNameMapper": {
+      "^@envs/(.*)$": "<rootDir>/src/environments/$1",
+      "^@shared/(.*)$": "<rootDir>/src/app/shared/$1",
+      "^@views/(.*)$": "<rootDir>/src/app/views/$1",
+      "~/(.*)": "<rootDir>/src/$1"
+    }
   }
 }
