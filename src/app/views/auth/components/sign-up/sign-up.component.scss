@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  animation: show-from-top .5s both;
+}
+
+.card {
+  &__footer-text {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

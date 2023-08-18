@@ -1,1 +1,29 @@
-<p>sign-up works!</p>
+<p-card
+  class="card"
+  [header]="'AUTH.SIGN_UP.HEADER' | translate: { appName }"
+  [subheader]="'AUTH.SIGN_UP.SUBHEADER' | translate"
+  [style]="{
+    maxWidth: '90vw',
+    width: '1000px'
+  }">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at
+    officiis quas recusandae tenetur unde voluptatem? Cupiditate error harum
+    ipsam iure, labore maiores minus! Dolor inventore laudantium nemo possimus
+    reiciendis.
+  </p>
+  <ng-template pTemplate="footer">
+    <div class="card__footer">
+      <p-button
+        [label]="'BUTTON.REGISTER' | translate"
+        (click)="handleSubmitForm()" />
+      <p class="card__footer-text">
+        {{ 'AUTH.LOGIN_INFO' | translate }}
+        <p-button
+          [label]="'AUTH.LOGIN' | translate"
+          styleClass="p-button-link"
+          (click)="handleLoginRouting()" />
+      </p>
+    </div>
+  </ng-template>
+</p-card>

@@ -56,9 +56,8 @@ export class SignInComponent implements OnInit {
 
     if (this.form.invalid) return;
 
-    console.log(this.form.value);
-
-    const payload: SignInFormValues = this.form.value as SignInFormValues;
+    // TODO: podmienić na właściwy payload interface
+    const payload: unknown = this.form.value as SignInFormValues;
 
     console.log(payload);
   }
