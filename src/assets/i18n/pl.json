@@ -1,9 +1,31 @@
 {
   "UNAUTHORIZED_INFO": "Musisz się zalogować, aby przejść dalej...",
   "TITLE": {
-    "UNAUTHORIZED": "Nieautoryzowany"
+    "UNAUTHORIZED": "Nieautoryzowany",
+    "SIGN_IN": "Logowanie",
+    "SIGN_UP": "Rejestracja"
   },
   "BUTTON": {
-    "LOGIN": "Zaloguj"
+    "LOGIN": "Zaloguj",
+    "REGISTER": "Zarejestruj"
+  },
+  "FORM": {
+    "EMAIL": "Email",
+    "EMAIL__TOOLTIP": "Wpisz swój email",
+    "PASSWORD": "Hasło",
+    "PASSWORD_TOOLTIP": "Wpisz swoje hasło"
+  },
+  "AUTH": {
+    "HEADER": "{{appName}} - rekrutacje",
+    "REGISTER": "Zarejestruj się",
+    "REGISTER_INFO": "Nie masz konta?",
+    "LOGIN": "Zaloguj się",
+    "LOGIN_INFO": "Masz już konto?",
+    "SIGN_IN": {
+      "SUBHEADER": "Zaloguj się aby przejść dalej..."
+    },
+    "SIGN_UP": {
+      "SUBHEADER": "Zarejestruj się aby przejść dalej..."
+    }
   }
 }
