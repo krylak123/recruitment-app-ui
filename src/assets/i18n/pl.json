@@ -7,7 +7,9 @@
   },
   "BUTTON": {
     "LOGIN": "Zaloguj",
-    "REGISTER": "Zarejestruj"
+    "REGISTER": "Zarejestruj",
+    "BACKWARD": "Cofnij",
+    "NEXT": "Dalej"
   },
   "FORM": {
     "EMAIL": "Email",

@@ -17,7 +17,8 @@ import { SignUpForm } from '@views/auth/components/sign-up/models/sign-up-form.i
 import { SignUpFormAdapterService } from '@views/auth/components/sign-up/adapters/sign-up-form-adapter.service';
 import { LetDirective } from '@ngrx/component';
 import { SignInFormValues } from '@views/auth/components/sign-in/models/sign-in-form-values.interface';
-import { SignUpStepsItemsTranslatePipe } from '@views/auth/components/sign-up/pipes/sign-up-steps-items-translate.pipe';
+import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
+import { SignUpStepsItemsTranslatePipe } from './pipes/sign-up-steps-items-translate.pipe';
 
 @Component({
   selector: 'app-sign-up',
@@ -37,6 +38,7 @@ import { SignUpStepsItemsTranslatePipe } from '@views/auth/components/sign-up/pi
     DividerModule,
     LetDirective,
     SignUpStepsItemsTranslatePipe,
+    SignUpFormComponent,
   ],
   providers: [SignUpFormAdapterService],
   templateUrl: './sign-up.component.html',
@@ -63,6 +65,16 @@ export class SignUpComponent implements OnInit {
 
   public onActiveIdxChange(idx: number): void {
     this.activeStepsIdx = idx;
+  }
+
+  public handleBackwardFormBtn(): void {
+    if (!this.activeStepsIdx) return;
+
+    this.activeStepsIdx--;
+  }
+
+  public handleNextFormBtn(): void {
+    this.activeStepsIdx++;
   }
 
   public handleLoginRouting(): void {
