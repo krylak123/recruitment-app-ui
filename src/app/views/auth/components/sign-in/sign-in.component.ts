@@ -13,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TooltipModule } from 'primeng/tooltip';
 import { MessageModule } from 'primeng/message';
 import { SignInFormValues } from '@views/auth/components/sign-in/models/sign-in-form-values.interface';
+import { DividerModule } from 'primeng/divider';
 
 @Component({
   selector: 'app-sign-in',
@@ -27,6 +28,7 @@ import { SignInFormValues } from '@views/auth/components/sign-in/models/sign-in-
     InputTextModule,
     TooltipModule,
     MessageModule,
+    DividerModule,
   ],
   providers: [SignInFormAdapterService],
   templateUrl: './sign-in.component.html',

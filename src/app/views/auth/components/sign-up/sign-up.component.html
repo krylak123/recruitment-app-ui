@@ -6,17 +6,113 @@
     maxWidth: '90vw',
     width: '1000px'
   }">
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at
-    officiis quas recusandae tenetur unde voluptatem? Cupiditate error harum
-    ipsam iure, labore maiores minus! Dolor inventore laudantium nemo possimus
-    reiciendis.
-  </p>
+  <p-steps
+    [model]="stepsItems | signUpStepsItemsTranslate"
+    [readonly]="false"
+    [activeIndex]="activeStepsIdx"
+    (activeIndexChange)="onActiveIdxChange($event)" />
+  <form [formGroup]="form" class="form">
+    <ng-container *ngrxLet="form.controls.commonGroup as commonGroup">
+      <div
+        formGroupName="commonGroup"
+        *ngIf="activeStepsIdx === 0"
+        class="form__group">
+        <div class="form__fields">
+          <div class="form__field">
+            <input
+              [style]="{ width: '100%' }"
+              type="text"
+              pInputText
+              formControlName="name"
+              [placeholder]="'FORM.NAME' | translate"
+              [pTooltip]="'FORM.NAME_TOOLTIP' | translate"
+              tooltipPosition="top" />
+            <ng-container *ngIf="commonGroup.controls.name.touched">
+              <p-message
+                *ngIf="commonGroup.controls.name.valid"
+                severity="success" />
+              <p-message
+                *ngIf="commonGroup.controls.name.invalid"
+                severity="error" />
+            </ng-container>
+          </div>
+          <div class="form__field">
+            <input
+              [style]="{ width: '100%' }"
+              type="text"
+              pInputText
+              formControlName="surname"
+              [placeholder]="'FORM.SURNAME' | translate"
+              [pTooltip]="'FORM.SURNAME_TOOLTIP' | translate"
+              tooltipPosition="top" />
+            <ng-container *ngIf="commonGroup.controls.surname.touched">
+              <p-message
+                *ngIf="commonGroup.controls.surname.valid"
+                severity="success" />
+              <p-message
+                *ngIf="commonGroup.controls.surname.invalid"
+                severity="error" />
+            </ng-container>
+          </div>
+        </div>
+        <div class="form__fields">
+          <div class="form__field">
+            <input
+              [style]="{ width: '100%' }"
+              type="text"
+              pInputText
+              formControlName="email"
+              [placeholder]="'FORM.EMAIL' | translate"
+              [pTooltip]="'FORM.EMAIL_TOOLTIP' | translate"
+              tooltipPosition="top" />
+            <ng-container *ngIf="commonGroup.controls.email.touched">
+              <p-message
+                *ngIf="commonGroup.controls.email.valid"
+                severity="success" />
+              <p-message
+                *ngIf="commonGroup.controls.email.invalid"
+                severity="error" />
+            </ng-container>
+          </div>
+          <div class="form__field">
+            <p-password
+              class="form__password"
+              [style]="{ width: '100%' }"
+              [inputStyle]="{ width: '100%' }"
+              formControlName="password"
+              [toggleMask]="true"
+              [feedback]="false"
+              [placeholder]="'FORM.PASSWORD' | translate"
+              [pTooltip]="'FORM.PASSWORD_TOOLTIP' | translate"
+              tooltipPosition="top" />
+            <ng-container *ngIf="commonGroup.controls.password.touched">
+              <p-message
+                *ngIf="commonGroup.controls.password.valid"
+                severity="success" />
+              <p-message
+                *ngIf="commonGroup.controls.password.invalid"
+                severity="error" />
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <div
+      formGroupName="dataGroup"
+      *ngIf="activeStepsIdx === 1"
+      class="form__group">
+      Form 2
+    </div>
+  </form>
+
   <ng-template pTemplate="footer">
     <div class="card__footer">
       <p-button
-        [label]="'BUTTON.REGISTER' | translate"
-        (click)="handleSubmitForm()" />
+        [label]="'BUTTON.REGISTER' | translate | uppercase"
+        (click)="handleSubmitForm()"
+        class="card__btn" />
+      <p-divider />
       <p class="card__footer-text">
         {{ 'AUTH.LOGIN_INFO' | translate }}
         <p-button

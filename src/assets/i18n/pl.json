@@ -11,9 +11,13 @@
   },
   "FORM": {
     "EMAIL": "Email",
-    "EMAIL__TOOLTIP": "Wpisz swój email",
+    "EMAIL_TOOLTIP": "Wpisz swój email",
     "PASSWORD": "Hasło",
-    "PASSWORD_TOOLTIP": "Wpisz swoje hasło"
+    "PASSWORD_TOOLTIP": "Wpisz swoje hasło",
+    "NAME": "Imię",
+    "NAME_TOOLTIP": "Wpisz swoje imię",
+    "SURNAME": "Nazwisko",
+    "SURNAME_TOOLTIP": "Wpisz swoje nazwisko"
   },
   "AUTH": {
     "REGISTER": "Zarejestruj się",
@@ -27,6 +31,11 @@
     "SIGN_UP": {
       "HEADER": "{{appName}} - Rejestracja",
       "SUBHEADER": "Zarejestruj się aby przejść dalej..."
+    },
+    "STEPS": {
+      "COMMONS": "Podstawowe",
+      "DETAILS": "Szczegółowe",
+      "CONSENTS": "Zgody"
     }
   }
 }

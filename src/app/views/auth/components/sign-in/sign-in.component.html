@@ -14,7 +14,7 @@
         pInputText
         formControlName="email"
         [placeholder]="'FORM.EMAIL' | translate"
-        [pTooltip]="'FORM.EMAIL__TOOLTIP' | translate"
+        [pTooltip]="'FORM.EMAIL_TOOLTIP' | translate"
         tooltipPosition="top" />
       <ng-container *ngIf="form.controls.email.touched">
         <p-message *ngIf="form.controls.email.valid" severity="success" />
@@ -42,8 +42,9 @@
   <ng-template pTemplate="footer">
     <div class="card__footer">
       <p-button
-        [label]="'BUTTON.LOGIN' | translate"
+        [label]="'BUTTON.LOGIN' | translate | uppercase"
         (click)="handleSubmitForm()" />
+      <p-divider />
       <p class="card__footer-text">
         {{ 'AUTH.REGISTER_INFO' | translate }}
         <p-button
