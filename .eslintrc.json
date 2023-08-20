@@ -41,7 +41,13 @@
           "error"
         ],
         "@typescript-eslint/explicit-member-accessibility": [
-          "error"
+          "error",
+          {
+            "accessibility": "explicit",
+            "overrides": {
+              "constructors": "no-public"
+            }
+          }
         ]
       }
     },

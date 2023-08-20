@@ -25,7 +25,21 @@
       "dom"
     ],
     "paths": {
-      "@core/*": ["./src/app/core/*"]
+      "@envs/*": [
+        "src/environments/*"
+      ],
+      "@core/*": [
+        "src/app/core/*"
+      ],
+      "@views/*": [
+        "src/app/views/*"
+      ],
+      "@providers": [
+        "src/app/app.providers.ts"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ]
     }
   },
   "angularCompilerOptions": {

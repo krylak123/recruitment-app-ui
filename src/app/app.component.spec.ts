@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { TranslateModule } from '@ngx-translate/core';
 
-describe('AppComponent', () => {
+describe(AppComponent.name, () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       imports: [AppComponent, TranslateModule.forRoot()],

@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
 import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
+import { APP_NAME } from '@shared/constants/app-name.constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TitleService extends TitleStrategy {
-  public constructor(private readonly title: Title) {
+  constructor(
+    private readonly title: Title,
+    private translateService: TranslateService
+  ) {
     super();
   }
 
   public override updateTitle(snapshot: RouterStateSnapshot): void {
-    const title: string | undefined = this.buildTitle(snapshot);
+    let title: string | undefined = this.buildTitle(snapshot);
 
-    this.title.setTitle(`${title ?? '- title -'} | appName`);
+    if (title) title = this.translateService.instant(title);
+
+    this.title.setTitle(`${title ?? '- set title -'} | ${APP_NAME}`);
   }
 }

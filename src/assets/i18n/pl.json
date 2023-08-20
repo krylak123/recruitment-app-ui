@@ -1,3 +1,43 @@
 {
-  "WELCOME": "ngx translate is working"
+  "UNAUTHORIZED_INFO": "Musisz się zalogować, aby przejść dalej...",
+  "TITLE": {
+    "UNAUTHORIZED": "Nieautoryzowany",
+    "SIGN_IN": "Logowanie",
+    "SIGN_UP": "Rejestracja"
+  },
+  "BUTTON": {
+    "LOGIN": "Zaloguj",
+    "REGISTER": "Zarejestruj",
+    "BACKWARD": "Cofnij",
+    "NEXT": "Dalej"
+  },
+  "FORM": {
+    "EMAIL": "Email",
+    "EMAIL_TOOLTIP": "Wpisz swój email",
+    "PASSWORD": "Hasło",
+    "PASSWORD_TOOLTIP": "Wpisz swoje hasło",
+    "NAME": "Imię",
+    "NAME_TOOLTIP": "Wpisz swoje imię",
+    "SURNAME": "Nazwisko",
+    "SURNAME_TOOLTIP": "Wpisz swoje nazwisko"
+  },
+  "AUTH": {
+    "REGISTER": "Zarejestruj się",
+    "REGISTER_INFO": "Nie masz konta?",
+    "LOGIN": "Zaloguj się",
+    "LOGIN_INFO": "Masz już konto?",
+    "SIGN_IN": {
+      "HEADER": "{{appName}} - Logowanie",
+      "SUBHEADER": "Zaloguj się aby przejść dalej..."
+    },
+    "SIGN_UP": {
+      "HEADER": "{{appName}} - Rejestracja",
+      "SUBHEADER": "Zarejestruj się aby przejść dalej..."
+    },
+    "STEPS": {
+      "COMMONS": "Podstawowe",
+      "DETAILS": "Szczegółowe",
+      "CONSENTS": "Zgody"
+    }
+  }
 }

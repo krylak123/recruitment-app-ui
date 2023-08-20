@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.unauthorized {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  &__label {
+    animation: show-from-top .5s both;
+  }
+
+  &__btn {
+    animation: show .5s .3s both;
+  }
+}

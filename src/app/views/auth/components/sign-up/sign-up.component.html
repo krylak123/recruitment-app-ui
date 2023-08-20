@@ -1,0 +1,50 @@
+<p-card
+  class="card"
+  [header]="'AUTH.SIGN_UP.HEADER' | translate: { appName }"
+  [subheader]="'AUTH.SIGN_UP.SUBHEADER' | translate"
+  [style]="{
+    maxWidth: '90vw',
+    width: '1000px'
+  }">
+  <p-steps
+    [model]="stepsItems | signUpStepsItemsTranslate"
+    [readonly]="false"
+    [activeIndex]="activeStepsIdx"
+    (activeIndexChange)="onActiveIdxChange($event)" />
+
+  <app-sign-up-form [form]="form" [activeStepsIdx]="activeStepsIdx" />
+
+  <ng-template pTemplate="footer">
+    <div class="card__footer">
+      <div class="card__footer-btns">
+        <p-button
+          [label]="'BUTTON.BACKWARD' | translate | uppercase"
+          [disabled]="activeStepsIdx === 0"
+          icon="pi pi-angle-left"
+          (click)="handleBackwardFormBtn()"
+          class="card__btn" />
+        <p-button
+          *ngIf="activeStepsIdx !== stepsItems.length - 1; else submitBtn"
+          [label]="'BUTTON.NEXT' | translate | uppercase"
+          icon="pi pi-angle-right"
+          iconPos="right"
+          (click)="handleNextFormBtn()"
+          class="card__btn" />
+      </div>
+      <ng-template #submitBtn>
+        <p-button
+          [label]="'BUTTON.REGISTER' | translate | uppercase"
+          (click)="handleSubmitForm()"
+          class="card__btn" />
+      </ng-template>
+      <p-divider />
+      <p class="card__footer-text">
+        {{ 'AUTH.LOGIN_INFO' | translate }}
+        <p-button
+          [label]="'AUTH.LOGIN' | translate"
+          styleClass="p-button-link"
+          (click)="handleLoginRouting()" />
+      </p>
+    </div>
+  </ng-template>
+</p-card>

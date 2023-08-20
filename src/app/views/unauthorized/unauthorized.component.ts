@@ -1,0 +1,24 @@
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { ButtonModule } from 'primeng/button';
+import { ActivatedRoute, Router } from '@angular/router';
+
+@Component({
+  selector: 'app-unauthorized',
+  standalone: true,
+  imports: [CommonModule, TranslateModule, ButtonModule],
+  templateUrl: './unauthorized.component.html',
+  styleUrls: ['./unauthorized.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class UnauthorizedComponent {
+  constructor(
+    private router: Router,
+    private aRoute: ActivatedRoute
+  ) {}
+
+  public handleLoginBtnClick(): void {
+    this.router.navigate(['../auth'], { relativeTo: this.aRoute });
+  }
+}
