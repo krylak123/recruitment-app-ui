@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   imports: [CommonModule, TranslateModule, ButtonModule],
   templateUrl: './unauthorized.component.html',
   styleUrls: ['./unauthorized.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UnauthorizedComponent {
   constructor(

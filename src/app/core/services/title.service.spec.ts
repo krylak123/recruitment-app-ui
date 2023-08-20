@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { TitleService } from './title.service';
 import { TranslateModule } from '@ngx-translate/core';
 
-describe('TitleService', () => {
+describe(TitleService.name, () => {
   let service: TitleService;
 
   beforeEach(() => {

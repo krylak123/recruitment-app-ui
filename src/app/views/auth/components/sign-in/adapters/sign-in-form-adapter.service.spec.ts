@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { SignInFormAdapterService } from './sign-in-form-adapter.service';
 
-describe('SignInFormAdapterService', () => {
+describe(SignInFormAdapterService.name, () => {
   let service: SignInFormAdapterService;
 
   beforeEach(() => {

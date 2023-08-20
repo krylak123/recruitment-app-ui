@@ -4,7 +4,7 @@ import { SignInComponent } from './sign-in.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 
-describe('SignInComponent', () => {
+describe(SignInComponent.name, () => {
   let component: SignInComponent;
   let fixture: ComponentFixture<SignInComponent>;
 
