@@ -1,7 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { TrimDirective } from './trim.directive';
+import { TrimDirective } from '@shared/utils';
 
 @Component({
   template: ` <input #input type="text" appTrim /> `,

@@ -1,4 +1,3 @@
-import { LoadingState } from '../enums/loading-state.enum';
-import { ErrorState } from '../interfaces/error-state.interface';
+import { ErrorState, LoadingState } from '@shared/store';
 
 export type CallState = LoadingState | ErrorState;
