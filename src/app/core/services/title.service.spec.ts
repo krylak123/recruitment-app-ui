@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { TitleService } from './title.service';
-import { TranslateModule } from '@ngx-translate/core';
 
 describe(TitleService.name, () => {
   let service: TitleService;

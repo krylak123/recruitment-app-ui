@@ -12,10 +12,10 @@
   gap: 1rem;
 
   &__label {
-    animation: show-from-top .5s both;
+    animation: show-from-top 0.5s both;
   }
 
   &__btn {
-    animation: show .5s .3s both;
+    animation: show 0.5s 0.3s both;
   }
 }

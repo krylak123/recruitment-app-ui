@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {
   NavigationCancel,
   NavigationEnd,
@@ -8,31 +8,23 @@ import {
   Router,
   RouterOutlet,
 } from '@angular/router';
-import { ButtonModule } from 'primeng/button';
-import { PrimeNGConfig } from 'primeng/api';
+import { environment } from '@envs/environment';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { PrimeNGConfig } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { environment } from '@envs/environment';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    ButtonModule,
-    TranslateModule,
-    ProgressSpinnerModule,
-  ],
+  imports: [CommonModule, RouterOutlet, ButtonModule, TranslateModule, ProgressSpinnerModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
-  private isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-    false
-  );
+  private isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(
     private primengConfig: PrimeNGConfig,
@@ -63,11 +55,7 @@ export class AppComponent implements OnInit {
       if (e instanceof NavigationStart) {
         this.isLoading.next(true);
       }
-      if (
-        e instanceof NavigationEnd ||
-        e instanceof NavigationCancel ||
-        e instanceof NavigationError
-      ) {
+      if (e instanceof NavigationEnd || e instanceof NavigationCancel || e instanceof NavigationError) {
         this.isLoading.next(false);
 
         window.scrollTo(0, 0);

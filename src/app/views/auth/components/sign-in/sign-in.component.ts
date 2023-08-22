@@ -1,19 +1,20 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { APP_NAME } from '@shared/constants/app-name.constants';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
-import { TranslateModule } from '@ngx-translate/core';
-import { SignInFormAdapterService } from '@views/auth/components/sign-in/adapters/sign-in-form-adapter.service';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { SignInForm } from '@views/auth/components/sign-in/models/sign-in-form.interface';
-import { PasswordModule } from 'primeng/password';
-import { InputTextModule } from 'primeng/inputtext';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TooltipModule } from 'primeng/tooltip';
-import { MessageModule } from 'primeng/message';
-import { SignInFormValues } from '@views/auth/components/sign-in/models/sign-in-form-values.interface';
+import { TranslateModule } from '@ngx-translate/core';
+import { APP_NAME } from '@shared/constants/app-name.constants';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
+import { InputTextModule } from 'primeng/inputtext';
+import { MessageModule } from 'primeng/message';
+import { PasswordModule } from 'primeng/password';
+import { TooltipModule } from 'primeng/tooltip';
+
+import { SignInFormAdapterService } from './adapters/sign-in-form-adapter.service';
+import { SignInFormValues } from './models/sign-in-form-values.interface';
+import { SignInForm } from './models/sign-in-form.interface';
 
 @Component({
   selector: 'app-sign-in',

@@ -6,16 +6,16 @@
     maxWidth: '90vw',
     width: '500px'
   }">
-  <form [formGroup]="form" class="form">
+  <form class="form" [formGroup]="form">
     <div class="form__field">
       <input
-        [style]="{ width: '100%' }"
         type="text"
         pInputText
         formControlName="email"
+        tooltipPosition="top"
+        [style]="{ width: '100%' }"
         [placeholder]="'FORM.EMAIL' | translate"
-        [pTooltip]="'FORM.EMAIL_TOOLTIP' | translate"
-        tooltipPosition="top" />
+        [pTooltip]="'FORM.EMAIL_TOOLTIP' | translate" />
       <ng-container *ngIf="form.controls.email.touched">
         <p-message *ngIf="form.controls.email.valid" severity="success" />
         <p-message *ngIf="form.controls.email.invalid" severity="error" />
@@ -25,14 +25,14 @@
     <div class="form__field">
       <p-password
         class="form__password"
+        formControlName="password"
+        tooltipPosition="top"
         [style]="{ width: '100%' }"
         [inputStyle]="{ width: '100%' }"
-        formControlName="password"
         [toggleMask]="true"
         [feedback]="false"
         [placeholder]="'FORM.PASSWORD' | translate"
-        [pTooltip]="'FORM.PASSWORD_TOOLTIP' | translate"
-        tooltipPosition="top" />
+        [pTooltip]="'FORM.PASSWORD_TOOLTIP' | translate" />
       <ng-container *ngIf="form.controls.password.touched">
         <p-message *ngIf="form.controls.password.valid" severity="success" />
         <p-message *ngIf="form.controls.password.invalid" severity="error" />
@@ -41,16 +41,11 @@
   </form>
   <ng-template pTemplate="footer">
     <div class="card__footer">
-      <p-button
-        [label]="'BUTTON.LOGIN' | translate | uppercase"
-        (click)="handleSubmitForm()" />
+      <p-button [label]="'BUTTON.LOGIN' | translate | uppercase" (click)="handleSubmitForm()" />
       <p-divider />
       <p class="card__footer-text">
         {{ 'AUTH.REGISTER_INFO' | translate }}
-        <p-button
-          [label]="'AUTH.REGISTER' | translate"
-          styleClass="p-button-link"
-          (click)="handleRegisterRouting()" />
+        <p-button styleClass="p-button-link" [label]="'AUTH.REGISTER' | translate" (click)="handleRegisterRouting()" />
       </p>
     </div>
   </ng-template>
