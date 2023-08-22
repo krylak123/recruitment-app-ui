@@ -8,7 +8,7 @@ import { NgControl } from '@angular/forms';
 export class TrimDirective {
   constructor(
     private el: ElementRef<HTMLInputElement | HTMLTextAreaElement>,
-    @Optional() private ngControl: NgControl
+    @Optional() private ngControl?: NgControl
   ) {}
 
   @HostListener('blur')
