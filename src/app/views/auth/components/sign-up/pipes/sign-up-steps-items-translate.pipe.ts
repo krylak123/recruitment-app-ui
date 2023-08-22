@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { MenuItem } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
+import { MenuItem } from 'primeng/api';
 
 @Pipe({
   name: 'signUpStepsItemsTranslate',

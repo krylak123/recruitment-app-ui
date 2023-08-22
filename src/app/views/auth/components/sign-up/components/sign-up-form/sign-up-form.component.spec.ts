@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SignUpFormAdapterService } from '@views/auth/components/sign-up/adapters/sign-up-form-adapter.service';
 
 import { SignUpFormComponent } from './sign-up-form.component';
-import { SignUpFormAdapterService } from '@views/auth/components/sign-up/adapters/sign-up-form-adapter.service';
 
 describe(SignUpFormComponent.name, () => {
   let component: SignUpFormComponent;

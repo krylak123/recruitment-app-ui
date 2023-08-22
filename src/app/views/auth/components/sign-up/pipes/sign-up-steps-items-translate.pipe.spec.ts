@@ -1,6 +1,7 @@
-import { SignUpStepsItemsTranslatePipe } from './sign-up-steps-items-translate.pipe';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TestBed } from '@angular/core/testing';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+
+import { SignUpStepsItemsTranslatePipe } from './sign-up-steps-items-translate.pipe';
 
 describe(SignUpStepsItemsTranslatePipe.name, () => {
   let translateService: TranslateService;

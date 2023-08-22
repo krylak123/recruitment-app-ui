@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { SignInComponent } from './sign-in.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
+
+import { SignInComponent } from './sign-in.component';
 
 describe(SignInComponent.name, () => {
   let component: SignInComponent;
@@ -10,11 +10,7 @@ describe(SignInComponent.name, () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        SignInComponent,
-        RouterTestingModule,
-        TranslateModule.forRoot(),
-      ],
+      imports: [SignInComponent, RouterTestingModule, TranslateModule.forRoot()],
     });
     fixture = TestBed.createComponent(SignInComponent);
     component = fixture.componentInstance;

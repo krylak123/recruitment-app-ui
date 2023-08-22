@@ -1,22 +1,23 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { APP_NAME } from '@shared/constants/app-name.constants';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LetDirective } from '@ngrx/component';
+import { TranslateModule } from '@ngx-translate/core';
+import { APP_NAME } from '@shared/constants/app-name.constants';
+import { SignInFormValues } from '@views/auth/components/sign-in/models/sign-in-form-values.interface';
+import { SignUpFormAdapterService } from '@views/auth/components/sign-up/adapters/sign-up-form-adapter.service';
+import { signUpStepsItems } from '@views/auth/components/sign-up/configs/sign-up-form-steps.config';
+import { SignUpForm } from '@views/auth/components/sign-up/models/sign-up-form.interface';
+import { MenuItem, SharedModule } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { DividerModule } from 'primeng/divider';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { PasswordModule } from 'primeng/password';
-import { MenuItem, SharedModule } from 'primeng/api';
-import { TranslateModule } from '@ngx-translate/core';
-import { signUpStepsItems } from '@views/auth/components/sign-up/configs/sign-up-form-steps.config';
 import { StepsModule } from 'primeng/steps';
-import { DividerModule } from 'primeng/divider';
-import { SignUpForm } from '@views/auth/components/sign-up/models/sign-up-form.interface';
-import { SignUpFormAdapterService } from '@views/auth/components/sign-up/adapters/sign-up-form-adapter.service';
-import { LetDirective } from '@ngrx/component';
-import { SignInFormValues } from '@views/auth/components/sign-in/models/sign-in-form-values.interface';
+
 import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
 import { SignUpStepsItemsTranslatePipe } from './pipes/sign-up-steps-items-translate.pipe';
 

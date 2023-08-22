@@ -1,13 +1,13 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { InputTextModule } from 'primeng/inputtext';
 import { LetDirective } from '@ngrx/component';
+import { TranslateModule } from '@ngx-translate/core';
+import { SignUpForm } from '@views/auth/components/sign-up/models/sign-up-form.interface';
+import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { PasswordModule } from 'primeng/password';
-import { SignUpForm } from '@views/auth/components/sign-up/models/sign-up-form.interface';
 import { TooltipModule } from 'primeng/tooltip';
-import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sign-up-form',

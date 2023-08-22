@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { APP_NAME } from '@shared/constants/app-name.constants';
 
