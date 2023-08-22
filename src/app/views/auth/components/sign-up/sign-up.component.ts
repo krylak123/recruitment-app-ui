@@ -5,10 +5,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LetDirective } from '@ngrx/component';
 import { TranslateModule } from '@ngx-translate/core';
 import { APP_NAME } from '@shared/constants/app-name.constants';
-import { SignInFormValues } from '@views/auth/components/sign-in/models/sign-in-form-values.interface';
-import { SignUpFormAdapterService } from '@views/auth/components/sign-up/adapters/sign-up-form-adapter.service';
-import { signUpStepsItems } from '@views/auth/components/sign-up/configs/sign-up-form-steps.config';
-import { SignUpForm } from '@views/auth/components/sign-up/models/sign-up-form.interface';
 import { MenuItem, SharedModule } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -18,7 +14,11 @@ import { MessageModule } from 'primeng/message';
 import { PasswordModule } from 'primeng/password';
 import { StepsModule } from 'primeng/steps';
 
+import { SignUpFormAdapterService } from './adapters/sign-up-form-adapter.service';
 import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
+import { signUpStepsItems } from './configs/sign-up-form-steps.config';
+import { SignUpFormValues } from './models/sign-up-form-values.interface';
+import { SignUpForm } from './models/sign-up-form.interface';
 import { SignUpStepsItemsTranslatePipe } from './pipes/sign-up-steps-items-translate.pipe';
 
 @Component({
@@ -88,7 +88,7 @@ export class SignUpComponent implements OnInit {
     if (this.form.invalid) return;
 
     // TODO: podmienić na właściwy payload interface
-    const payload: unknown = this.form.value as SignInFormValues;
+    const payload: unknown = this.form.value as SignUpFormValues;
 
     console.log(payload);
   }
