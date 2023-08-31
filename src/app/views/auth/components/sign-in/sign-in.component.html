@@ -41,7 +41,10 @@
   </form>
   <ng-template pTemplate="footer">
     <div class="card__footer">
-      <p-button [label]="'BUTTON.LOGIN' | translate | uppercase" (click)="handleSubmitForm()" />
+      <p-button
+        [label]="'BUTTON.LOGIN' | translate | uppercase"
+        [loading]="(loginCallState$ | async) === loadingState.LOADING"
+        (click)="handleSubmitForm()" />
       <p-divider />
       <p class="card__footer-text">
         {{ 'AUTH.REGISTER_INFO' | translate }}

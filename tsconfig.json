@@ -26,6 +26,7 @@
       "@core/*": ["src/app/core/*"],
       "@views/*": ["src/app/views/*"],
       "@providers": ["src/app/app.providers.ts"],
+      "@backend/*": ["src/app/backend/*"],
       "@shared/*": ["src/app/shared/*"]
     }
   },

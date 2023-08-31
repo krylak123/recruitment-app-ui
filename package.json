@@ -79,6 +79,7 @@
       "^@envs/(.*)$": "<rootDir>/src/environments/$1",
       "^@shared/(.*)$": "<rootDir>/src/app/shared/$1",
       "^@views/(.*)$": "<rootDir>/src/app/views/$1",
+      "^@backend/(.*)$": "<rootDir>/src/app/backend/$1",
       "~/(.*)": "<rootDir>/src/$1"
     }
   }
