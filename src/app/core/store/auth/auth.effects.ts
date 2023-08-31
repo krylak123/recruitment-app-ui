@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AuthService } from '@backend/auth';
+import { ToastService } from '@core/services';
 import { AuthActions } from '@core/store/auth/auth.actions';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { MessageService } from 'primeng/api';
 import { catchError, map, of, switchMap, tap } from 'rxjs';
 
 @Injectable()
@@ -27,11 +27,7 @@ export class AuthEffects {
         tap(accessToken => {
           localStorage.setItem('access_token', accessToken);
 
-          this.messageService.add({
-            severity: 'success',
-            summary: 'AUTH.STORE.LOGIN_SUMMARY',
-            detail: 'AUTH.STORE.SUCCESS_MES.LOGIN_DETAIL',
-          });
+          this.toastService.triggerSuccessToast('AUTH.STORE.LOGIN_SUMMARY', 'AUTH.STORE.SUCCESS_MES.LOGIN_DETAIL');
         })
       );
     },
@@ -42,15 +38,8 @@ export class AuthEffects {
     () => {
       return this.actions$.pipe(
         ofType(AuthActions.loginFail),
-        tap(({ error }) => {
-          console.log({
-            fromEffectFail: error,
-          });
-          this.messageService.add({
-            severity: 'error',
-            summary: 'AUTH.STORE.LOGIN_SUMMARY',
-            detail: 'AUTH.STORE.ERROR_MES.LOGIN_DETAIL',
-          });
+        tap(() => {
+          this.toastService.triggerErrorToast('AUTH.STORE.LOGIN_SUMMARY', 'AUTH.STORE.ERROR_MES.LOGIN_DETAIL');
         })
       );
     },
@@ -64,11 +53,7 @@ export class AuthEffects {
         tap(() => {
           localStorage.removeItem('access_token');
 
-          this.messageService.add({
-            severity: 'success',
-            summary: 'AUTH.STORE.LOGOUT_SUMMARY',
-            detail: 'AUTH.STORE.SUCCESS_MES.LOGOUT_DETAIL',
-          });
+          this.toastService.triggerSuccessToast('AUTH.STORE.LOGOUT_SUMMARY', 'AUTH.STORE.SUCCESS_MES.LOGOUT_DETAIL');
         })
       );
     },
@@ -78,6 +63,6 @@ export class AuthEffects {
   constructor(
     private actions$: Actions,
     private service: AuthService,
-    private messageService: MessageService
+    private toastService: ToastService
   ) {}
 }
