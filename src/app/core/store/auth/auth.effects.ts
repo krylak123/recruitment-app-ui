@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '@backend/auth';
 import { ToastService } from '@core/services';
 import { AuthActions } from '@core/store/auth/auth.actions';
@@ -26,6 +27,7 @@ export class AuthEffects {
         map(({ res }) => res.access_token),
         tap(accessToken => {
           localStorage.setItem('access_token', accessToken);
+          this.router.navigate(['main']).then();
 
           this.toastService.triggerSuccessToast('AUTH.STORE.LOGIN_SUMMARY', 'AUTH.STORE.SUCCESS_MES.LOGIN_DETAIL');
         })
@@ -52,6 +54,7 @@ export class AuthEffects {
         ofType(AuthActions.logout),
         tap(() => {
           localStorage.removeItem('access_token');
+          this.router.navigate(['unauthorized']).then();
 
           this.toastService.triggerSuccessToast('AUTH.STORE.LOGOUT_SUMMARY', 'AUTH.STORE.SUCCESS_MES.LOGOUT_DETAIL');
         })
@@ -63,6 +66,7 @@ export class AuthEffects {
   constructor(
     private actions$: Actions,
     private service: AuthService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private router: Router
   ) {}
 }

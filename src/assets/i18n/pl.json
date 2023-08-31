@@ -7,6 +7,7 @@
   },
   "BUTTON": {
     "LOGIN": "Zaloguj",
+    "LOGOUT": "Wyloguj",
     "REGISTER": "Zarejestruj",
     "BACKWARD": "Cofnij",
     "NEXT": "Dalej"
@@ -44,7 +45,7 @@
       "LOGOUT_SUMMARY": "Wylogowywanie",
       "SUCCESS_MES": {
         "LOGIN_DETAIL": "Zalogowano pomyślnie",
-        "LOGOUT_DETAIL": "Wylogowano pomyślnie pomyślnie"
+        "LOGOUT_DETAIL": "Wylogowano pomyślnie"
       },
       "ERROR_MES": {
         "LOGIN_DETAIL": "Nie udało się zalogować"
