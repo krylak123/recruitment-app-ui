@@ -19,6 +19,10 @@
 
 .main {
   flex-grow: 1;
+
+  &__breadcrumbs-container {
+    margin-bottom: 2rem;
+  }
 }
 
 .content-container {

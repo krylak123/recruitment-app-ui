@@ -5,13 +5,14 @@ import { AppState } from '@core/store/app.reducer';
 import { AuthActions } from '@core/store/auth';
 import { Store } from '@ngrx/store';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { BreadcrumbsComponent } from '@views/main/components/breadcrumbs/breadcrumbs.component';
 import { MenuItem } from 'primeng/api';
 import { SplitButtonModule } from 'primeng/splitbutton';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, SplitButtonModule, TranslateModule],
+  imports: [CommonModule, RouterOutlet, SplitButtonModule, TranslateModule, BreadcrumbsComponent],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

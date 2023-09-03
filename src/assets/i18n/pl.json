@@ -3,7 +3,8 @@
   "TITLE": {
     "UNAUTHORIZED": "Nieautoryzowany",
     "SIGN_IN": "Logowanie",
-    "SIGN_UP": "Rejestracja"
+    "SIGN_UP": "Rejestracja",
+    "DASHBOARD": "Główny panel"
   },
   "BUTTON": {
     "LOGIN": "Zaloguj",
