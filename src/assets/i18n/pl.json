@@ -3,13 +3,16 @@
   "TITLE": {
     "UNAUTHORIZED": "Nieautoryzowany",
     "SIGN_IN": "Logowanie",
-    "SIGN_UP": "Rejestracja"
+    "SIGN_UP": "Rejestracja",
+    "DASHBOARD": "Główny panel"
   },
   "BUTTON": {
     "LOGIN": "Zaloguj",
+    "LOGOUT": "Wyloguj",
     "REGISTER": "Zarejestruj",
     "BACKWARD": "Cofnij",
-    "NEXT": "Dalej"
+    "NEXT": "Dalej",
+    "PROFILE": "Profil"
   },
   "FORM": {
     "EMAIL": "Email",
@@ -38,6 +41,17 @@
       "COMMONS": "Podstawowe",
       "DETAILS": "Szczegółowe",
       "CONSENTS": "Zgody"
+    },
+    "STORE": {
+      "LOGIN_SUMMARY": "Logowanie",
+      "LOGOUT_SUMMARY": "Wylogowywanie",
+      "SUCCESS_MES": {
+        "LOGIN_DETAIL": "Zalogowano pomyślnie",
+        "LOGOUT_DETAIL": "Wylogowano pomyślnie"
+      },
+      "ERROR_MES": {
+        "LOGIN_DETAIL": "Nie udało się zalogować"
+      }
     }
   }
 }

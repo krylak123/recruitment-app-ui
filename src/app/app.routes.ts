@@ -7,6 +7,10 @@ export const routes: Routes = [
   },
   {
     path: 'main',
+    title: 'TITLE.DASHBOARD',
+    // TODO po wykonaniu pełnej obsługi auth odkomentować
+    // canActivate: [authGuard],
+    // canActivateChild: [authGuard],
     loadChildren: () => import('@views/main/main.routes').then(r => r.mainRoutes),
   },
   {

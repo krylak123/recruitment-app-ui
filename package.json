@@ -79,6 +79,9 @@
       "^@envs/(.*)$": "<rootDir>/src/environments/$1",
       "^@shared/(.*)$": "<rootDir>/src/app/shared/$1",
       "^@views/(.*)$": "<rootDir>/src/app/views/$1",
+      "^@core/(.*)$": "<rootDir>/src/app/core/$1",
+      "^@backend/(.*)$": "<rootDir>/src/app/backend/$1",
+      "^@providers": "<rootDir>/src/app/app.providers.ts",
       "~/(.*)": "<rootDir>/src/$1"
     }
   }

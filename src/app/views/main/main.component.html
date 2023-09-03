@@ -1,7 +1,14 @@
-<header class="header">header</header>
+<header class="header">
+  <div></div>
+  <p-splitButton
+    icon="pi pi-user"
+    [label]="'NAME SURNAME' | translate"
+    [model]="headerBtnItems"
+    (click)="goProfile()" />
+</header>
 <main class="main">
   <div class="content-container">
-    <div>breadcrumb</div>
+    <app-breadcrumbs class="main__breadcrumbs-container" />
     <router-outlet />
   </div>
 </main>

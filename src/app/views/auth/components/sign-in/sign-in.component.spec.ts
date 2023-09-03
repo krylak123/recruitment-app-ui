@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { SignInComponent } from './sign-in.component';
@@ -11,6 +12,7 @@ describe(SignInComponent.name, () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [SignInComponent, RouterTestingModule, TranslateModule.forRoot()],
+      providers: [provideMockStore()],
     });
     fixture = TestBed.createComponent(SignInComponent);
     component = fixture.componentInstance;
