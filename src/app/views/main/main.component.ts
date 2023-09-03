@@ -20,6 +20,7 @@ export class MainComponent {
   public readonly headerBtnItems: MenuItem[] = [
     {
       label: this.translateService.instant('BUTTON.LOGOUT'),
+      icon: 'pi pi-sign-out',
       command: (): void => this.store.dispatch(AuthActions.logout()),
     },
   ];
@@ -28,4 +29,8 @@ export class MainComponent {
     private store: Store<AppState>,
     private translateService: TranslateService
   ) {}
+
+  public goProfile(): void {
+    console.log('go to profile');
+  }
 }

@@ -10,7 +10,8 @@
     "LOGOUT": "Wyloguj",
     "REGISTER": "Zarejestruj",
     "BACKWARD": "Cofnij",
-    "NEXT": "Dalej"
+    "NEXT": "Dalej",
+    "PROFILE": "Profil"
   },
   "FORM": {
     "EMAIL": "Email",
