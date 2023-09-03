@@ -3,7 +3,7 @@ import { CanActivateChildFn } from '@angular/router';
 
 import { authGuard } from './auth.guard';
 
-describe('authGuard', () => {
+describe(authGuard.name, () => {
   const executeGuard: CanActivateChildFn = (...guardParameters) =>
     TestBed.runInInjectionContext(() => authGuard(...guardParameters));
 
