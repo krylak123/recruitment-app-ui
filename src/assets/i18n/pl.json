@@ -4,7 +4,8 @@
     "UNAUTHORIZED": "Nieautoryzowany",
     "SIGN_IN": "Logowanie",
     "SIGN_UP": "Rejestracja",
-    "DASHBOARD": "Główny panel"
+    "DASHBOARD": "Główny panel",
+    "CREATORS": "Kreatory"
   },
   "BUTTON": {
     "LOGIN": "Zaloguj",

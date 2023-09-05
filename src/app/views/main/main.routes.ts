@@ -5,6 +5,16 @@ export const mainRoutes: Routes = [
   {
     path: '',
     component: MainComponent,
+    children: [
+      {
+        path: 'creators',
+        title: 'TITLE.CREATORS',
+        loadChildren: () => import('@views/creators/creators.routes').then(r => r.creatorsRoutes),
+        data: {
+          breadcrumb: 'Kreatory',
+        },
+      },
+    ],
   },
   {
     path: '',
