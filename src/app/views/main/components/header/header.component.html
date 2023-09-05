@@ -1,0 +1,10 @@
+<p-menubar class="menu" [model]="menuItems">
+  <ng-template pTemplate="end">
+    <p-splitButton
+      icon="pi pi-user"
+      styleClass="p-button-text p-button-secondary"
+      [label]="'NAME SURNAME'"
+      [model]="userBtnItems"
+      (onClick)="goProfile()" />
+  </ng-template>
+</p-menubar>

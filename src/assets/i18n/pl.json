@@ -7,6 +7,17 @@
     "DASHBOARD": "Główny panel",
     "CREATORS": "Kreatory"
   },
+  "MENU": {
+    "CREATORS": "Kreatory",
+    "TASKS": "Zadania",
+    "RECRUITMENTS": "Rekrutacje",
+    "CURRENT": "Bieżące",
+    "ARCHIVED": "Archiwalne",
+    "USERS": "Użytkownicy",
+    "CANDIDATES": "Kandydaci",
+    "EMPLOYEES": "Pracownicy"
+
+  },
   "BUTTON": {
     "LOGIN": "Zaloguj",
     "LOGOUT": "Wyloguj",
