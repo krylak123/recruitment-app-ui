@@ -7,6 +7,14 @@ export const creatorsRoutes: Routes = [
     component: CreatorsComponent,
   },
   {
+    path: 'questions',
+    title: 'TITLE.QUESTIONS_ADD',
+    loadComponent: () => import('./views/questions/questions.component').then(c => c.QuestionsComponent),
+    data: {
+      breadcrumb: 'BREADCRUMB.QUESTION',
+    },
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: '',

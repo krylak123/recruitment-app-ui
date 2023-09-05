@@ -11,7 +11,7 @@ export const mainRoutes: Routes = [
         title: 'TITLE.CREATORS',
         loadChildren: () => import('@views/main/views/creators/creators.routes').then(r => r.creatorsRoutes),
         data: {
-          breadcrumb: 'Kreatory',
+          breadcrumb: 'BREADCRUMB.CREATORS',
         },
       },
     ],

@@ -7,6 +7,10 @@
     "DASHBOARD": "Główny panel",
     "CREATORS": "Kreatory"
   },
+  "BREADCRUMB": {
+    "CREATORS": "Kreatory",
+    "QUESTION": "Pytanie"
+  },
   "MENU": {
     "CREATORS": "Kreatory",
     "TASKS": "Zadania",
@@ -16,7 +20,6 @@
     "USERS": "Użytkownicy",
     "CANDIDATES": "Kandydaci",
     "EMPLOYEES": "Pracownicy"
-
   },
   "BUTTON": {
     "LOGIN": "Zaloguj",
@@ -24,7 +27,8 @@
     "REGISTER": "Zarejestruj",
     "BACKWARD": "Cofnij",
     "NEXT": "Dalej",
-    "PROFILE": "Profil"
+    "PROFILE": "Profil",
+    "QUESTION": "Pytanie"
   },
   "FORM": {
     "EMAIL": "Email",
