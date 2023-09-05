@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CreatorsComponent } from 'src/app/views/creators/creators.component';
+import { CreatorsComponent } from '@views/main/views/creators/creators.component';
 
 describe('CreatorsComponent', () => {
   let component: CreatorsComponent;

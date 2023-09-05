@@ -9,7 +9,7 @@ export const mainRoutes: Routes = [
       {
         path: 'creators',
         title: 'TITLE.CREATORS',
-        loadChildren: () => import('@views/creators/creators.routes').then(r => r.creatorsRoutes),
+        loadChildren: () => import('@views/main/views/creators/creators.routes').then(r => r.creatorsRoutes),
         data: {
           breadcrumb: 'Kreatory',
         },
