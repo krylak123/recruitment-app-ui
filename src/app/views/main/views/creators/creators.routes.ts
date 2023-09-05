@@ -8,7 +8,7 @@ export const creatorsRoutes: Routes = [
   },
   {
     path: 'questions',
-    title: 'TITLE.QUESTIONS_ADD',
+    title: 'TITLE.QUESTION_ADD',
     loadComponent: () => import('./views/questions/questions.component').then(c => c.QuestionsComponent),
     data: {
       breadcrumb: 'BREADCRUMB.QUESTION',
