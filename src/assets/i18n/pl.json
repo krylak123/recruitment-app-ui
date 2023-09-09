@@ -47,7 +47,8 @@
     "CONTENT": "Treść",
     "TIME_LIMIT": "Limit czasowy ({{value}}s)",
     "POINTS": "Punkty ({{value}}pkt)",
-    "EXP_LEVEL": "Poziom doświadczenia"
+    "EXP_LEVEL": "Poziom doświadczenia",
+    "FILL_FIELD": "Uzupełnij poprawnie formularz"
   },
   "AUTH": {
     "REGISTER": "Zarejestruj się",
@@ -76,6 +77,19 @@
       },
       "ERROR_MES": {
         "LOGIN_DETAIL": "Nie udało się zalogować"
+      }
+    }
+  },
+  "QUESTIONS":{
+    "STORE": {
+      "QUESTION_OPEN_SUMMARY": "Pytanie otwarte",
+      "QUESTION_CLOSE_SUMMARY": "Pytanie zamknięte",
+      "SUCCESS_MES": {
+        "QUESTION_ADD": "Dodano nowe pytanie"
+      },
+      "ERROR_MES": {
+        "QUESTION_ADD": "Nie udało się dodać pytania"
+
       }
     }
   }

@@ -1,7 +1,10 @@
 <form [formGroup]="form" (ngSubmit)="handleSubmitForm()">
   <header class="header">
     <p-button type="button" styleClass="p-button-secondary" [label]="'BUTTON.CANCEL' | translate" (click)="goBack()" />
-    <p-button type="submit" [label]="'BUTTON.SAVE' | translate" />
+    <p-button
+      type="submit"
+      [label]="'BUTTON.SAVE' | translate"
+      [loading]="(addCallState$ | async) === loadingState.LOADING" />
   </header>
   <section class="form">
     <div class="form__container">
