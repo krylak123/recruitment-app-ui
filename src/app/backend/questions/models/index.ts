@@ -1,1 +1,1 @@
-export * from './question-close-payload';
+export * from 'src/app/backend/questions/models/question-open-payload';

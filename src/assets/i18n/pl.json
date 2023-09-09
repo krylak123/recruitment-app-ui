@@ -29,7 +29,11 @@
     "BACKWARD": "Cofnij",
     "NEXT": "Dalej",
     "PROFILE": "Profil",
-    "QUESTION": "Pytanie"
+    "QUESTION": "Pytanie",
+    "QUESTION_CLOSE": "Pytanie zamknięte",
+    "QUESTION_OPEN": "Pytanie otwarte",
+    "SAVE": "Zapisz",
+    "CANCEL": "Anuluj"
   },
   "FORM": {
     "EMAIL": "Email",
@@ -39,7 +43,11 @@
     "NAME": "Imię",
     "NAME_TOOLTIP": "Wpisz swoje imię",
     "SURNAME": "Nazwisko",
-    "SURNAME_TOOLTIP": "Wpisz swoje nazwisko"
+    "SURNAME_TOOLTIP": "Wpisz swoje nazwisko",
+    "CONTENT": "Treść",
+    "TIME_LIMIT": "Limit czasowy ({{value}}s)",
+    "POINTS": "Punkty ({{value}}pkt)",
+    "EXP_LEVEL": "Poziom doświadczenia"
   },
   "AUTH": {
     "REGISTER": "Zarejestruj się",

@@ -1,15 +1,20 @@
 import { Routes } from '@angular/router';
-import { MainComponent } from '@views/main/main.component';
+
+import { MainComponent } from './main.component';
 
 export const mainRoutes: Routes = [
   {
     path: '',
     component: MainComponent,
     children: [
+      // {
+      //   path: '',
+      //   title: 'TITLE.DASHBOARD',
+      // },
       {
         path: 'creators',
         title: 'TITLE.CREATORS',
-        loadChildren: () => import('@views/main/views/creators/creators.routes').then(r => r.creatorsRoutes),
+        loadChildren: () => import('./views/creators/creators.routes').then(r => r.creatorsRoutes),
         data: {
           breadcrumb: 'BREADCRUMB.CREATORS',
         },
@@ -19,6 +24,10 @@ export const mainRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
+    redirectTo: '',
+  },
+  {
+    path: '**',
     redirectTo: '',
   },
 ];

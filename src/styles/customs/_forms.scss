@@ -1,0 +1,12 @@
+.form {
+
+  &__field {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &--textarea {
+      align-items: flex-start;
+    }
+  }
+}

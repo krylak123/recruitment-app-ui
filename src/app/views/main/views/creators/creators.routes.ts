@@ -19,4 +19,8 @@ export const creatorsRoutes: Routes = [
     pathMatch: 'full',
     redirectTo: '',
   },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
