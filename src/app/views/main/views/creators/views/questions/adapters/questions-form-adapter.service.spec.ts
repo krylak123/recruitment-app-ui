@@ -2,11 +2,13 @@ import { TestBed } from '@angular/core/testing';
 
 import { QuestionsFormAdapterService } from './questions-form-adapter.service';
 
-describe('QuestionsFormAdapterService', () => {
+describe(QuestionsFormAdapterService.name, () => {
   let service: QuestionsFormAdapterService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [QuestionsFormAdapterService],
+    });
     service = TestBed.inject(QuestionsFormAdapterService);
   });
 
