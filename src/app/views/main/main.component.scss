@@ -7,13 +7,6 @@
 .header {
   position: sticky;
   top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  height: 5rem;
-  background-color: var(--primary-color);
-  color: var(--primary-color-text);
   box-shadow: 0 0.1rem 1rem 0 #595959;
 }
 

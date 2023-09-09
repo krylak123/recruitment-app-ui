@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
-import { BreadcrumbsComponent } from '@views/main/components/breadcrumbs/breadcrumbs.component';
+import { CreatorsComponent } from '@views/main/views/creators/creators.component';
 
-describe(BreadcrumbsComponent.name, () => {
-  let component: BreadcrumbsComponent;
-  let fixture: ComponentFixture<BreadcrumbsComponent>;
+describe(CreatorsComponent.name, () => {
+  let component: CreatorsComponent;
+  let fixture: ComponentFixture<CreatorsComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [BreadcrumbsComponent, RouterTestingModule, TranslateModule.forRoot()],
+      imports: [CreatorsComponent, RouterTestingModule, TranslateModule.forRoot()],
     });
-    fixture = TestBed.createComponent(BreadcrumbsComponent);
+    fixture = TestBed.createComponent(CreatorsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

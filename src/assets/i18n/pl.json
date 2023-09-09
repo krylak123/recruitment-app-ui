@@ -4,7 +4,23 @@
     "UNAUTHORIZED": "Nieautoryzowany",
     "SIGN_IN": "Logowanie",
     "SIGN_UP": "Rejestracja",
-    "DASHBOARD": "Główny panel"
+    "DASHBOARD": "Główny panel",
+    "CREATORS": "Kreatory",
+    "QUESTION_ADD": "Dodaj pytanie"
+  },
+  "BREADCRUMB": {
+    "CREATORS": "Kreatory",
+    "QUESTION": "Pytanie"
+  },
+  "MENU": {
+    "CREATORS": "Kreatory",
+    "TASKS": "Zadania",
+    "RECRUITMENTS": "Rekrutacje",
+    "CURRENT": "Bieżące",
+    "ARCHIVED": "Archiwalne",
+    "USERS": "Użytkownicy",
+    "CANDIDATES": "Kandydaci",
+    "EMPLOYEES": "Pracownicy"
   },
   "BUTTON": {
     "LOGIN": "Zaloguj",
@@ -12,7 +28,12 @@
     "REGISTER": "Zarejestruj",
     "BACKWARD": "Cofnij",
     "NEXT": "Dalej",
-    "PROFILE": "Profil"
+    "PROFILE": "Profil",
+    "QUESTION": "Pytanie",
+    "QUESTION_CLOSE": "Pytanie zamknięte",
+    "QUESTION_OPEN": "Pytanie otwarte",
+    "SAVE": "Zapisz",
+    "CANCEL": "Anuluj"
   },
   "FORM": {
     "EMAIL": "Email",
@@ -22,7 +43,14 @@
     "NAME": "Imię",
     "NAME_TOOLTIP": "Wpisz swoje imię",
     "SURNAME": "Nazwisko",
-    "SURNAME_TOOLTIP": "Wpisz swoje nazwisko"
+    "SURNAME_TOOLTIP": "Wpisz swoje nazwisko",
+    "CONTENT": "Treść",
+    "TIME_LIMIT": "Limit czasowy ({{value}}s)",
+    "POINTS": "Punkty ({{value}}pkt)",
+    "EXP_LEVEL": "Poziom doświadczenia",
+    "FILL_FIELD": "Uzupełnij poprawnie formularz",
+    "ANSWER_CONTENT": "Treść odpowiedzi",
+    "ANSWER_LIST": "Lista odpowiedzi (min. 2/max. 10)"
   },
   "AUTH": {
     "REGISTER": "Zarejestruj się",
@@ -51,6 +79,19 @@
       },
       "ERROR_MES": {
         "LOGIN_DETAIL": "Nie udało się zalogować"
+      }
+    }
+  },
+  "QUESTIONS":{
+    "STORE": {
+      "QUESTION_OPEN_SUMMARY": "Pytanie otwarte",
+      "QUESTION_CLOSE_SUMMARY": "Pytanie zamknięte",
+      "SUCCESS_MES": {
+        "QUESTION_ADD": "Dodano nowe pytanie"
+      },
+      "ERROR_MES": {
+        "QUESTION_ADD": "Nie udało się dodać pytania"
+
       }
     }
   }

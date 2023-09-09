@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { PushPipe } from '@ngrx/component';
+import { TranslateService } from '@ngx-translate/core';
 import { MenuItem } from 'primeng/api';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { BehaviorSubject, distinctUntilChanged, filter } from 'rxjs';
@@ -20,7 +21,8 @@ export class BreadcrumbsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private aRoute: ActivatedRoute
+    private aRoute: ActivatedRoute,
+    private translateService: TranslateService
   ) {}
 
   public ngOnInit(): void {
@@ -46,7 +48,7 @@ export class BreadcrumbsComponent implements OnInit {
     const nextUrl: string = path ? `${url}/${path}` : url;
 
     const breadcrumb: MenuItem = {
-      label,
+      label: label ? this.translateService.instant(label) : label,
       routerLink: '/main' + nextUrl,
     };
 

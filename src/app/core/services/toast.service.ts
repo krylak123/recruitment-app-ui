@@ -27,11 +27,11 @@ export class ToastService {
     });
   }
 
-  public triggerWarnToast(summary: string, detail: string): void {
+  public triggerWarnToast(summary: string, detail?: string): void {
     this.messageService.add({
       severity: 'warn',
       summary: this.translateService.instant(summary),
-      detail: this.translateService.instant(detail),
+      detail: detail && this.translateService.instant(detail),
     });
   }
 
