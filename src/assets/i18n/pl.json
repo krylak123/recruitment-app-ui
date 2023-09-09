@@ -48,7 +48,9 @@
     "TIME_LIMIT": "Limit czasowy ({{value}}s)",
     "POINTS": "Punkty ({{value}}pkt)",
     "EXP_LEVEL": "Poziom doświadczenia",
-    "FILL_FIELD": "Uzupełnij poprawnie formularz"
+    "FILL_FIELD": "Uzupełnij poprawnie formularz",
+    "ANSWER_CONTENT": "Treść odpowiedzi",
+    "ANSWER_LIST": "Lista odpowiedzi (min. 2/max. 10)"
   },
   "AUTH": {
     "REGISTER": "Zarejestruj się",

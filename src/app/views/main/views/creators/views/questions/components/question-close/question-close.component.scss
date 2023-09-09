@@ -9,8 +9,9 @@
   margin-bottom: 2rem;
 }
 
-.form {display: grid;
-  grid-template-areas: 'content' 'option';
+.form {
+  display: grid;
+  grid-template-areas: 'content ' 'option' 'answer';
   gap: 3rem;
 
   &__container {
@@ -45,7 +46,19 @@
     flex-grow: 1;
   }
 
+  &__answers-container {
+    grid-area: answer;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__answer {
+    display: flex;
+    gap: 1rem;
+  }
+
   @media screen and (min-width: 1024px) {
-    grid-template-areas: 'content option';
+    grid-template-areas: 'content option' 'answer answer';
   }
 }

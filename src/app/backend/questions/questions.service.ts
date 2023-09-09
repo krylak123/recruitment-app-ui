@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { QuestionOpenPayload } from '@backend/questions/models/question-open-payload';
 import { API_URL } from '@providers';
 import { Observable } from 'rxjs';
+
+import { QuestionClosePayload, QuestionOpenPayload } from './models';
 
 @Injectable({
   providedIn: 'root',
@@ -16,5 +17,9 @@ export class QuestionsService {
 
   public createOpenQuestion(payload: QuestionOpenPayload): Observable<void> {
     return this.http.post<void>(`${this.url}/open`, payload);
+  }
+
+  public createCloseQuestion(payload: QuestionClosePayload): Observable<void> {
+    return this.http.post<void>(`${this.url}/close`, payload);
   }
 }
