@@ -1,0 +1,35 @@
+:host {
+  position: relative;
+  display: block;
+  padding: 1rem 1rem 1rem 3rem;
+  background-color: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 .2rem .5rem 0 #595959;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2rem;
+    background-color: var(--color-exp-level);
+  }
+}
+
+.detail {
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__heading {
+    font-size: 1.3rem;
+  }
+
+
+}

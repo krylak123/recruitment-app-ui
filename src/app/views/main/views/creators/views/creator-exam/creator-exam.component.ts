@@ -4,15 +4,18 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ExamPayloadInterface } from '@backend/exams/models/exam-payload.interface';
+import { QuestionCloseResponseInterface, QuestionOpenResponseInterface } from '@backend/questions';
 import { ToastService } from '@core/services';
 import { Store } from '@ngrx/store';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { QuestionDetailItemComponent } from '@shared/components';
 import { searchQuestionOpenActions, selectSearchQuestionOpenResultList } from '@shared/data-access';
 import {
   searchQuestionCloseActions,
   selectSearchQuestionCloseResultList,
 } from '@shared/data-access/search-question-close';
 import { ExpLevelEnum } from '@shared/enums';
+import { expLevelColorMap } from '@shared/maps/exp-level-color.map';
 import { CallState, LoadingState } from '@shared/store';
 import { Message } from 'primeng/api';
 import { AutoCompleteCompleteEvent, AutoCompleteModule } from 'primeng/autocomplete';
@@ -45,6 +48,7 @@ import { CreatorExamFormInterface } from './models/creator-exam-form.interface';
     DividerModule,
     AutoCompleteModule,
     MessagesModule,
+    QuestionDetailItemComponent,
   ],
   providers: [CreatorExamFormAdapterService, CreatorExamStore],
   templateUrl: './creator-exam.component.html',
@@ -53,16 +57,17 @@ import { CreatorExamFormInterface } from './models/creator-exam-form.interface';
 })
 export class CreatorExamComponent implements OnInit {
   public readonly loadingState = LoadingState;
-  public readonly expLevelList: string[] = Object.keys(ExpLevelEnum);
+  public readonly expLevelList = Object.keys(ExpLevelEnum);
+  public readonly expLevelColor = expLevelColorMap;
   public form!: FormGroup<CreatorExamFormInterface>;
   public formSearchQuestionClose!: FormControl<string>;
   public formSearchQuestionOpen!: FormControl<string>;
-  public selectedQuestionClose!: any[];
-  public selectedQuestionOpen!: any[];
+  public selectedQuestionClose!: QuestionCloseResponseInterface[];
+  public selectedQuestionOpen!: QuestionOpenResponseInterface[];
   public messageNoSelectedQuestionOpen!: Message[];
   public messageNoSelectedQuestionClose!: Message[];
-  public questionCloseList$!: Observable<any[]>;
-  public questionOpenList$!: Observable<any[]>;
+  public questionCloseList$!: Observable<QuestionCloseResponseInterface[]>;
+  public questionOpenList$!: Observable<QuestionOpenResponseInterface[]>;
   public addCallState$!: Observable<CallState>;
 
   constructor(
@@ -97,16 +102,32 @@ export class CreatorExamComponent implements OnInit {
     this.store.dispatch(searchQuestionOpenActions.searchQuestionOpen({ phrase }));
   }
 
-  public handleSelectQuestionClose(questionClose: any): void {
+  public handleSelectQuestionClose(questionClose: QuestionCloseResponseInterface): void {
+    if (this.selectedQuestionClose.find(item => item.id === questionClose.id)) {
+      return this.toastService.triggerInfoToast('EXAM.ALREADY_ADDED_QUESTION');
+    }
+
     this.selectedQuestionClose = [...this.selectedQuestionClose, questionClose];
 
     this.formSearchQuestionClose.reset();
   }
 
-  public handleSelectQuestionOpen(questionOpen: any): void {
+  public handleSelectQuestionOpen(questionOpen: QuestionOpenResponseInterface): void {
+    if (this.selectedQuestionOpen.find(item => item.id === questionOpen.id)) {
+      return this.toastService.triggerInfoToast('EXAM.ALREADY_ADDED_QUESTION');
+    }
+
     this.selectedQuestionOpen = [...this.selectedQuestionOpen, questionOpen];
 
     this.formSearchQuestionOpen.reset();
+  }
+
+  public handleRemoveQuestionClose(id: string): void {
+    this.selectedQuestionClose = this.selectedQuestionClose.filter(item => item.id !== id);
+  }
+
+  public handleRemoveQuestionOpen(id: string): void {
+    this.selectedQuestionOpen = this.selectedQuestionOpen.filter(item => item.id !== id);
   }
 
   public handleSubmitForm(): void {

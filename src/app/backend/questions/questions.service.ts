@@ -4,7 +4,12 @@ import { API_URL } from '@providers';
 import { ExpLevelEnum } from '@shared/enums';
 import { Observable } from 'rxjs';
 
-import { QuestionClosePayload, QuestionOpenPayload } from './models';
+import {
+  QuestionClosePayload,
+  QuestionCloseResponseInterface,
+  QuestionOpenPayload,
+  QuestionOpenResponseInterface,
+} from './models';
 
 @Injectable({
   providedIn: 'root',
@@ -16,14 +21,14 @@ export class QuestionsService {
     @Inject(API_URL) private apiUrl: string
   ) {}
 
-  public getQuestionOpenList(phrase: string, expLevel?: ExpLevelEnum): Observable<any[]> {
+  public getQuestionOpenList(phrase: string, expLevel?: ExpLevelEnum): Observable<QuestionOpenResponseInterface[]> {
     console.log(phrase, expLevel);
-    return this.http.get<any[]>(`${this.url}/open/all`);
+    return this.http.get<QuestionOpenResponseInterface[]>(`${this.url}/open/all`);
   }
 
-  public getQuestionOCloseList(phrase: string, expLevel?: ExpLevelEnum): Observable<any[]> {
+  public getQuestionOCloseList(phrase: string, expLevel?: ExpLevelEnum): Observable<QuestionCloseResponseInterface[]> {
     console.log(phrase, expLevel);
-    return this.http.get<any[]>(`${this.url}/close/all`);
+    return this.http.get<QuestionCloseResponseInterface[]>(`${this.url}/close/all`);
   }
 
   public createOpenQuestion(payload: QuestionOpenPayload): Observable<void> {

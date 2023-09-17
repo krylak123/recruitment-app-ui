@@ -1,0 +1,8 @@
+<div class="detail__header">
+  <p class="detail__heading">{{ data.name }}</p>
+  <p-button type="button" icon="pi pi-times" (onClick)="remove.emit(data.id)" />
+</div>
+<p-divider />
+<div class="detail__content">
+  <p>{{ 'FORM.CONTENT' | translate }}: {{ data.content }}</p>
+</div>

@@ -65,7 +65,13 @@
       </div>
       <ul class="questions__list">
         <ng-container *ngIf="selectedQuestionClose.length; else notSelectedQuestionClose">
-          <li *ngFor="let question of selectedQuestionClose" class="questions__item">{{ question.name }}</li>
+          <app-question-detail-item
+            *ngFor="let question of selectedQuestionClose"
+            class="questions__item"
+            type="CLOSE"
+            [data]="question"
+            [style.--color-exp-level]="expLevelColor[question.expLevel]"
+            (remove)="handleRemoveQuestionClose($event)" />
         </ng-container>
         <ng-template #notSelectedQuestionClose>
           <p-messages [enableService]="false" [closable]="false" [(value)]="messageNoSelectedQuestionClose" />
@@ -94,7 +100,13 @@
       </div>
       <ul class="questions__list">
         <ng-container *ngIf="selectedQuestionOpen.length; else notSelectedQuestionOpen">
-          <li *ngFor="let question of selectedQuestionOpen" class="questions__item">{{ question.name }}</li>
+          <app-question-detail-item
+            *ngFor="let question of selectedQuestionOpen"
+            class="questions__item"
+            type="OPEN"
+            [data]="question"
+            [style.--color-exp-level]="expLevelColor[question.expLevel]"
+            (remove)="handleRemoveQuestionOpen($event)" />
         </ng-container>
         <ng-template #notSelectedQuestionOpen>
           <p-messages [enableService]="false" [closable]="false" [(value)]="messageNoSelectedQuestionOpen" />

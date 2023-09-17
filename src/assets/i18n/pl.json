@@ -106,8 +106,10 @@
         "QUESTION_LIST": "Nie udało sie pobrac listy pytań"
       }
     }
-  },"EXAM":{
-  "ACCEPT_MIN": "Musisz wybrać minimum 1 pytanie zamknięte lub otwarte",
+  },
+  "EXAM":{
+    "ACCEPT_MIN": "Musisz wybrać minimum 1 pytanie zamknięte lub otwarte",
+    "ALREADY_ADDED_QUESTION": "Dodano już te pytanie do egzaminu",
     "STORE": {
       "EXAM_SUMMARY": "Egzamin",
       "SUCCESS_MES": {

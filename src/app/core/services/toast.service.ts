@@ -11,19 +11,19 @@ export class ToastService {
     private translateService: TranslateService
   ) {}
 
-  public triggerSuccessToast(summary: string, detail: string): void {
+  public triggerSuccessToast(summary: string, detail?: string): void {
     this.messageService.add({
       severity: 'success',
       summary: this.translateService.instant(summary),
-      detail: this.translateService.instant(detail),
+      detail: detail && this.translateService.instant(detail),
     });
   }
 
-  public triggerInfoToast(summary: string, detail: string): void {
+  public triggerInfoToast(summary: string, detail?: string): void {
     this.messageService.add({
       severity: 'info',
       summary: this.translateService.instant(summary),
-      detail: this.translateService.instant(detail),
+      detail: detail && this.translateService.instant(detail),
     });
   }
 
@@ -35,11 +35,11 @@ export class ToastService {
     });
   }
 
-  public triggerErrorToast(summary: string, detail: string): void {
+  public triggerErrorToast(summary: string, detail?: string): void {
     this.messageService.add({
       severity: 'error',
       summary: this.translateService.instant(summary),
-      detail: this.translateService.instant(detail),
+      detail: detail && this.translateService.instant(detail),
     });
   }
 }
