@@ -44,7 +44,7 @@
   <p-divider />
   <section class="questions-container">
     <div class="questions">
-      <h3>{{ 'FORM.SELECT_QUESTIONS_CLOSE' | translate }}</h3>
+      <h3>{{ 'FORM.SELECT_QUESTIONS_CLOSE' | translate: { count: selectedQuestionClose.length } }}</h3>
       <div class="questions__form">
         <p-autoComplete
           *ngIf="questionCloseList$ | async as questionCloseList"
@@ -79,7 +79,7 @@
       </ul>
     </div>
     <div class="questions">
-      <h3>{{ 'FORM.SELECT_QUESTIONS_OPEN' | translate }}</h3>
+      <h3>{{ 'FORM.SELECT_QUESTIONS_OPEN' | translate: { count: selectedQuestionOpen.length } }}</h3>
       <div class="questions__form">
         <p-autoComplete
           *ngIf="questionOpenList$ | async as questionOpenList"

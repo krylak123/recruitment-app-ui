@@ -55,8 +55,8 @@
     "ANSWER_CONTENT": "Treść odpowiedzi",
     "ANSWER_LIST": "Lista odpowiedzi (min. 2/max. 10)",
     "DESCRIPTION": "Opis",
-    "SELECT_QUESTIONS_OPEN": "Wybierz pytania otwarte",
-    "SELECT_QUESTIONS_CLOSE": "Wybierz pytania zamknięte",
+    "SELECT_QUESTIONS_OPEN": "({{count}}) Wybierz pytania otwarte",
+    "SELECT_QUESTIONS_CLOSE": "({{count}}) Wybierz pytania zamknięte",
     "SEARCH_QUESTION_OPEN": "Wyszukaj pytanie otwarte po nazwie",
     "SEARCH_QUESTION_CLOSE": "Wyszukaj pytanie zamknięte po nazwie"
   },

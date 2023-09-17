@@ -1,10 +1,11 @@
+import { QuestionOpenResponseInterface } from '@backend/questions';
 import { createReducer, on } from '@ngrx/store';
 import { ItemState, LoadingState } from '@shared/store';
 
 import { searchQuestionOpenActions } from './search-question-open.actions';
 
 export interface SearchQuestionOpenState extends ItemState {
-  resultList: any[];
+  resultList: QuestionOpenResponseInterface[];
 }
 
 const initialState: SearchQuestionOpenState = {

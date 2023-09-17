@@ -1,10 +1,11 @@
+import { QuestionCloseResponseInterface } from '@backend/questions';
 import { createReducer, on } from '@ngrx/store';
 import { ItemState, LoadingState } from '@shared/store';
 
 import { searchQuestionCloseActions } from './search-question-close.actions';
 
 export interface SearchQuestionCloseState extends ItemState {
-  resultList: any[];
+  resultList: QuestionCloseResponseInterface[];
 }
 
 const initialState: SearchQuestionCloseState = {

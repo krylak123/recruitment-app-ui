@@ -1,4 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
+import { QuestionCloseResponseInterface } from '@backend/questions';
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
 import { ExpLevelEnum } from '@shared/enums';
 
@@ -12,7 +13,7 @@ export const searchQuestionCloseActions = createActionGroup({
       expLevel?: ExpLevelEnum;
     }>(),
     searchQuestionCloseSuccess: props<{
-      resultList: any[];
+      resultList: QuestionCloseResponseInterface[];
     }>(),
     searchQuestionCloseFail: props<{
       error: HttpErrorResponse;
