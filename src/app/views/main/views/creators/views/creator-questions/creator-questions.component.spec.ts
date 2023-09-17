@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { API_URL } from '@providers';
 import { MessageService } from 'primeng/api';
 
-import { QuestionsComponent } from './questions.component';
+import { CreatorQuestionsComponent } from './creator-questions.component';
 
 window.ResizeObserver =
   window.ResizeObserver ||
@@ -15,16 +15,16 @@ window.ResizeObserver =
     unobserve: jest.fn(),
   }));
 
-describe(QuestionsComponent.name, () => {
-  let component: QuestionsComponent;
-  let fixture: ComponentFixture<QuestionsComponent>;
+describe(CreatorQuestionsComponent.name, () => {
+  let component: CreatorQuestionsComponent;
+  let fixture: ComponentFixture<CreatorQuestionsComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [QuestionsComponent, TranslateModule.forRoot(), RouterTestingModule, HttpClientTestingModule],
+      imports: [CreatorQuestionsComponent, TranslateModule.forRoot(), RouterTestingModule, HttpClientTestingModule],
       providers: [{ provide: API_URL, useValue: '' }, MessageService],
     });
-    fixture = TestBed.createComponent(QuestionsComponent);
+    fixture = TestBed.createComponent(CreatorQuestionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

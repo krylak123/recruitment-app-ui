@@ -1,59 +1,66 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, DestroyRef, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { QuestionOpenPayload } from '@backend/questions';
+import { QuestionClosePayload } from '@backend/questions';
 import { ToastService } from '@core/services';
 import { TranslateModule } from '@ngx-translate/core';
 import { ExpLevelEnum } from '@shared/enums';
 import { CallState, LoadingState } from '@shared/store';
-import { QuestionOpenStore } from '@views/main/views/creators/views/questions/components/question-open/question-open.store';
 import { ButtonModule } from 'primeng/button';
+import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { MessageModule } from 'primeng/message';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SliderModule } from 'primeng/slider';
 import { Observable, filter, tap } from 'rxjs';
 
-import { QuestionsFormAdapterService } from '../../adapters/questions-form-adapter.service';
-import { QuestionsOpenFormInterface } from '../../models/questions-open-form.interface';
+import { CreatorQuestionsFormAdapterService } from '../../adapters/creator-questions-form-adapter.service';
+import { CreatorQuestionsCloseFormInterface } from '../../models/creator-questions-close-form.interface';
+import { QuestionCloseStore } from './question-close.store';
 
 @Component({
-  selector: 'app-question-open',
+  selector: 'app-question-close',
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    InputTextModule,
-    MessageModule,
-    TranslateModule,
-    RadioButtonModule,
-    InputTextareaModule,
     ButtonModule,
+    InputTextModule,
+    InputTextareaModule,
+    RadioButtonModule,
+    ReactiveFormsModule,
+    TranslateModule,
     SliderModule,
-    FormsModule,
+    CheckboxModule,
   ],
-  providers: [QuestionOpenStore],
-  templateUrl: './question-open.component.html',
-  styleUrls: ['./question-open.component.scss'],
+  providers: [QuestionCloseStore],
+  templateUrl: './question-close.component.html',
+  styleUrls: ['./question-close.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class QuestionOpenComponent implements OnInit {
+export class QuestionCloseComponent implements OnInit {
   public readonly loadingState = LoadingState;
   public readonly expLevelList: string[] = Object.keys(ExpLevelEnum);
-  public form!: FormGroup<QuestionsOpenFormInterface>;
+  public form!: FormGroup<CreatorQuestionsCloseFormInterface>;
   public addCallState$!: Observable<CallState>;
 
   constructor(
-    private formAdapter: QuestionsFormAdapterService,
+    private formAdapter: CreatorQuestionsFormAdapterService,
     private router: Router,
     private aRoute: ActivatedRoute,
-    private questionOpenStore: QuestionOpenStore,
+    private questionCloseStore: QuestionCloseStore,
     private destroyRef: DestroyRef,
     private toastService: ToastService
   ) {}
+
+  public get preventRemoveAnswer(): boolean {
+    return this.form.controls.answers.length <= 2;
+  }
+
+  public get preventAddAnswer(): boolean {
+    return this.form.controls.answers.length >= 10;
+  }
 
   public ngOnInit(): void {
     this.setUpProperties();
@@ -64,6 +71,14 @@ export class QuestionOpenComponent implements OnInit {
     this.router.navigate(['..'], { relativeTo: this.aRoute });
   }
 
+  public handleAddAnswer(): void {
+    this.form.controls.answers.push(this.formAdapter.createCloseQuestionAnswerForm());
+  }
+
+  public handleRemoveAnswer(idx: number): void {
+    this.form.controls.answers.removeAt(idx);
+  }
+
   public handleSubmitForm(): void {
     this.form.markAllAsTouched();
 
@@ -71,15 +86,15 @@ export class QuestionOpenComponent implements OnInit {
       return this.toastService.triggerWarnToast('FORM.FILL_FIELD');
     }
 
-    const payload: QuestionOpenPayload = this.form.getRawValue();
+    const payload: QuestionClosePayload = this.form.getRawValue();
 
-    this.questionOpenStore.addQuestionClose(payload);
+    this.questionCloseStore.addQuestionClose(payload);
   }
 
   private setUpProperties(): void {
-    this.form = this.formAdapter.createOpenQuestionForm();
+    this.form = this.formAdapter.createCloseQuestionForm();
 
-    this.addCallState$ = this.questionOpenStore.addCallState$;
+    this.addCallState$ = this.questionCloseStore.addCallState$;
   }
 
   private setUpDataFlow(): void {
@@ -97,7 +112,7 @@ export class QuestionOpenComponent implements OnInit {
   }
 
   private resetForm(): void {
-    this.questionOpenStore.clearState();
+    this.questionCloseStore.clearState();
     this.form.reset();
   }
 }
