@@ -15,6 +15,14 @@ export const creatorsRoutes: Routes = [
     },
   },
   {
+    path: 'exam',
+    title: 'TITLE.EXAM_ADD',
+    loadComponent: () => import('./views/creator-exam/creator-exam.component').then(c => c.CreatorExamComponent),
+    data: {
+      breadcrumb: 'BREADCRUMB.EXAM',
+    },
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: '',
