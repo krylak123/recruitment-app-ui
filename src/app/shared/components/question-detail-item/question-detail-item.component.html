@@ -5,4 +5,20 @@
 <p-divider />
 <div class="detail__content">
   <p>{{ 'FORM.CONTENT' | translate }}: {{ data.content }}</p>
+  <ng-container *ngIf="type === 'CLOSE' && answers">
+    <p-divider />
+    <p class="answers__heading">{{ 'FORM.ANSWERS' | translate }}:</p>
+    <ul class="answers__list">
+      <li *ngFor="let answer of answers" class="answers__item">
+        <p class="answers__check">
+          <span
+            class="pi"
+            [class.pi-check]="answer.isCorrect"
+            [class.pi-times]="!answer.isCorrect"
+            [style.color]="answer.isCorrect ? '#0f0' : '#f00'"></span>
+        </p>
+        <p class="answers__content">{{ answer.content }}</p>
+      </li>
+    </ul>
+  </ng-container>
 </div>

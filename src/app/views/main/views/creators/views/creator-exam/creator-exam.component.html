@@ -70,6 +70,7 @@
             class="questions__item"
             type="CLOSE"
             [data]="question"
+            [answers]="question.answers"
             [style.--color-exp-level]="expLevelColor[question.expLevel]"
             (remove)="handleRemoveQuestionClose($event)" />
         </ng-container>
