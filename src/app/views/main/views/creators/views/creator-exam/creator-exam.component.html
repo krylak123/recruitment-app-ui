@@ -1,1 +1,43 @@
-<p>creator-exam works!</p>
+<form [formGroup]="form" (ngSubmit)="handleSubmitForm()">
+  <header class="header">
+    <p-button type="button" styleClass="p-button-secondary" [label]="'BUTTON.CANCEL' | translate" (click)="goBack()" />
+    <p-button type="submit" [label]="'BUTTON.SAVE' | translate" />
+  </header>
+  <section class="form">
+    <div class="form__container">
+      <div class="form__field">
+        <input
+          type="text"
+          pInputText
+          formControlName="name"
+          [style]="{ width: '100%' }"
+          [placeholder]="'FORM.NAME' | translate" />
+      </div>
+      <div class="form__field form__field--textarea">
+        <textarea
+          rows="10"
+          pInputTextarea
+          formControlName="description"
+          class="form__textarea"
+          [placeholder]="'FORM.DESCRIPTION' | translate"></textarea>
+      </div>
+    </div>
+    <div class="form__container">
+      <div class="form__field">
+        <div class="form__slider-label-container">
+          <p>{{ 'FORM.EXP_LEVEL' | translate }}</p>
+        </div>
+        <div class="form__radio-container">
+          <div *ngFor="let expLevel of expLevelList" class="form__radio">
+            <p-radioButton formControlName="expLevel" [inputId]="expLevel" [value]="expLevel" />
+            <label [for]="expLevel">{{ expLevel }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <p-divider />
+  <section class="questions">
+    <p>{{ 'Wybierz pytania' | translate }}</p>
+  </section>
+</form>

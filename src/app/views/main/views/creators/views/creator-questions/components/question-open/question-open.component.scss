@@ -9,7 +9,8 @@
   margin-bottom: 2rem;
 }
 
-.form {display: grid;
+.form {
+  display: grid;
   grid-template-areas: 'content' 'option';
   gap: 3rem;
 

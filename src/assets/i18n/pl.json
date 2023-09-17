@@ -53,7 +53,8 @@
     "EXP_LEVEL": "Poziom doświadczenia",
     "FILL_FIELD": "Uzupełnij poprawnie formularz",
     "ANSWER_CONTENT": "Treść odpowiedzi",
-    "ANSWER_LIST": "Lista odpowiedzi (min. 2/max. 10)"
+    "ANSWER_LIST": "Lista odpowiedzi (min. 2/max. 10)",
+    "DESCRIPTION": "Opis"
   },
   "AUTH": {
     "REGISTER": "Zarejestruj się",
