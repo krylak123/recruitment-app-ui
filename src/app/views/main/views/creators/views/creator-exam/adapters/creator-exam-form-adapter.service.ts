@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { ExpLevelEnum } from '@shared/enums';
 
 import { CreatorExamFormInterface } from '../models/creator-exam-form.interface';
@@ -14,5 +14,13 @@ export class CreatorExamFormAdapterService {
       description: this.fb.control('', [Validators.required]),
       expLevel: this.fb.control(ExpLevelEnum.ENTRY, [Validators.required]),
     });
+  }
+
+  public createSearchQuestionCloseFormControl(): FormControl<string> {
+    return this.fb.control('');
+  }
+
+  public createSearchQuestionOpenFormControl(): FormControl<string> {
+    return this.fb.control('');
   }
 }

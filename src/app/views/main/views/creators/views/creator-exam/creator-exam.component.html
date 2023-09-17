@@ -37,7 +37,63 @@
     </div>
   </section>
   <p-divider />
-  <section class="questions">
-    <p>{{ 'Wybierz pytania' | translate }}</p>
+  <section class="questions-container">
+    <div class="questions">
+      <h3>{{ 'FORM.SELECT_QUESTIONS_CLOSE' | translate }}</h3>
+      <div class="questions__form">
+        <p-autoComplete
+          *ngIf="questionOpenList$ | async as questionOpenList"
+          class="p-autocomplete"
+          field="name"
+          [placeholder]="'FORM.SEARCH_QUESTION_CLOSE' | translate"
+          [style]="{ width: '100%' }"
+          [inputStyle]="{ width: '100%' }"
+          [suggestions]="questionOpenList"
+          [forceSelection]="true"
+          (completeMethod)="handleSearchQuestionClose($event)"
+          (onSelect)="handleSelectQuestionClose($event)">
+          <ng-template let-questionOpen pTemplate="item">
+            ({{ questionOpen.expLevel | translate }}) {{ questionOpen.name }}
+          </ng-template>
+        </p-autoComplete>
+      </div>
+      <ul class="questions__list">
+        <ng-container *ngIf="selectedQuestionClose.length; else notSelectedQuestionClose">
+          <li *ngFor="let question of selectedQuestionClose" class="questions__item">{{ question.name }}</li>
+        </ng-container>
+        <ng-template #notSelectedQuestionClose>
+          <p-messages [enableService]="false" [closable]="false" [(value)]="messageNoSelectedQuestionClose" />
+        </ng-template>
+      </ul>
+    </div>
+    <div class="questions">
+      <h3>{{ 'FORM.SELECT_QUESTIONS_OPEN' | translate }}</h3>
+      <div class="questions__form">
+        <p-autoComplete
+          *ngIf="questionOpenList$ | async as questionOpenList"
+          class="p-autocomplete"
+          field="name"
+          [formControl]="formSearchQuestionOpen"
+          [placeholder]="'FORM.SEARCH_QUESTION_OPEN' | translate"
+          [style]="{ width: '100%' }"
+          [inputStyle]="{ width: '100%' }"
+          [suggestions]="questionOpenList"
+          [forceSelection]="true"
+          (completeMethod)="handleSearchQuestionOpen($event)"
+          (onSelect)="handleSelectQuestionOpen($event)">
+          <ng-template let-questionOpen pTemplate="item">
+            ({{ questionOpen.expLevel | translate }}) {{ questionOpen.name }}
+          </ng-template>
+        </p-autoComplete>
+      </div>
+      <ul class="questions__list">
+        <ng-container *ngIf="selectedQuestionOpen.length; else notSelectedQuestionOpen">
+          <li *ngFor="let question of selectedQuestionOpen" class="questions__item">{{ question.name }}</li>
+        </ng-container>
+        <ng-template #notSelectedQuestionOpen>
+          <p-messages [enableService]="false" [closable]="false" [(value)]="messageNoSelectedQuestionOpen" />
+        </ng-template>
+      </ul>
+    </div>
   </section>
 </form>

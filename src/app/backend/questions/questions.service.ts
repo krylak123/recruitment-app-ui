@@ -18,7 +18,7 @@ export class QuestionsService {
 
   public getQuestionOpenList(phrase: string, expLevel?: ExpLevelEnum): Observable<any[]> {
     console.log(phrase, expLevel);
-    return this.http.get<any[]>(`${this.url}/open`);
+    return this.http.get<any[]>(`${this.url}/open/all`);
   }
 
   public createOpenQuestion(payload: QuestionOpenPayload): Observable<void> {

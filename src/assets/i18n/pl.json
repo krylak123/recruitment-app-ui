@@ -54,7 +54,11 @@
     "FILL_FIELD": "Uzupełnij poprawnie formularz",
     "ANSWER_CONTENT": "Treść odpowiedzi",
     "ANSWER_LIST": "Lista odpowiedzi (min. 2/max. 10)",
-    "DESCRIPTION": "Opis"
+    "DESCRIPTION": "Opis",
+    "SELECT_QUESTIONS_OPEN": "Wybierz pytania otwarte",
+    "SELECT_QUESTIONS_CLOSE": "Wybierz pytania zamknięte",
+    "SEARCH_QUESTION_OPEN": "Wyszukaj pytanie otwarte po nazwie",
+    "SEARCH_QUESTION_CLOSE": "Wyszukaj pytanie zamknięte po nazwie"
   },
   "AUTH": {
     "REGISTER": "Zarejestruj się",
@@ -87,11 +91,15 @@
     }
   },
   "QUESTIONS":{
+    "MESSAGE": {
+      "CLOSE_QUESTION_NOT_SELECTED": "Brak wybranych pytań zamkniętych",
+      "OPEN_QUESTION_NOT_SELECTED": "Brak wybranych pytań otwartych"
+    },
     "STORE": {
       "QUESTION_OPEN_SUMMARY": "Pytanie otwarte",
       "QUESTION_CLOSE_SUMMARY": "Pytanie zamknięte",
       "SUCCESS_MES": {
-        "QUESTION_ADD": "Dodano nowe pytanie",
+        "QUESTION_ADD": "Dodano nowe pytanie"
       },
       "ERROR_MES": {
         "QUESTION_ADD": "Nie udało się dodać pytania",
