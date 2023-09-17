@@ -1,13 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, DestroyRef, OnInit } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ExamPayloadInterface } from '@backend/exams/models/exam-payload.interface';
 import { ToastService } from '@core/services';
 import { Store } from '@ngrx/store';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { searchQuestionOpenActions, selectSearchQuestionOpenResultList } from '@shared/data-access';
+import {
+  searchQuestionCloseActions,
+  selectSearchQuestionCloseResultList,
+} from '@shared/data-access/search-question-close';
 import { ExpLevelEnum } from '@shared/enums';
-import { LoadingState } from '@shared/store';
+import { CallState, LoadingState } from '@shared/store';
 import { Message } from 'primeng/api';
 import { AutoCompleteCompleteEvent, AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
@@ -17,9 +23,11 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MessagesModule } from 'primeng/messages';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SliderModule } from 'primeng/slider';
-import { Observable } from 'rxjs';
+import { Observable, filter, tap } from 'rxjs';
 
 import { CreatorExamFormAdapterService } from './adapters/creator-exam-form-adapter.service';
+import { CreatorExamStore } from './creator-exam.store';
+import { CreatorExamFormValuesInterface } from './models/creator-exam-form-values.interface';
 import { CreatorExamFormInterface } from './models/creator-exam-form.interface';
 
 @Component({
@@ -38,7 +46,7 @@ import { CreatorExamFormInterface } from './models/creator-exam-form.interface';
     AutoCompleteModule,
     MessagesModule,
   ],
-  providers: [CreatorExamFormAdapterService],
+  providers: [CreatorExamFormAdapterService, CreatorExamStore],
   templateUrl: './creator-exam.component.html',
   styleUrls: ['./creator-exam.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -53,7 +61,9 @@ export class CreatorExamComponent implements OnInit {
   public selectedQuestionOpen!: any[];
   public messageNoSelectedQuestionOpen!: Message[];
   public messageNoSelectedQuestionClose!: Message[];
+  public questionCloseList$!: Observable<any[]>;
   public questionOpenList$!: Observable<any[]>;
+  public addCallState$!: Observable<CallState>;
 
   constructor(
     private formAdapter: CreatorExamFormAdapterService,
@@ -62,11 +72,13 @@ export class CreatorExamComponent implements OnInit {
     private destroyRef: DestroyRef,
     private toastService: ToastService,
     private store: Store,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private creatorExamStore: CreatorExamStore
   ) {}
 
   public ngOnInit(): void {
     this.setUpProperties();
+    this.setUpDataFlow();
   }
 
   public goBack(): void {
@@ -76,8 +88,7 @@ export class CreatorExamComponent implements OnInit {
   public handleSearchQuestionClose(event: AutoCompleteCompleteEvent): void {
     const phrase: string = event.query;
 
-    console.log(phrase);
-    // this.store.dispatch(searchQuestionCloseActions.searchQuestionClose({ phrase }));
+    this.store.dispatch(searchQuestionCloseActions.searchQuestionClose({ phrase }));
   }
 
   public handleSearchQuestionOpen(event: AutoCompleteCompleteEvent): void {
@@ -103,9 +114,13 @@ export class CreatorExamComponent implements OnInit {
 
     if (this.form.invalid) {
       return this.toastService.triggerWarnToast('FORM.FILL_FIELD');
+    } else if (!(this.selectedQuestionClose.length + this.selectedQuestionOpen.length)) {
+      return this.toastService.triggerWarnToast('EXAM.ACCEPT_MIN');
     }
 
-    console.log(this.form.value);
+    const payload: ExamPayloadInterface = this.formatPayload(this.form.getRawValue());
+
+    this.creatorExamStore.addExam(payload);
   }
 
   private setUpProperties(): void {
@@ -127,6 +142,37 @@ export class CreatorExamComponent implements OnInit {
       },
     ];
 
+    this.questionCloseList$ = this.store.select(selectSearchQuestionCloseResultList);
     this.questionOpenList$ = this.store.select(selectSearchQuestionOpenResultList);
+    this.addCallState$ = this.creatorExamStore.addCallState$;
+  }
+
+  private setUpDataFlow(): void {
+    this.handleAddCallState();
+  }
+
+  private handleAddCallState(): void {
+    this.addCallState$
+      .pipe(
+        filter(status => status === LoadingState.LOADED),
+        tap(() => this.resetForm()),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe();
+  }
+
+  private formatPayload(formValues: CreatorExamFormValuesInterface): ExamPayloadInterface {
+    return {
+      ...formValues,
+      questionCloseList: this.selectedQuestionClose.map(item => item.id),
+      questionOpenList: this.selectedQuestionOpen.map(item => item.id),
+    };
+  }
+
+  private resetForm(): void {
+    this.creatorExamStore.clearState();
+    this.form.reset();
+    this.selectedQuestionClose = [];
+    this.selectedQuestionOpen = [];
   }
 }

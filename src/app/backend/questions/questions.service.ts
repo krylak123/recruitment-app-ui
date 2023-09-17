@@ -21,6 +21,11 @@ export class QuestionsService {
     return this.http.get<any[]>(`${this.url}/open/all`);
   }
 
+  public getQuestionOCloseList(phrase: string, expLevel?: ExpLevelEnum): Observable<any[]> {
+    console.log(phrase, expLevel);
+    return this.http.get<any[]>(`${this.url}/close/all`);
+  }
+
   public createOpenQuestion(payload: QuestionOpenPayload): Observable<void> {
     return this.http.post<void>(`${this.url}/open`, payload);
   }

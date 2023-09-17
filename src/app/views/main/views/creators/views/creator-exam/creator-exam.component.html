@@ -1,6 +1,11 @@
 <form [formGroup]="form" (ngSubmit)="handleSubmitForm()">
   <header class="header">
-    <p-button type="button" styleClass="p-button-secondary" [label]="'BUTTON.CANCEL' | translate" (click)="goBack()" />
+    <p-button
+      type="button"
+      styleClass="p-button-secondary"
+      [label]="'BUTTON.CANCEL' | translate"
+      [loading]="(addCallState$ | async) === loadingState.LOADING"
+      (click)="goBack()" />
     <p-button type="submit" [label]="'BUTTON.SAVE' | translate" />
   </header>
   <section class="form">
@@ -42,13 +47,14 @@
       <h3>{{ 'FORM.SELECT_QUESTIONS_CLOSE' | translate }}</h3>
       <div class="questions__form">
         <p-autoComplete
-          *ngIf="questionOpenList$ | async as questionOpenList"
+          *ngIf="questionCloseList$ | async as questionCloseList"
           class="p-autocomplete"
           field="name"
+          [formControl]="formSearchQuestionClose"
           [placeholder]="'FORM.SEARCH_QUESTION_CLOSE' | translate"
           [style]="{ width: '100%' }"
           [inputStyle]="{ width: '100%' }"
-          [suggestions]="questionOpenList"
+          [suggestions]="questionCloseList"
           [forceSelection]="true"
           (completeMethod)="handleSearchQuestionClose($event)"
           (onSelect)="handleSelectQuestionClose($event)">
