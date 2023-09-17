@@ -1,6 +1,14 @@
 import { ActionReducerMap } from '@ngrx/store';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface SharedDataAccessState {}
+import {
+  SearchQuestionOpenState,
+  searchQuestionOpenReducer,
+} from './search-question-open/search-question-open.reducer';
 
-export const sharedDataAccessReducers: ActionReducerMap<SharedDataAccessState> = {};
+export interface SharedDataAccessState {
+  searchQuestionOpen: SearchQuestionOpenState;
+}
+
+export const sharedDataAccessReducers: ActionReducerMap<SharedDataAccessState> = {
+  searchQuestionOpen: searchQuestionOpenReducer,
+};

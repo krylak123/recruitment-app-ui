@@ -91,11 +91,11 @@
       "QUESTION_OPEN_SUMMARY": "Pytanie otwarte",
       "QUESTION_CLOSE_SUMMARY": "Pytanie zamknięte",
       "SUCCESS_MES": {
-        "QUESTION_ADD": "Dodano nowe pytanie"
+        "QUESTION_ADD": "Dodano nowe pytanie",
       },
       "ERROR_MES": {
-        "QUESTION_ADD": "Nie udało się dodać pytania"
-
+        "QUESTION_ADD": "Nie udało się dodać pytania",
+        "QUESTION_LIST": "Nie udało sie pobrac listy pytań"
       }
     }
   }
