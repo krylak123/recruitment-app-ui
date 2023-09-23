@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { LoginPayloadInterface, LoginResponseInterface } from '@backend/auth/models';
 import { API_URL } from '@providers';
 import { Observable } from 'rxjs';
-import { LoginPayloadInterface, LoginResponseInterface } from 'src/app/backend/auth/models';
 
 @Injectable({
   providedIn: 'root',
