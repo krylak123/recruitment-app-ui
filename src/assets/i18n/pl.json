@@ -38,6 +38,15 @@
     "SAVE": "Zapisz",
     "CANCEL": "Anuluj"
   },
+  "ERROR": {
+    "FORM": {
+      "NO_ERRORS": "Brak błędów",
+      "DEFAULT": "Błąd",
+      "REQUIRED": "Wymagane",
+      "MAX_LENGTH": "Za długie",
+      "MIN_LENGTH": "Za krótkie"
+    }
+  },
   "FORM": {
     "EMAIL": "Email",
     "EMAIL_TOOLTIP": "Wpisz swój email",

@@ -10,16 +10,13 @@
   </header>
   <section class="form">
     <div class="form__container">
-      <div class="form__field form__field--hint">
-        <input
-          type="text"
-          pInputText
-          formControlName="name"
-          [style]="{ width: '100%' }"
-          [maxlength]="nameMaxLength"
-          [placeholder]="'FORM.NAME' | translate" />
-        <small>{{ form.controls.name.value.length }}/{{ nameMaxLength }}</small>
-      </div>
+      <app-form-input-text
+        formControlName="name"
+        placeholder="FORM.NAME"
+        [maxLength]="nameMaxLength"
+        [hintVisible]="true">
+        <small hint>{{ form.controls.name.value.length }}/{{ nameMaxLength }}</small>
+      </app-form-input-text>
       <div class="form__field form__field--hint">
         <textarea
           rows="10"
