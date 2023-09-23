@@ -6,7 +6,9 @@ describe(CreatorExamFormAdapterService.name, () => {
   let service: CreatorExamFormAdapterService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [CreatorExamFormAdapterService],
+    });
     service = TestBed.inject(CreatorExamFormAdapterService);
   });
 
