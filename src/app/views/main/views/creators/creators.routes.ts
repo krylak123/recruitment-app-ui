@@ -10,9 +10,7 @@ export const creatorsRoutes: Routes = [
     path: 'questions',
     title: 'TITLE.QUESTION_ADD',
     loadComponent: () =>
-      import('src/app/views/main/views/creators/views/creator-questions/creator-questions.component').then(
-        c => c.CreatorQuestionsComponent
-      ),
+      import('./views/creator-questions/creator-questions.component').then(c => c.CreatorQuestionsComponent),
     data: {
       breadcrumb: 'BREADCRUMB.QUESTION',
     },

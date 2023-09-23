@@ -4,7 +4,7 @@ import { API_URL } from '@providers';
 
 import { ExamsService } from './exams.service';
 
-describe('ExamsService', () => {
+describe(ExamsService.name, () => {
   let service: ExamsService;
 
   beforeEach(() => {
