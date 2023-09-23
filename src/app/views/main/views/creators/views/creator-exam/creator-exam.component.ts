@@ -9,6 +9,7 @@ import { ToastService } from '@core/services';
 import { Store } from '@ngrx/store';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { QuestionDetailItemComponent } from '@shared/components';
+import { EXAM_DESCRIPTION_MAX_LENGTH, NAME_MAX_LENGTH } from '@shared/constants';
 import { searchQuestionOpenActions, selectSearchQuestionOpenResultList } from '@shared/data-access';
 import {
   searchQuestionCloseActions,
@@ -59,6 +60,8 @@ export class CreatorExamComponent implements OnInit {
   public readonly loadingState = LoadingState;
   public readonly expLevelList = Object.keys(ExpLevelEnum);
   public readonly expLevelColor = expLevelColorMap;
+  public readonly nameMaxLength = NAME_MAX_LENGTH;
+  public readonly descriptionMaxLength = EXAM_DESCRIPTION_MAX_LENGTH;
   public form!: FormGroup<CreatorExamFormInterface>;
   public formSearchQuestionClose!: FormControl<string>;
   public formSearchQuestionOpen!: FormControl<string>;

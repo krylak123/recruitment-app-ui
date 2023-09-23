@@ -1,5 +1,13 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
+import {
+  QUESTION_CONTENT_MAX_LENGTH,
+  QUESTION_NAME_MAX_LENGTH,
+  QUESTION_POINTS_MAX,
+  QUESTION_POINTS_MIN,
+  QUESTION_TIME_MAX,
+  QUESTION_TIME_MIN,
+} from '@shared/constants';
 import { ExpLevelEnum } from '@shared/enums';
 
 import {
@@ -14,21 +22,37 @@ export class CreatorQuestionsFormAdapterService {
 
   public createOpenQuestionForm(): FormGroup<CreatorQuestionsOpenFormInterface> {
     return this.fb.group<CreatorQuestionsOpenFormInterface>({
-      name: this.fb.control('', [Validators.required, Validators.maxLength(20)]),
-      content: this.fb.control('', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]),
+      name: this.fb.control('', [Validators.required, Validators.maxLength(QUESTION_NAME_MAX_LENGTH)]),
+      content: this.fb.control('', [Validators.required, Validators.maxLength(QUESTION_CONTENT_MAX_LENGTH)]),
       expLevel: this.fb.control(ExpLevelEnum.ENTRY, [Validators.required]),
-      timeLimit: this.fb.control(10, [Validators.required, Validators.min(10), Validators.max(600)]),
-      maxPoints: this.fb.control(1, [Validators.required, Validators.min(1), Validators.max(10)]),
+      timeLimit: this.fb.control(QUESTION_TIME_MIN, [
+        Validators.required,
+        Validators.min(QUESTION_TIME_MIN),
+        Validators.max(QUESTION_TIME_MAX),
+      ]),
+      maxPoints: this.fb.control(QUESTION_POINTS_MIN, [
+        Validators.required,
+        Validators.min(QUESTION_POINTS_MIN),
+        Validators.max(QUESTION_POINTS_MAX),
+      ]),
     });
   }
 
   public createCloseQuestionForm(): FormGroup<CreatorQuestionsCloseFormInterface> {
     return this.fb.group<CreatorQuestionsCloseFormInterface>({
-      name: this.fb.control('', [Validators.required, Validators.maxLength(20)]),
-      content: this.fb.control('', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]),
+      name: this.fb.control('', [Validators.required, Validators.maxLength(QUESTION_NAME_MAX_LENGTH)]),
+      content: this.fb.control('', [Validators.required, Validators.maxLength(QUESTION_CONTENT_MAX_LENGTH)]),
       expLevel: this.fb.control(ExpLevelEnum.ENTRY, [Validators.required]),
-      timeLimit: this.fb.control(10, [Validators.required, Validators.min(10), Validators.max(600)]),
-      maxPoints: this.fb.control(1, [Validators.required, Validators.min(1), Validators.max(10)]),
+      timeLimit: this.fb.control(QUESTION_TIME_MIN, [
+        Validators.required,
+        Validators.min(QUESTION_TIME_MIN),
+        Validators.max(QUESTION_TIME_MAX),
+      ]),
+      maxPoints: this.fb.control(QUESTION_POINTS_MIN, [
+        Validators.required,
+        Validators.min(QUESTION_POINTS_MIN),
+        Validators.max(QUESTION_POINTS_MAX),
+      ]),
       answers: this.fb.array<FormGroup<CreatorQuestionsCloseFormAnswersInterface>>([
         this.createCloseQuestionAnswerForm(),
         this.createCloseQuestionAnswerForm(),

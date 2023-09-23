@@ -10,21 +10,25 @@
   </header>
   <section class="form">
     <div class="form__container">
-      <div class="form__field">
+      <div class="form__field form__field--hint">
         <input
           type="text"
           pInputText
           formControlName="name"
           [style]="{ width: '100%' }"
+          [maxlength]="nameMaxLength"
           [placeholder]="'FORM.NAME' | translate" />
+        <small>{{ form.controls.name.value.length }}/{{ nameMaxLength }}</small>
       </div>
-      <div class="form__field form__field--textarea">
+      <div class="form__field form__field--hint">
         <textarea
           rows="10"
           pInputTextarea
           formControlName="description"
           class="form__textarea"
+          [maxLength]="descriptionMaxLength"
           [placeholder]="'FORM.DESCRIPTION' | translate"></textarea>
+        <small>{{ form.controls.description.value.length }}/{{ descriptionMaxLength }}</small>
       </div>
     </div>
     <div class="form__container">

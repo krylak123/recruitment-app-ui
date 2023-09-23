@@ -1,0 +1,8 @@
+export const NAME_MAX_LENGTH = 30;
+export const QUESTION_NAME_MAX_LENGTH = 30;
+export const QUESTION_CONTENT_MAX_LENGTH = 160;
+export const QUESTION_TIME_MIN = 10;
+export const QUESTION_TIME_MAX = 600;
+export const QUESTION_POINTS_MIN = 1;
+export const QUESTION_POINTS_MAX = 10;
+export const EXAM_DESCRIPTION_MAX_LENGTH = 250;
