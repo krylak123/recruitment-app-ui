@@ -10,6 +10,10 @@ export class CreatorsCardMenuService {
       label: this.translateService.instant('BUTTON.QUESTION'),
       routerCommand: (): Promise<boolean> => this.router.navigate(['questions'], { relativeTo: this.aRoute }),
     },
+    {
+      label: this.translateService.instant('BUTTON.EXAM'),
+      routerCommand: (): Promise<boolean> => this.router.navigate(['exam'], { relativeTo: this.aRoute }),
+    },
   ];
 
   constructor(

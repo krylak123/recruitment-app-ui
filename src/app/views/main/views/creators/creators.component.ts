@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CreatorsCardMenuInterface } from '@views/main/views/creators/models/creators-card-menu.interface';
-import { CreatorsCardMenuService } from '@views/main/views/creators/services/creators-card-menu.service';
 import { CardModule } from 'primeng/card';
+
+import { CreatorsCardMenuInterface } from './models/creators-card-menu.interface';
+import { CreatorsCardMenuService } from './services/creators-card-menu.service';
 
 @Component({
   selector: 'app-creators',

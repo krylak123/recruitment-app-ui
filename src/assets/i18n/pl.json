@@ -6,11 +6,13 @@
     "SIGN_UP": "Rejestracja",
     "DASHBOARD": "Główny panel",
     "CREATORS": "Kreatory",
-    "QUESTION_ADD": "Dodaj pytanie"
+    "QUESTION_ADD": "Dodaj pytanie",
+    "EXAM_ADD": "Dodaj egzamin"
   },
   "BREADCRUMB": {
     "CREATORS": "Kreatory",
-    "QUESTION": "Pytanie"
+    "QUESTION": "Pytanie",
+    "EXAM": "Egzamin"
   },
   "MENU": {
     "CREATORS": "Kreatory",
@@ -32,6 +34,7 @@
     "QUESTION": "Pytanie",
     "QUESTION_CLOSE": "Pytanie zamknięte",
     "QUESTION_OPEN": "Pytanie otwarte",
+    "EXAM": "Egzamin",
     "SAVE": "Zapisz",
     "CANCEL": "Anuluj"
   },
@@ -50,7 +53,13 @@
     "EXP_LEVEL": "Poziom doświadczenia",
     "FILL_FIELD": "Uzupełnij poprawnie formularz",
     "ANSWER_CONTENT": "Treść odpowiedzi",
-    "ANSWER_LIST": "Lista odpowiedzi (min. 2/max. 10)"
+    "ANSWER_LIST": "Lista odpowiedzi (min. 2/max. 10)",
+    "DESCRIPTION": "Opis",
+    "SELECT_QUESTIONS_OPEN": "({{count}}) Wybierz pytania otwarte",
+    "SELECT_QUESTIONS_CLOSE": "({{count}}) Wybierz pytania zamknięte",
+    "SEARCH_QUESTION_OPEN": "Wyszukaj pytanie otwarte po nazwie",
+    "SEARCH_QUESTION_CLOSE": "Wyszukaj pytanie zamknięte po nazwie",
+    "ANSWERS": "Odpowiedzi"
   },
   "AUTH": {
     "REGISTER": "Zarejestruj się",
@@ -83,6 +92,10 @@
     }
   },
   "QUESTIONS":{
+    "MESSAGE": {
+      "CLOSE_QUESTION_NOT_SELECTED": "Brak wybranych pytań zamkniętych",
+      "OPEN_QUESTION_NOT_SELECTED": "Brak wybranych pytań otwartych"
+    },
     "STORE": {
       "QUESTION_OPEN_SUMMARY": "Pytanie otwarte",
       "QUESTION_CLOSE_SUMMARY": "Pytanie zamknięte",
@@ -90,8 +103,21 @@
         "QUESTION_ADD": "Dodano nowe pytanie"
       },
       "ERROR_MES": {
-        "QUESTION_ADD": "Nie udało się dodać pytania"
-
+        "QUESTION_ADD": "Nie udało się dodać pytania",
+        "QUESTION_LIST": "Nie udało sie pobrac listy pytań"
+      }
+    }
+  },
+  "EXAM":{
+    "ACCEPT_MIN": "Musisz wybrać minimum 1 pytanie zamknięte lub otwarte",
+    "ALREADY_ADDED_QUESTION": "Dodano już te pytanie do egzaminu",
+    "STORE": {
+      "EXAM_SUMMARY": "Egzamin",
+      "SUCCESS_MES": {
+        "ADD": "Dodano nowy egzamin"
+      },
+      "ERROR_MES": {
+        "ADD": "Nie udało się dodać egzaminu"
       }
     }
   }
