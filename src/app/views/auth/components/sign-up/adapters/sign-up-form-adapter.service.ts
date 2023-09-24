@@ -9,8 +9,8 @@ export class SignUpFormAdapterService {
   public createForm(): FormGroup<SignUpForm> {
     return this.fb.group<SignUpForm>({
       commonGroup: this.fb.group({
-        name: this.fb.control('', [Validators.required]),
-        surname: this.fb.control('', [Validators.required]),
+        firstName: this.fb.control('', [Validators.required]),
+        lastName: this.fb.control('', [Validators.required]),
         email: this.fb.control('', [Validators.required, Validators.email]),
         password: this.fb.control('', [Validators.required]),
       }),

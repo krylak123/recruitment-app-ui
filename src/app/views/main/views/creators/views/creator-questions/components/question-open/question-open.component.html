@@ -8,28 +8,20 @@
   </header>
   <section class="form">
     <div class="form__container">
-      <div class="form__field">
-        <input
-          type="text"
-          pInputText
-          formControlName="name"
-          [style]="{ width: '100%' }"
-          [placeholder]="'FORM.NAME' | translate" />
-      </div>
-      <div class="form__field form__field--textarea">
-        <textarea
-          rows="10"
-          pInputTextarea
-          formControlName="content"
-          class="form__textarea"
-          [placeholder]="'FORM.CONTENT' | translate"></textarea>
-      </div>
+      <app-form-input-text
+        formControlName="name"
+        placeholder="FORM.NAME"
+        [maxLength]="nameMaxLength"
+        [hintVisible]="true">
+        <small hint>{{ form.controls.name.value.length }}/{{ nameMaxLength }}</small>
+      </app-form-input-text>
+      <app-form-input-textarea formControlName="content" placeholder="FORM.CONTENT" [hintVisible]="true">
+        <small hint>{{ form.controls.content.value.length }}/{{ descriptionMaxLength }}</small>
+      </app-form-input-textarea>
     </div>
     <div class="form__container">
-      <div class="form__field">
-        <div class="form__slider-label-container">
-          <p>{{ 'FORM.EXP_LEVEL' | translate }}</p>
-        </div>
+      <div class="form__field form__field--radio">
+        <p>{{ 'FORM.EXP_LEVEL' | translate }}</p>
         <div class="form__radio-container">
           <div *ngFor="let expLevel of expLevelList" class="form__radio">
             <p-radioButton formControlName="expLevel" [inputId]="expLevel" [value]="expLevel" />
@@ -37,16 +29,12 @@
           </div>
         </div>
       </div>
-      <div class="form__field">
-        <div class="form__slider-label-container">
-          <p>{{ 'FORM.TIME_LIMIT' | translate: { value: form.controls.timeLimit.value } }}</p>
-        </div>
+      <div class="form__field form__field--slider">
+        <p>{{ 'FORM.TIME_LIMIT' | translate: { value: form.controls.timeLimit.value } }}</p>
         <p-slider class="form__slider" formControlName="timeLimit" [min]="10" [max]="600" [step]="10" />
       </div>
-      <div class="form__field">
-        <div class="form__slider-label-container">
-          <p>{{ 'FORM.POINTS' | translate: { value: form.controls.maxPoints.value } }}</p>
-        </div>
+      <div class="form__field form__field--slider">
+        <p>{{ 'FORM.POINTS' | translate: { value: form.controls.maxPoints.value } }}</p>
         <p-slider class="form__slider" formControlName="maxPoints" [min]="1" [max]="10" />
       </div>
     </div>

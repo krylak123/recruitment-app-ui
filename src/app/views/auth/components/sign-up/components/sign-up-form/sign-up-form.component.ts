@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { LetDirective } from '@ngrx/component';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormInputTextComponent } from '@shared/form-controls';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { PasswordModule } from 'primeng/password';
@@ -23,6 +24,7 @@ import { SignUpForm } from '../../models/sign-up-form.interface';
     ReactiveFormsModule,
     TooltipModule,
     TranslateModule,
+    FormInputTextComponent,
   ],
   templateUrl: './sign-up-form.component.html',
   styleUrls: ['./sign-up-form.component.scss'],

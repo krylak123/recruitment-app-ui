@@ -22,10 +22,8 @@
       </app-form-input-textarea>
     </div>
     <div class="form__container">
-      <div class="form__field">
-        <div class="form__slider-label-container">
-          <p>{{ 'FORM.EXP_LEVEL' | translate }}</p>
-        </div>
+      <div class="form__field form__field--radio">
+        <p>{{ 'FORM.EXP_LEVEL' | translate }}</p>
         <div class="form__radio-container">
           <div *ngFor="let expLevel of expLevelList" class="form__radio">
             <p-radioButton formControlName="expLevel" [inputId]="expLevel" [value]="expLevel" />

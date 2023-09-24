@@ -2,50 +2,23 @@
   <ng-container *ngrxLet="form.controls.commonGroup as commonGroup">
     <div *ngIf="activeStepsIdx === 0" formGroupName="commonGroup" class="form__group">
       <div class="form__fields">
-        <div class="form__field">
-          <input
-            type="text"
-            pInputText
-            formControlName="name"
-            tooltipPosition="top"
-            [style]="{ width: '100%' }"
-            [placeholder]="'FORM.NAME' | translate"
-            [pTooltip]="'FORM.NAME_TOOLTIP' | translate" />
-          <ng-container *ngIf="commonGroup.controls.name.touched">
-            <p-message *ngIf="commonGroup.controls.name.valid" severity="success" />
-            <p-message *ngIf="commonGroup.controls.name.invalid" severity="error" />
-          </ng-container>
-        </div>
-        <div class="form__field">
-          <input
-            type="text"
-            pInputText
-            formControlName="surname"
-            tooltipPosition="top"
-            [style]="{ width: '100%' }"
-            [placeholder]="'FORM.SURNAME' | translate"
-            [pTooltip]="'FORM.SURNAME_TOOLTIP' | translate" />
-          <ng-container *ngIf="commonGroup.controls.surname.touched">
-            <p-message *ngIf="commonGroup.controls.surname.valid" severity="success" />
-            <p-message *ngIf="commonGroup.controls.surname.invalid" severity="error" />
-          </ng-container>
-        </div>
+        <app-form-input-text
+          class="form__field"
+          formControlName="firstName"
+          placeholder="FORM.FIRST_NAME"
+          [hintVisible]="true" />
+        <app-form-input-text
+          class="form__field"
+          formControlName="lastName"
+          placeholder="FORM.LAST_NAME"
+          [hintVisible]="true" />
       </div>
       <div class="form__fields">
-        <div class="form__field">
-          <input
-            type="text"
-            pInputText
-            formControlName="email"
-            tooltipPosition="top"
-            [style]="{ width: '100%' }"
-            [placeholder]="'FORM.EMAIL' | translate"
-            [pTooltip]="'FORM.EMAIL_TOOLTIP' | translate" />
-          <ng-container *ngIf="commonGroup.controls.email.touched">
-            <p-message *ngIf="commonGroup.controls.email.valid" severity="success" />
-            <p-message *ngIf="commonGroup.controls.email.invalid" severity="error" />
-          </ng-container>
-        </div>
+        <app-form-input-text
+          class="form__field"
+          formControlName="email"
+          placeholder="FORM.EMAIL"
+          [hintVisible]="true" />
         <div class="form__field">
           <p-password
             class="form__password"
@@ -67,4 +40,6 @@
   </ng-container>
 
   <div *ngIf="activeStepsIdx === 1" formGroupName="dataGroup" class="form__group">Form 2</div>
+
+  <div *ngIf="activeStepsIdx === 2" formGroupName="dataGroup" class="form__group">Form 3</div>
 </form>

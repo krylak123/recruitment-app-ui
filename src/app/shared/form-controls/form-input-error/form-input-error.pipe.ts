@@ -10,6 +10,8 @@ export class FormInputErrorPipe implements PipeTransform {
   public transform(errors: ValidationErrors): string {
     const key: string = Object.keys(errors)[0];
 
+    console.log(key);
+
     return formErrorsMap[key] ?? 'ERROR.FORM.DEFAULT';
   }
 }

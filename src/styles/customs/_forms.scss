@@ -1,4 +1,24 @@
 .form {
+  gap: 3rem;
+
+  &__fields {
+    display: flex;
+    gap: 3rem;
+  }
+
+  &__field {
+    width: 100%;
+
+    &--radio, &--slider {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    &--slider {
+      gap: .7rem;
+    }
+  }
 
   &__content-container {
     display: flex;
@@ -7,15 +27,13 @@
     width: 100%;
   }
 
-  &__field {
+  &__radio-container {
     display: flex;
-    align-items: center;
     gap: 1rem;
+  }
 
-    &--hint {
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0;
-    }
+  &__radio {
+    display: flex;
+    gap: .5rem;
   }
 }
