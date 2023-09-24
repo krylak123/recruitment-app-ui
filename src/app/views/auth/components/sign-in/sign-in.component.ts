@@ -8,7 +8,7 @@ import { AuthActions, selectAuthCallState } from '@core/store/auth';
 import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { APP_NAME } from '@shared/constants/app-name.constants';
-import { FormInputTextComponent } from '@shared/form-controls';
+import { FormInputPasswordComponent, FormInputTextComponent } from '@shared/form-controls';
 import { CallState, LoadingState } from '@shared/store';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -39,6 +39,7 @@ import { SignInForm } from './models/sign-in-form.interface';
     DividerModule,
     MessageModule,
     FormInputTextComponent,
+    FormInputPasswordComponent,
   ],
   providers: [SignInFormAdapterService],
   templateUrl: './sign-in.component.html',

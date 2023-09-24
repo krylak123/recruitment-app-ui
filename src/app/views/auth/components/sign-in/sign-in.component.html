@@ -7,23 +7,8 @@
     width: '500px'
   }">
   <form class="form" [formGroup]="form">
-    <app-form-input-text class="form__field" formControlName="email" placeholder="FORM.EMAIL" [hintVisible]="true" />
-    <div class="form__field">
-      <p-password
-        class="form__password"
-        formControlName="password"
-        tooltipPosition="top"
-        [style]="{ width: '100%' }"
-        [inputStyle]="{ width: '100%' }"
-        [toggleMask]="true"
-        [feedback]="false"
-        [placeholder]="'FORM.PASSWORD' | translate"
-        [pTooltip]="'FORM.PASSWORD_TOOLTIP' | translate" />
-      <ng-container *ngIf="form.controls.password.touched">
-        <p-message *ngIf="form.controls.password.valid" severity="success" />
-        <p-message *ngIf="form.controls.password.invalid" severity="error" />
-      </ng-container>
-    </div>
+    <app-form-input-text class="form__field" formControlName="email" placeholder="FORM.EMAIL" />
+    <app-form-input-password class="form__field" formControlName="password" placeholder="FORM.PASSWORD" />
   </form>
   <ng-template pTemplate="footer">
     <div class="card__footer">

@@ -4,35 +4,31 @@ import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormControlAbstract } from '@shared/form-controls/form-control.abstract';
 import { FormInputErrorComponent } from '@shared/form-controls/form-input-error/form-input-error.component';
-import { TrimDirective } from '@shared/utils';
-import { InputTextareaModule } from 'primeng/inputtextarea';
 import { PaginatorModule } from 'primeng/paginator';
+import { PasswordModule } from 'primeng/password';
 
 @Component({
-  selector: 'app-form-input-textarea',
+  selector: 'app-form-input-password',
   standalone: true,
   imports: [
     CommonModule,
-    InputTextareaModule,
     PaginatorModule,
+    PasswordModule,
     ReactiveFormsModule,
     TranslateModule,
     FormInputErrorComponent,
-    TrimDirective,
   ],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FormInputTextareaComponent),
+      useExisting: forwardRef(() => FormInputPasswordComponent),
       multi: true,
     },
   ],
-  templateUrl: './form-input-textarea.component.html',
-  styleUrls: ['./form-input-textarea.component.scss'],
+  templateUrl: './form-input-password.component.html',
+  styleUrls: ['./form-input-password.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormInputTextareaComponent extends FormControlAbstract {
+export class FormInputPasswordComponent extends FormControlAbstract {
   @Input() public placeholder = '';
-  @Input() public maxLength?: number;
-  @Input() public rows = 5;
 }

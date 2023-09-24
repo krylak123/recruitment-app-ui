@@ -2,39 +2,12 @@
   <ng-container *ngrxLet="form.controls.commonGroup as commonGroup">
     <div *ngIf="activeStepsIdx === 0" formGroupName="commonGroup" class="form__group">
       <div class="form__fields">
-        <app-form-input-text
-          class="form__field"
-          formControlName="firstName"
-          placeholder="FORM.FIRST_NAME"
-          [hintVisible]="true" />
-        <app-form-input-text
-          class="form__field"
-          formControlName="lastName"
-          placeholder="FORM.LAST_NAME"
-          [hintVisible]="true" />
+        <app-form-input-text class="form__field" formControlName="firstName" placeholder="FORM.FIRST_NAME" />
+        <app-form-input-text class="form__field" formControlName="lastName" placeholder="FORM.LAST_NAME" />
       </div>
       <div class="form__fields">
-        <app-form-input-text
-          class="form__field"
-          formControlName="email"
-          placeholder="FORM.EMAIL"
-          [hintVisible]="true" />
-        <div class="form__field">
-          <p-password
-            class="form__password"
-            formControlName="password"
-            tooltipPosition="top"
-            [style]="{ width: '100%' }"
-            [inputStyle]="{ width: '100%' }"
-            [toggleMask]="true"
-            [feedback]="false"
-            [placeholder]="'FORM.PASSWORD' | translate"
-            [pTooltip]="'FORM.PASSWORD_TOOLTIP' | translate" />
-          <ng-container *ngIf="commonGroup.controls.password.touched">
-            <p-message *ngIf="commonGroup.controls.password.valid" severity="success" />
-            <p-message *ngIf="commonGroup.controls.password.invalid" severity="error" />
-          </ng-container>
-        </div>
+        <app-form-input-text class="form__field" formControlName="email" placeholder="FORM.EMAIL" />
+        <app-form-input-password class="form__field" formControlName="password" placeholder="FORM.PASSWORD" />
       </div>
     </div>
   </ng-container>

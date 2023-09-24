@@ -35,6 +35,5 @@ import { FormInputErrorComponent } from '../form-input-error/form-input-error.co
 })
 export class FormInputTextComponent extends FormControlAbstract {
   @Input() public placeholder = '';
-  @Input() public hintVisible = false;
   @Input() public maxLength?: number;
 }

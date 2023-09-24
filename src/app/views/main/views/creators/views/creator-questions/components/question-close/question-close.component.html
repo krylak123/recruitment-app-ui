@@ -8,14 +8,10 @@
   </header>
   <section class="form">
     <div class="form__container">
-      <app-form-input-text
-        formControlName="name"
-        placeholder="FORM.NAME"
-        [maxLength]="nameMaxLength"
-        [hintVisible]="true">
+      <app-form-input-text formControlName="name" placeholder="FORM.NAME" [maxLength]="nameMaxLength">
         <small hint>{{ form.controls.name.value.length }}/{{ nameMaxLength }}</small>
       </app-form-input-text>
-      <app-form-input-textarea formControlName="content" placeholder="FORM.CONTENT" [hintVisible]="true">
+      <app-form-input-textarea formControlName="content" placeholder="FORM.CONTENT">
         <small hint>{{ form.controls.content.value.length }}/{{ descriptionMaxLength }}</small>
       </app-form-input-textarea>
     </div>
