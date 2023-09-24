@@ -1,12 +1,11 @@
-<input
-  type="text"
-  pInputText
+<textarea
+  pInputTextarea
   appTrim
-  [style]="{ width: '100%' }"
-  [attr.maxLength]="maxLength"
-  [placeholder]="placeholder | translate"
+  class="form__textarea"
+  [rows]="rows"
   [formControl]="formControl"
-  (change)="onChange($event)" />
+  [attr.maxlength]="maxLength"
+  [placeholder]="placeholder | translate"></textarea>
 <div class="form__content-container">
   <app-form-input-error [errors]="formControl.errors" />
   <ng-content select="[hint]" />

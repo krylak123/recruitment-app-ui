@@ -16,7 +16,7 @@ import {
   selectSearchQuestionCloseResultList,
 } from '@shared/data-access/search-question-close';
 import { ExpLevelEnum } from '@shared/enums';
-import { FormInputTextComponent } from '@shared/form-controls';
+import { FormInputTextComponent, FormInputTextareaComponent } from '@shared/form-controls';
 import { expLevelColorMap } from '@shared/maps/exp-level-color.map';
 import { CallState, LoadingState } from '@shared/store';
 import { Message } from 'primeng/api';
@@ -52,6 +52,7 @@ import { CreatorExamFormInterface } from './models/creator-exam-form.interface';
     MessagesModule,
     QuestionDetailItemComponent,
     FormInputTextComponent,
+    FormInputTextareaComponent,
   ],
   providers: [CreatorExamFormAdapterService, CreatorExamStore],
   templateUrl: './creator-exam.component.html',

@@ -17,16 +17,9 @@
         [hintVisible]="true">
         <small hint>{{ form.controls.name.value.length }}/{{ nameMaxLength }}</small>
       </app-form-input-text>
-      <div class="form__field form__field--hint">
-        <textarea
-          rows="10"
-          pInputTextarea
-          formControlName="description"
-          class="form__textarea"
-          [maxLength]="descriptionMaxLength"
-          [placeholder]="'FORM.DESCRIPTION' | translate"></textarea>
-        <small>{{ form.controls.description.value.length }}/{{ descriptionMaxLength }}</small>
-      </div>
+      <app-form-input-textarea formControlName="description" placeholder="FORM.DESCRIPTION" [hintVisible]="true">
+        <small hint>{{ form.controls.description.value.length }}/{{ descriptionMaxLength }}</small>
+      </app-form-input-textarea>
     </div>
     <div class="form__container">
       <div class="form__field">

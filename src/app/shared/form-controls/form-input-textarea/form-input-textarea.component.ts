@@ -1,40 +1,39 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, forwardRef } from '@angular/core';
-import { FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormControlAbstract } from '@shared/form-controls/form-control.abstract';
+import { FormInputErrorComponent } from '@shared/form-controls/form-input-error/form-input-error.component';
 import { TrimDirective } from '@shared/utils';
-import { InputTextModule } from 'primeng/inputtext';
-import { PasswordModule } from 'primeng/password';
-
-import { FormInputErrorComponent } from '../form-input-error/form-input-error.component';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { PaginatorModule } from 'primeng/paginator';
 
 @Component({
-  selector: 'app-form-input-text',
+  selector: 'app-form-input-textarea',
   standalone: true,
   imports: [
     CommonModule,
-    InputTextModule,
+    InputTextareaModule,
+    PaginatorModule,
+    ReactiveFormsModule,
     TranslateModule,
-    FormsModule,
-    PasswordModule,
     FormInputErrorComponent,
     TrimDirective,
-    ReactiveFormsModule,
   ],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FormInputTextComponent),
+      useExisting: forwardRef(() => FormInputTextareaComponent),
       multi: true,
     },
   ],
-  templateUrl: './form-input-text.component.html',
-  styleUrls: ['./form-input-text.component.scss'],
+  templateUrl: './form-input-textarea.component.html',
+  styleUrls: ['./form-input-textarea.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormInputTextComponent extends FormControlAbstract {
+export class FormInputTextareaComponent extends FormControlAbstract {
   @Input() public placeholder = '';
   @Input() public hintVisible = false;
   @Input() public maxLength?: number;
+  @Input() public rows = 5;
 }
