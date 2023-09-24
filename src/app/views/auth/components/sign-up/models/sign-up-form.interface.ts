@@ -6,8 +6,8 @@ export interface SignUpForm {
 }
 
 export interface SignUpFormCommonGroup {
-  name: FormControl<string>;
-  surname: FormControl<string>;
+  firstName: FormControl<string>;
+  lastName: FormControl<string>;
   email: FormControl<string>;
   password: FormControl<string>;
 }

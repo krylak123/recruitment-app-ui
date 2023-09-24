@@ -10,32 +10,16 @@
   </header>
   <section class="form">
     <div class="form__container">
-      <div class="form__field form__field--hint">
-        <input
-          type="text"
-          pInputText
-          formControlName="name"
-          [style]="{ width: '100%' }"
-          [maxlength]="nameMaxLength"
-          [placeholder]="'FORM.NAME' | translate" />
-        <small>{{ form.controls.name.value.length }}/{{ nameMaxLength }}</small>
-      </div>
-      <div class="form__field form__field--hint">
-        <textarea
-          rows="10"
-          pInputTextarea
-          formControlName="description"
-          class="form__textarea"
-          [maxLength]="descriptionMaxLength"
-          [placeholder]="'FORM.DESCRIPTION' | translate"></textarea>
-        <small>{{ form.controls.description.value.length }}/{{ descriptionMaxLength }}</small>
-      </div>
+      <app-form-input-text formControlName="name" placeholder="FORM.NAME" [maxLength]="nameMaxLength">
+        <small hint>{{ form.controls.name.value.length }}/{{ nameMaxLength }}</small>
+      </app-form-input-text>
+      <app-form-input-textarea formControlName="description" placeholder="FORM.DESCRIPTION">
+        <small hint>{{ form.controls.description.value.length }}/{{ descriptionMaxLength }}</small>
+      </app-form-input-textarea>
     </div>
     <div class="form__container">
-      <div class="form__field">
-        <div class="form__slider-label-container">
-          <p>{{ 'FORM.EXP_LEVEL' | translate }}</p>
-        </div>
+      <div class="form__field form__field--radio">
+        <p>{{ 'FORM.EXP_LEVEL' | translate }}</p>
         <div class="form__radio-container">
           <div *ngFor="let expLevel of expLevelList" class="form__radio">
             <p-radioButton formControlName="expLevel" [inputId]="expLevel" [value]="expLevel" />

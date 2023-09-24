@@ -38,15 +38,23 @@
     "SAVE": "Zapisz",
     "CANCEL": "Anuluj"
   },
+  "ERROR": {
+    "FORM": {
+      "NO_ERRORS": "Brak błędów",
+      "DEFAULT": "Błąd",
+      "REQUIRED": "Wymagane",
+      "MAX_LENGTH": "Za długie",
+      "MIN_LENGTH": "Za krótkie",
+      "EMAIL": "Błędny format maila"
+    }
+  },
   "FORM": {
     "EMAIL": "Email",
-    "EMAIL_TOOLTIP": "Wpisz swój email",
     "PASSWORD": "Hasło",
     "PASSWORD_TOOLTIP": "Wpisz swoje hasło",
-    "NAME": "Imię",
-    "NAME_TOOLTIP": "Wpisz swoje imię",
-    "SURNAME": "Nazwisko",
-    "SURNAME_TOOLTIP": "Wpisz swoje nazwisko",
+    "FIRST_NAME": "Imię",
+    "LAST_NAME": "Nazwisko",
+    "NAME": "Nazwa",
     "CONTENT": "Treść",
     "TIME_LIMIT": "Limit czasowy ({{value}}s)",
     "POINTS": "Punkty ({{value}}pkt)",

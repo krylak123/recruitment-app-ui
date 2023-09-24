@@ -1,0 +1,5 @@
+<small *ngIf="errors; else noErrors">{{ errors | formInputError | translate }}</small>
+
+<ng-template #noErrors>
+  <small class="correct">{{ 'ERROR.FORM.NO_ERRORS' | translate }}</small>
+</ng-template>

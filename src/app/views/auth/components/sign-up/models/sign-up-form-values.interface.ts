@@ -4,8 +4,8 @@ export interface SignUpFormValues {
 }
 
 export interface SignUpFormValuesCommonGroup {
-  name: string;
-  surname: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
 }

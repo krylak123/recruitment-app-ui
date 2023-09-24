@@ -6,7 +6,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionClosePayload } from '@backend/questions';
 import { ToastService } from '@core/services';
 import { TranslateModule } from '@ngx-translate/core';
+import { EXAM_DESCRIPTION_MAX_LENGTH, NAME_MAX_LENGTH } from '@shared/constants';
 import { ExpLevelEnum } from '@shared/enums';
+import { FormInputTextComponent, FormInputTextareaComponent } from '@shared/form-controls';
 import { CallState, LoadingState } from '@shared/store';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -33,6 +35,8 @@ import { QuestionCloseStore } from './question-close.store';
     TranslateModule,
     SliderModule,
     CheckboxModule,
+    FormInputTextComponent,
+    FormInputTextareaComponent,
   ],
   providers: [QuestionCloseStore],
   templateUrl: './question-close.component.html',
@@ -42,6 +46,8 @@ import { QuestionCloseStore } from './question-close.store';
 export class QuestionCloseComponent implements OnInit {
   public readonly loadingState = LoadingState;
   public readonly expLevelList: string[] = Object.keys(ExpLevelEnum);
+  public readonly nameMaxLength = NAME_MAX_LENGTH;
+  public readonly descriptionMaxLength = EXAM_DESCRIPTION_MAX_LENGTH;
   public form!: FormGroup<CreatorQuestionsCloseFormInterface>;
   public addCallState$!: Observable<CallState>;
 
