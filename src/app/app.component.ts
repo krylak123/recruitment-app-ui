@@ -8,7 +8,7 @@ import {
   Router,
   RouterOutlet,
 } from '@angular/router';
-import { environment } from '@envs/environment';
+import { TokenService } from '@core/services/token.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
@@ -30,10 +30,9 @@ export class AppComponent implements OnInit {
   constructor(
     private primengConfig: PrimeNGConfig,
     private translateService: TranslateService,
-    private router: Router
-  ) {
-    console.log('ProdMode: ', environment.PRODUCTION);
-  }
+    private router: Router,
+    private tokenService: TokenService
+  ) {}
 
   public get isLoading$(): Observable<boolean> {
     return this.isLoading.asObservable();
@@ -42,6 +41,7 @@ export class AppComponent implements OnInit {
   public ngOnInit(): void {
     this.translateService.setDefaultLang('pl');
     this.translateService.use('pl');
+    this.tokenService.initAuth();
 
     this.setUpPrimeNGConfig();
     this.handleLazyLoadingLoader();

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@backend/auth';
 import { ToastService } from '@core/services';
+import { TokenService } from '@core/services/token.service';
 import { AuthActions } from '@core/store/auth/auth.actions';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, of, switchMap, tap } from 'rxjs';
@@ -26,9 +27,8 @@ export class AuthEffects {
         ofType(AuthActions.loginSuccess),
         map(({ res }) => res.access_token),
         tap(accessToken => {
-          localStorage.setItem('access_token', accessToken);
+          this.tokenService.setUser(accessToken);
           this.router.navigate(['main']).then();
-
           this.toastService.triggerSuccessToast('AUTH.STORE.LOGIN_SUMMARY', 'AUTH.STORE.SUCCESS_MES.LOGIN_DETAIL');
         })
       );
@@ -53,7 +53,7 @@ export class AuthEffects {
       return this.actions$.pipe(
         ofType(AuthActions.logout),
         tap(() => {
-          localStorage.removeItem('access_token');
+          this.tokenService.handleLogout();
           this.router.navigate(['unauthorized']).then();
 
           this.toastService.triggerSuccessToast('AUTH.STORE.LOGOUT_SUMMARY', 'AUTH.STORE.SUCCESS_MES.LOGOUT_DETAIL');
@@ -67,6 +67,7 @@ export class AuthEffects {
     private actions$: Actions,
     private service: AuthService,
     private toastService: ToastService,
+    private tokenService: TokenService,
     private router: Router
   ) {}
 }
