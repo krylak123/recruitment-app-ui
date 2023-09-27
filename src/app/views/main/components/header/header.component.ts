@@ -1,18 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserInterface } from '@backend/users';
 import { AppState } from '@core/store/app.reducer';
-import { AuthActions } from '@core/store/auth';
+import { AuthActions, selectAuthUser } from '@core/store/auth';
 import { Store } from '@ngrx/store';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { UserNamesPipe } from '@shared/pipes';
 import { MenuItem, PrimeIcons } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { SplitButtonModule } from 'primeng/splitbutton';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, SplitButtonModule, TranslateModule, MenubarModule],
+  imports: [CommonModule, SplitButtonModule, TranslateModule, MenubarModule, UserNamesPipe],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -66,6 +69,7 @@ export class HeaderComponent {
       command: (): void => this.store.dispatch(AuthActions.logout()),
     },
   ];
+  public user$: Observable<UserInterface | null> = this.store.select(selectAuthUser);
 
   constructor(
     private store: Store<AppState>,

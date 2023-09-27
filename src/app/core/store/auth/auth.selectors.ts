@@ -6,3 +6,4 @@ export const selectAuthStoreState = (state: AppState): AuthState => state.auth;
 
 export const selectAuthCallState = createSelector(selectAuthStoreState, (state: AuthState) => state.callState);
 export const selectAuthIsLogged = createSelector(selectAuthStoreState, (state: AuthState) => state.isLogged);
+export const selectAuthUser = createSelector(selectAuthStoreState, (state: AuthState) => state.currentUser);

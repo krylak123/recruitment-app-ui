@@ -1,7 +1,7 @@
-import { AuthState, authReducer } from '@core/store/auth/auth.reducer';
 import { RouterReducerState, routerReducer } from '@ngrx/router-store';
 import { ActionReducerMap } from '@ngrx/store';
 
+import { AuthState, authReducer } from './auth/auth.reducer';
 import { RouterStateUrl } from './router/custom-route-serializer';
 
 export interface AppState {

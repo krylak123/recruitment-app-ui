@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { MessageService } from 'primeng/api';
 
@@ -8,7 +9,7 @@ describe(AppComponent.name, () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       imports: [AppComponent, TranslateModule.forRoot()],
-      providers: [MessageService],
+      providers: [MessageService, provideMockStore()],
     })
   );
 

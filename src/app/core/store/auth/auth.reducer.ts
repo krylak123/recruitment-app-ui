@@ -1,3 +1,4 @@
+import { UserInterface } from '@backend/users';
 import { AuthActions } from '@core/store/auth/auth.actions';
 import { createReducer, on } from '@ngrx/store';
 import { ItemState, LoadingState } from '@shared/store';
@@ -5,13 +6,15 @@ import { ItemState, LoadingState } from '@shared/store';
 export interface AuthState extends ItemState {
   isLogged: boolean;
   exp: number;
-  user: unknown | null;
+  token: string | null;
+  currentUser: UserInterface | null;
 }
 
 const initialState: AuthState = {
   isLogged: false,
   exp: 0,
-  user: null,
+  token: null,
+  currentUser: null,
   callState: LoadingState.INIT,
 };
 
@@ -29,8 +32,8 @@ export const authReducer = createReducer(
     (state, { res }): AuthState => ({
       ...state,
       isLogged: true,
-      user: res,
       exp: 123,
+      token: res.access_token,
       callState: LoadingState.LOADED,
     })
   ),
@@ -47,6 +50,13 @@ export const authReducer = createReducer(
     (state): AuthState => ({
       ...state,
       ...initialState,
+    })
+  ),
+  on(
+    AuthActions.setCurrentUser,
+    (state, { user }): AuthState => ({
+      ...state,
+      currentUser: user,
     })
   )
 );
