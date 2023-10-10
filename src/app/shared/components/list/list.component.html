@@ -31,12 +31,8 @@
   <p-table [value]="[1, 2, 3]">
     <ng-template *ngIf="heading" pTemplate="caption">
       <div class="list__caption-container">
-        <p>
-          {{ heading | translate }}
-        </p>
-        <p>
-          {{ 'LIST.TOTAL' | translate: { quantity: '-' } }}
-        </p>
+        <p>{{ heading | translate }}</p>
+        <ng-content />
       </div>
     </ng-template>
     <ng-template pTemplate="header">
