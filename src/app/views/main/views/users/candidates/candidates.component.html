@@ -5,3 +5,9 @@
   [listCallState]="listCallState$ | async"
   [handleRowSelect]="true"
   (rowSelect)="handleShowDetails($event)" />
+
+<app-candidate-details-modal
+  *ngIf="itemDetails"
+  [item]="itemDetails"
+  [isVisible]="detailsModalIsVisible"
+  (hideModal)="detailsModalIsVisible = false" />

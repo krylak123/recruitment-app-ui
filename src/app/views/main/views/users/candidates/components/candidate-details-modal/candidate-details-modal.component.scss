@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.modal {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__details-container {
+    display: flex;
+    gap: 1rem;
+  }
+}

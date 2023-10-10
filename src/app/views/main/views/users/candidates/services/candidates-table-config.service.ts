@@ -7,28 +7,33 @@ export class CandidatesTableConfigService {
     return [
       {
         field: 'firstName',
-        label: 'LIST.COLUMN.FIRST_NAME',
+        label: 'FIELD.FIRST_NAME',
         type: 'text',
+        sort: true,
       },
       {
         field: 'lastName',
-        label: 'LIST.COLUMN.LAST_NAME',
+        label: 'FIELD.LAST_NAME',
         type: 'text',
+        sort: true,
       },
       {
         field: 'email',
-        label: 'LIST.COLUMN.EMAIL',
+        label: 'FIELD.EMAIL',
         type: 'text',
+        sort: true,
       },
       {
         field: 'createAt',
-        label: 'LIST.COLUMN.CREATE_AT',
+        label: 'FIELD.CREATE_AT',
         type: 'date',
+        sort: true,
       },
       {
         field: 'updatedAt',
-        label: 'LIST.COLUMN.UPDATED_AT',
+        label: 'FIELD.UPDATED_AT',
         type: 'date',
+        sort: true,
       },
     ];
   }

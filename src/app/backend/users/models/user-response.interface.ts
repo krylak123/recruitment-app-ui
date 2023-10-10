@@ -7,5 +7,5 @@ export interface UserResponseInterface {
   firstName: string;
   lastName: string;
   createAt: Date;
-  updateAt: Date;
+  updatedAt: Date;
 }

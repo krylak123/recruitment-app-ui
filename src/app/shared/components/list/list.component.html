@@ -3,17 +3,16 @@
     <p-table [value]="list.data">
       <ng-template *ngIf="heading" pTemplate="caption">
         <div class="list__caption-container">
-          <p>
-            {{ heading | translate }}
-          </p>
-          <p>
-            {{ 'LIST.TOTAL' | translate: { quantity: list.quantity } }}
-          </p>
+          <p>{{ heading | translate }} ({{ list.quantity }})</p>
+          <ng-content />
         </div>
       </ng-template>
       <ng-template pTemplate="header">
         <tr>
-          <th *ngFor="let col of columns">{{ col.label | translate }}</th>
+          <th *ngFor="let col of columns" class="whitespace-nowrap" [pSortableColumn]="col.field">
+            {{ col.label | translate }}
+            <p-sortIcon *ngIf="col.sort" [field]="col.field" />
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-item>
