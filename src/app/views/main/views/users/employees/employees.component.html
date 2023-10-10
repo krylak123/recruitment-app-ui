@@ -1,1 +1,13 @@
-<p>employees works!</p>
+<app-list
+  heading="USERS.EMPLOYEES_LIST_HEADING"
+  [columns]="columns"
+  [list]="list$ | async"
+  [listCallState]="listCallState$ | async"
+  [handleRowSelect]="true"
+  (rowSelect)="handleShowDetails($event)" />
+
+<app-employee-details-modal
+  *ngIf="itemDetails"
+  [item]="itemDetails"
+  [isVisible]="detailsModalIsVisible"
+  (hideModal)="detailsModalIsVisible = false" />

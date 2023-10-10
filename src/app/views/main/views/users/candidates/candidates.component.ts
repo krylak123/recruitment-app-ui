@@ -41,6 +41,7 @@ export class CandidatesComponent implements OnInit, OnDestroy {
   public list$!: Observable<ListResponseInterface<UserResponseInterface> | null>;
   public itemDetails: UserResponseInterface | null = null;
   public detailsModalIsVisible = false;
+
   constructor(
     private candidatesStore: CandidatesStore,
     private tableConfigService: CandidatesTableConfigService

@@ -19,4 +19,8 @@ export class UsersService {
   public getCandidatesList(): Observable<ListResponseInterface<UserResponseInterface>> {
     return this.http.get<ListResponseInterface<UserResponseInterface>>(`${this.url}/candidates`);
   }
+
+  public getEmployeesList(): Observable<ListResponseInterface<UserResponseInterface>> {
+    return this.http.get<ListResponseInterface<UserResponseInterface>>(`${this.url}/employees`);
+  }
 }

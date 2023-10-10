@@ -1,0 +1,32 @@
+<p-dialog
+  [header]="item | userNames"
+  [modal]="true"
+  [dismissableMask]="true"
+  [style]="{ width: '50vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="hideModal.emit()"
+  [(visible)]="isVisible">
+  <article class="modal__content">
+    <div class="modal__details-container">
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.EMAIL' | translate }}</p>
+        <p class="detail__value">{{ item.email }}</p>
+      </div>
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.PHONE' | translate }}</p>
+        <p class="detail__value">{{ 111222333 }}</p>
+      </div>
+    </div>
+    <div class="modal__details-container">
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.CREATE_AT' | translate }}</p>
+        <p class="detail__value">{{ item.createAt | date: dateFormat }}</p>
+      </div>
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.UPDATED_AT' | translate }}</p>
+        <p class="detail__value">{{ item.updatedAt | date: dateFormat }}</p>
+      </div>
+    </div>
+  </article>
+</p-dialog>

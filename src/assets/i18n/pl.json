@@ -50,7 +50,8 @@
     "EMAIL": "Email",
     "CREATE_AT": "Data utworzenia",
     "UPDATED_AT": "Data modyfikacji",
-    "PHONE": "Nr telefonu"
+    "PHONE": "Nr telefonu",
+    "ROLE": "Rola"
   },
   "ERROR": {
     "FORM": {
@@ -145,6 +146,7 @@
   },
   "USERS": {
     "CANDIDATES_LIST_HEADING": "Lista kandydatów",
+    "EMPLOYEES_LIST_HEADING": "Lista pracowników",
     "STORE": {
       "CANDIDATES_SUMMARY": "Kandydaci",
       "ERROR_MES": {
