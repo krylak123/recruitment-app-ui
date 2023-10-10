@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.list {
+  &__caption-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__row {
+    cursor: default;
+
+    &:hover {
+      background-color: #ddd !important;
+    }
+
+    &--handle-row-click {
+      cursor: pointer;
+    }
+  }
+}

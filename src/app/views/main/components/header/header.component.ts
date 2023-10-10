@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserInterface } from '@backend/users';
+import { UserTokenInterface } from '@backend/users';
 import { AppState } from '@core/store/app.reducer';
 import { AuthActions, selectAuthUser } from '@core/store/auth';
 import { Store } from '@ngrx/store';
@@ -69,7 +69,7 @@ export class HeaderComponent {
       command: (): void => this.store.dispatch(AuthActions.logout()),
     },
   ];
-  public user$: Observable<UserInterface | null> = this.store.select(selectAuthUser);
+  public user$: Observable<UserTokenInterface | null> = this.store.select(selectAuthUser);
 
   constructor(
     private store: Store<AppState>,

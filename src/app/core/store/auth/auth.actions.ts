@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { LoginPayloadInterface, LoginResponseInterface } from '@backend/auth/models';
-import { UserInterface } from '@backend/users';
+import { UserTokenInterface } from '@backend/users';
 import { appStorePrefix } from '@core/store/app.constants';
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
 
@@ -18,7 +18,7 @@ export const AuthActions = createActionGroup({
     }>(),
     logout: emptyProps(),
     setCurrentUser: props<{
-      user: UserInterface;
+      user: UserTokenInterface;
     }>(),
   },
 });

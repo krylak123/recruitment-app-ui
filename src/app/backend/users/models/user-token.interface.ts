@@ -1,6 +1,6 @@
 import { RoleEnum } from '@shared/enums';
 
-export interface UserInterface {
+export interface UserTokenInterface {
   id: string;
   firstName: string;
   lastName: string;

@@ -1,4 +1,4 @@
-import { UserInterface } from '@backend/users';
+import { UserTokenInterface } from '@backend/users';
 import { AuthActions } from '@core/store/auth/auth.actions';
 import { createReducer, on } from '@ngrx/store';
 import { ItemState, LoadingState } from '@shared/store';
@@ -7,7 +7,7 @@ export interface AuthState extends ItemState {
   isLogged: boolean;
   exp: number;
   token: string | null;
-  currentUser: UserInterface | null;
+  currentUser: UserTokenInterface | null;
 }
 
 const initialState: AuthState = {

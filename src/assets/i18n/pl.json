@@ -40,6 +40,16 @@
     "SAVE": "Zapisz",
     "CANCEL": "Anuluj"
   },
+  "LIST": {
+    "TOTAL": "Wyników: {{quantity}}",
+    "COLUMN": {
+      "FIRST_NAME": "Imię",
+      "LAST_NAME": "Nazwisko",
+      "EMAIL": "Email",
+      "CREATE_AT": "Data utworzenia",
+      "UPDATED_AT": "Data modyfikacji"
+    }
+  },
   "ERROR": {
     "FORM": {
       "NO_ERRORS": "Brak błędów",
@@ -128,6 +138,15 @@
       },
       "ERROR_MES": {
         "ADD": "Nie udało się dodać egzaminu"
+      }
+    }
+  },
+  "USERS":{
+    "CANDIDATES_LIST_HEADING": "Lista kandydatów",
+    "STORE": {
+      "CANDIDATES_SUMMARY": "Kandydaci",
+      "ERROR_MES": {
+        "CANDIDATES_LIST": "Nie udało się pobrać listy kandydatów"
       }
     }
   }

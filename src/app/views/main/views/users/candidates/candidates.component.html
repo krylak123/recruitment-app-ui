@@ -1,1 +1,7 @@
-<p>candidates works!</p>
+<app-list
+  heading="USERS.CANDIDATES_LIST_HEADING"
+  [columns]="columns"
+  [list]="list$ | async"
+  [listCallState]="listCallState$ | async"
+  [handleRowSelect]="true"
+  (rowSelect)="handleShowDetails($event)" />

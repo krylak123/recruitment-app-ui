@@ -1,0 +1,56 @@
+<ng-container *ngIf="listCallState === loadingState.LOADED; else loading">
+  <ng-container *ngIf="list">
+    <p-table [value]="list.data">
+      <ng-template *ngIf="heading" pTemplate="caption">
+        <div class="list__caption-container">
+          <p>
+            {{ heading | translate }}
+          </p>
+          <p>
+            {{ 'LIST.TOTAL' | translate: { quantity: list.quantity } }}
+          </p>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th *ngFor="let col of columns">{{ col.label | translate }}</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr
+          class="list__row"
+          [class.list__row--handle-row-click]="handleRowSelect"
+          (click)="handleRowSelect ? rowSelect.emit(item) : null">
+          <td *ngFor="let col of columns">{{ item[col.field] | listValueFormat: col.type }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </ng-container>
+</ng-container>
+
+<ng-template #loading>
+  <p-table [value]="[1, 2, 3]">
+    <ng-template *ngIf="heading" pTemplate="caption">
+      <div class="list__caption-container">
+        <p>
+          {{ heading | translate }}
+        </p>
+        <p>
+          {{ 'LIST.TOTAL' | translate: { quantity: '-' } }}
+        </p>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th *ngFor="let col of columns">{{ col.label | translate }}</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body">
+      <tr>
+        <td *ngFor="let _ of columns">
+          <p-skeleton />
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</ng-template>
