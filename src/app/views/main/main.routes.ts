@@ -17,6 +17,14 @@ export const mainRoutes: Routes = [
           breadcrumb: 'BREADCRUMB.CREATORS',
         },
       },
+      {
+        path: 'users',
+        title: 'TITLE.USERS',
+        loadChildren: () => import('./views/users/users.routes').then(r => r.usersRoutes),
+        data: {
+          breadcrumb: 'BREADCRUMB.USERS',
+        },
+      },
     ],
   },
   {

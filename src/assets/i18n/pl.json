@@ -7,12 +7,18 @@
     "DASHBOARD": "Główny panel",
     "CREATORS": "Kreatory",
     "QUESTION_ADD": "Dodaj pytanie",
-    "EXAM_ADD": "Dodaj egzamin"
+    "EXAM_ADD": "Dodaj egzamin",
+    "USERS": "Użytkownicy",
+    "CANDIDATES": "Kandydaci",
+    "EMPLOYEES": "Pracownicy"
   },
   "BREADCRUMB": {
     "CREATORS": "Kreatory",
     "QUESTION": "Pytanie",
-    "EXAM": "Egzamin"
+    "EXAM": "Egzamin",
+    "USERS": "Użytkownicy",
+    "CANDIDATES": "Kandydaci",
+    "EMPLOYEES": "Pracownicy"
   },
   "MENU": {
     "CREATORS": "Kreatory",
@@ -37,6 +43,15 @@
     "EXAM": "Egzamin",
     "SAVE": "Zapisz",
     "CANCEL": "Anuluj"
+  },
+  "FIELD": {
+    "FIRST_NAME": "Imię",
+    "LAST_NAME": "Nazwisko",
+    "EMAIL": "Email",
+    "CREATE_AT": "Data utworzenia",
+    "UPDATED_AT": "Data modyfikacji",
+    "PHONE": "Nr telefonu",
+    "ROLE": "Rola"
   },
   "ERROR": {
     "FORM": {
@@ -99,7 +114,7 @@
       }
     }
   },
-  "QUESTIONS":{
+  "QUESTIONS": {
     "MESSAGE": {
       "CLOSE_QUESTION_NOT_SELECTED": "Brak wybranych pytań zamkniętych",
       "OPEN_QUESTION_NOT_SELECTED": "Brak wybranych pytań otwartych"
@@ -116,7 +131,7 @@
       }
     }
   },
-  "EXAM":{
+  "EXAM": {
     "ACCEPT_MIN": "Musisz wybrać minimum 1 pytanie zamknięte lub otwarte",
     "ALREADY_ADDED_QUESTION": "Dodano już te pytanie do egzaminu",
     "STORE": {
@@ -126,6 +141,17 @@
       },
       "ERROR_MES": {
         "ADD": "Nie udało się dodać egzaminu"
+      }
+    }
+  },
+  "USERS": {
+    "CANDIDATES_LIST_HEADING": "Lista kandydatów",
+    "EMPLOYEES_LIST_HEADING": "Lista pracowników",
+    "ADD_EMPLOYEE": "Dodaj pracownika",
+    "STORE": {
+      "CANDIDATES_SUMMARY": "Kandydaci",
+      "ERROR_MES": {
+        "CANDIDATES_LIST": "Nie udało się pobrać listy kandydatów"
       }
     }
   }

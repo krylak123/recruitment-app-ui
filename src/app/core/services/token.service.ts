@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { UserInterface } from '@backend/users';
+import { UserTokenInterface } from '@backend/users';
 import { AppState } from '@core/store/app.reducer';
 import { AuthActions } from '@core/store/auth';
 import { Store } from '@ngrx/store';
@@ -37,7 +37,7 @@ export class TokenService {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { sub, exp, iat, ...res } = decodedToken;
 
-    const user: UserInterface = {
+    const user: UserTokenInterface = {
       ...res,
       id: sub,
     };
@@ -48,7 +48,6 @@ export class TokenService {
 
   public handleLogout(): void {
     this.removeTokenFromLocalStorage();
-    this.store.dispatch(AuthActions.logout());
   }
 
   public tokenIsExpired(): boolean {

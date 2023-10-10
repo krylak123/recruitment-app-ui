@@ -1,0 +1,15 @@
+<app-list
+  heading="USERS.EMPLOYEES_LIST_HEADING"
+  [columns]="columns"
+  [list]="list$ | async"
+  [listCallState]="listCallState$ | async"
+  [handleRowSelect]="true"
+  (rowSelect)="handleShowDetails($event)">
+  <p-button styleClass="p-button-sm" [label]="'USERS.ADD_EMPLOYEE' | translate | uppercase" />
+</app-list>
+
+<app-employee-details-modal
+  *ngIf="itemDetails"
+  [item]="itemDetails"
+  [isVisible]="detailsModalIsVisible"
+  (hideModal)="detailsModalIsVisible = false" />

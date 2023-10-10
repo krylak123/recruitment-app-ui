@@ -28,7 +28,6 @@ export class AuthEffects {
         map(({ res }) => res.access_token),
         tap(accessToken => {
           this.tokenService.setUser(accessToken);
-          this.router.navigate(['main']).then();
           this.toastService.triggerSuccessToast('AUTH.STORE.LOGIN_SUMMARY', 'AUTH.STORE.SUCCESS_MES.LOGIN_DETAIL');
         })
       );
