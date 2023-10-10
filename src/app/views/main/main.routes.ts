@@ -18,11 +18,11 @@ export const mainRoutes: Routes = [
         },
       },
       {
-        path: 'candidates',
-        title: 'TITLE.CANDIDATES',
-        loadChildren: () => import('./views/users/candidates/candidates.routes').then(r => r.candidatesRoutes),
+        path: 'users',
+        title: 'TITLE.USERS',
+        loadChildren: () => import('./views/users/users.routes').then(r => r.usersRoutes),
         data: {
-          breadcrumb: 'BREADCRUMB.CANDIDATES',
+          breadcrumb: 'BREADCRUMB.USERS',
         },
       },
     ],

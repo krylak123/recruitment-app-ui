@@ -8,13 +8,17 @@
     "CREATORS": "Kreatory",
     "QUESTION_ADD": "Dodaj pytanie",
     "EXAM_ADD": "Dodaj egzamin",
-    "CANDIDATES": "Kandydaci"
+    "USERS": "Użytkownicy",
+    "CANDIDATES": "Kandydaci",
+    "EMPLOYEES": "Pracownicy"
   },
   "BREADCRUMB": {
     "CREATORS": "Kreatory",
     "QUESTION": "Pytanie",
     "EXAM": "Egzamin",
-    "CANDIDATES": "Kandydaci"
+    "USERS": "Użytkownicy",
+    "CANDIDATES": "Kandydaci",
+    "EMPLOYEES": "Pracownicy"
   },
   "MENU": {
     "CREATORS": "Kreatory",

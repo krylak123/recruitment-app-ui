@@ -53,11 +53,11 @@ export class HeaderComponent {
       items: [
         {
           label: this.translateService.instant('MENU.CANDIDATES'),
-          command: (): Promise<boolean> => this.router.navigate(['main/candidates']),
+          command: (): Promise<boolean> => this.router.navigate(['main/users/candidates']),
         },
         {
           label: this.translateService.instant('MENU.EMPLOYEES'),
-          command: (): void => console.log('router workers'),
+          command: (): Promise<boolean> => this.router.navigate(['main/users/employees']),
         },
       ],
     },

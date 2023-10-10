@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { CandidatesComponent } from '@views/main/views/users/candidates/candidates.component';
+
+import { CandidatesComponent } from './candidates.component';
 
 export const candidatesRoutes: Routes = [
   {

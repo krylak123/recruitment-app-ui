@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, OnInit } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginPayloadInterface } from '@backend/auth/models';
@@ -17,7 +18,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { PasswordModule } from 'primeng/password';
 import { TooltipModule } from 'primeng/tooltip';
-import { Observable } from 'rxjs';
+import { Observable, filter, tap } from 'rxjs';
 
 import { SignInFormAdapterService } from './adapters/sign-in-form-adapter.service';
 import { SignInFormValues } from './models/sign-in-form-values.interface';
@@ -56,11 +57,13 @@ export class SignInComponent implements OnInit {
     private formAdapter: SignInFormAdapterService,
     private router: Router,
     private aRoute: ActivatedRoute,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private destroyRef: DestroyRef
   ) {}
 
   public ngOnInit(): void {
     this.setUpProperties();
+    this.setUpDataFlow();
   }
 
   public handleRegisterRouting(): void {
@@ -81,5 +84,15 @@ export class SignInComponent implements OnInit {
     this.form = this.formAdapter.createForm();
 
     this.loginCallState$ = this.store.select(selectAuthCallState);
+  }
+
+  private setUpDataFlow(): void {
+    this.loginCallState$
+      .pipe(
+        filter(status => status === LoadingState.LOADED),
+        tap(() => this.router.navigate(['main']).then()),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe();
   }
 }
