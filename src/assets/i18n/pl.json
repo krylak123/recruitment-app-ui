@@ -147,6 +147,7 @@
   "USERS": {
     "CANDIDATES_LIST_HEADING": "Lista kandydatów",
     "EMPLOYEES_LIST_HEADING": "Lista pracowników",
+    "ADD_EMPLOYEE": "Dodaj pracownika",
     "STORE": {
       "CANDIDATES_SUMMARY": "Kandydaci",
       "ERROR_MES": {

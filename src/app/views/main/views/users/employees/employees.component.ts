@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { UserResponseInterface } from '@backend/users';
+import { TranslateModule } from '@ngx-translate/core';
 import { ListColumnsInterface, ListComponent } from '@shared/components/list';
 import { ListResponseInterface } from '@shared/models/list-response.interface';
 import { CallState, LoadingState } from '@shared/store';
+import { ButtonModule } from 'primeng/button';
 import { Observable } from 'rxjs';
 
 import { EmployeeDetailsModalComponent } from './components/employee-details-modal/employee-details-modal.component';
@@ -13,7 +15,7 @@ import { EmployeesTableConfigService } from './services/employees-table-config.s
 @Component({
   selector: 'app-employees',
   standalone: true,
-  imports: [CommonModule, ListComponent, EmployeeDetailsModalComponent],
+  imports: [CommonModule, ListComponent, EmployeeDetailsModalComponent, ButtonModule, TranslateModule],
   providers: [EmployeesStore, EmployeesTableConfigService],
   templateUrl: './employees.component.html',
   styleUrls: ['./employees.component.scss'],

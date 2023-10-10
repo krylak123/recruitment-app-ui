@@ -4,7 +4,9 @@
   [list]="list$ | async"
   [listCallState]="listCallState$ | async"
   [handleRowSelect]="true"
-  (rowSelect)="handleShowDetails($event)" />
+  (rowSelect)="handleShowDetails($event)">
+  <p-button styleClass="p-button-sm" [label]="'USERS.ADD_EMPLOYEE' | translate | uppercase" />
+</app-list>
 
 <app-employee-details-modal
   *ngIf="itemDetails"
