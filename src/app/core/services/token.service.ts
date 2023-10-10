@@ -48,7 +48,6 @@ export class TokenService {
 
   public handleLogout(): void {
     this.removeTokenFromLocalStorage();
-    this.store.dispatch(AuthActions.logout());
   }
 
   public tokenIsExpired(): boolean {

@@ -7,12 +7,14 @@
     "DASHBOARD": "Główny panel",
     "CREATORS": "Kreatory",
     "QUESTION_ADD": "Dodaj pytanie",
-    "EXAM_ADD": "Dodaj egzamin"
+    "EXAM_ADD": "Dodaj egzamin",
+    "CANDIDATES": "Kandydaci"
   },
   "BREADCRUMB": {
     "CREATORS": "Kreatory",
     "QUESTION": "Pytanie",
-    "EXAM": "Egzamin"
+    "EXAM": "Egzamin",
+    "CANDIDATES": "Kandydaci"
   },
   "MENU": {
     "CREATORS": "Kreatory",
