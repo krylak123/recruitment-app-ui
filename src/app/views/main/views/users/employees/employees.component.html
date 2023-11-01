@@ -5,8 +5,16 @@
   [listCallState]="listCallState$ | async"
   [handleRowSelect]="true"
   (rowSelect)="handleShowDetails($event)">
-  <p-button styleClass="p-button-sm" [label]="'USERS.ADD_EMPLOYEE' | translate | uppercase" />
+  <p-button
+    styleClass="p-button-sm"
+    [label]="'USERS.ADD_EMPLOYEE' | translate | uppercase"
+    (click)="formModalIsVisible = true" />
 </app-list>
+
+<app-employee-create-modal
+  [isVisible]="formModalIsVisible"
+  (reloadList)="handleLoadList()"
+  (hideModal)="formModalIsVisible = false" />
 
 <app-employee-details-modal
   *ngIf="itemDetails"

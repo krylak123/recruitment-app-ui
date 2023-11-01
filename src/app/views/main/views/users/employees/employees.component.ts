@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ListColumnsInterface, ListComponent } from '@shared/components/list';
 import { ListResponseInterface } from '@shared/models/list-response.interface';
 import { CallState, LoadingState } from '@shared/store';
+import { EmployeeCreateModalComponent } from '@views/main/views/users/employees/components/employee-create-modal/employee-create-modal.component';
 import { ButtonModule } from 'primeng/button';
 import { Observable } from 'rxjs';
 
@@ -15,7 +16,14 @@ import { EmployeesTableConfigService } from './services/employees-table-config.s
 @Component({
   selector: 'app-employees',
   standalone: true,
-  imports: [CommonModule, ListComponent, EmployeeDetailsModalComponent, ButtonModule, TranslateModule],
+  imports: [
+    CommonModule,
+    ListComponent,
+    EmployeeDetailsModalComponent,
+    ButtonModule,
+    TranslateModule,
+    EmployeeCreateModalComponent,
+  ],
   providers: [EmployeesStore, EmployeesTableConfigService],
   templateUrl: './employees.component.html',
   styleUrls: ['./employees.component.scss'],
@@ -27,6 +35,7 @@ export class EmployeesComponent implements OnInit, OnDestroy {
   public listCallState$!: Observable<CallState>;
   public list$!: Observable<ListResponseInterface<UserResponseInterface> | null>;
   public itemDetails: UserResponseInterface | null = null;
+  public formModalIsVisible = false;
   public detailsModalIsVisible = false;
 
   constructor(
@@ -47,11 +56,15 @@ export class EmployeesComponent implements OnInit, OnDestroy {
     this.detailsModalIsVisible = true;
   }
 
+  public handleLoadList(): void {
+    this.employeesStore.getEmployeesList();
+  }
+
   private setUpProperties(): void {
     this.columns = this.tableConfigService.getTableValues();
     this.listCallState$ = this.employeesStore.listCallState$;
     this.list$ = this.employeesStore.list$;
 
-    this.employeesStore.getEmployeesList();
+    this.handleLoadList();
   }
 }
