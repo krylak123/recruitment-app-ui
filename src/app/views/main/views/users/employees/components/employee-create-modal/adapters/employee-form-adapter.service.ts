@@ -20,7 +20,7 @@ export class EmployeeFormAdapterService {
       lastName: this.fb.control('', [Validators.required]),
       email: this.fb.control('', [Validators.required, Validators.email]),
       password: this.fb.control(DEFAULT_PASSWORD, [Validators.required]),
-      phone: this.fb.control('', [Validators.required]),
+      phone: this.fb.control('', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]),
     });
   }
 }
