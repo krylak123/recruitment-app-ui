@@ -6,6 +6,7 @@ export interface UserResponseInterface {
   email: string;
   firstName: string;
   lastName: string;
+  phone: string;
   createAt: Date;
   updatedAt: Date;
 }
