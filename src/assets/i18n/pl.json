@@ -42,7 +42,8 @@
     "QUESTION_OPEN": "Pytanie otwarte",
     "EXAM": "Egzamin",
     "SAVE": "Zapisz",
-    "CANCEL": "Anuluj"
+    "CANCEL": "Anuluj",
+    "ADD": "Dodaj"
   },
   "FIELD": {
     "FIRST_NAME": "Imię",
@@ -82,7 +83,8 @@
     "SELECT_QUESTIONS_CLOSE": "({{count}}) Wybierz pytania zamknięte",
     "SEARCH_QUESTION_OPEN": "Wyszukaj pytanie otwarte po nazwie",
     "SEARCH_QUESTION_CLOSE": "Wyszukaj pytanie zamknięte po nazwie",
-    "ANSWERS": "Odpowiedzi"
+    "ANSWERS": "Odpowiedzi",
+    "PHONE": "Nr telefonu"
   },
   "AUTH": {
     "REGISTER": "Zarejestruj się",
@@ -104,13 +106,16 @@
     },
     "STORE": {
       "LOGIN_SUMMARY": "Logowanie",
+      "REGISTER_SUMMARY": "Rejestracja",
       "LOGOUT_SUMMARY": "Wylogowywanie",
       "SUCCESS_MES": {
         "LOGIN_DETAIL": "Zalogowano pomyślnie",
+        "REGISTER_DETAIL": "Zarejestrowano pomyślnie",
         "LOGOUT_DETAIL": "Wylogowano pomyślnie"
       },
       "ERROR_MES": {
-        "LOGIN_DETAIL": "Nie udało się zalogować"
+        "LOGIN_DETAIL": "Nie udało się zalogować",
+        "REGISTER_DETAIL": "Nie udało się zarejestrować"
       }
     }
   },
