@@ -62,6 +62,47 @@ export class AuthEffects {
     { dispatch: false }
   );
 
+  public register$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(AuthActions.register),
+      switchMap(({ payload }) =>
+        this.service.registerUser(payload).pipe(
+          map(res => AuthActions.registerSuccess({ res })),
+          catchError(error => of(AuthActions.registerFail({ error })))
+        )
+      )
+    );
+  });
+
+  public registerSuccess$ = createEffect(
+    () => {
+      return this.actions$.pipe(
+        ofType(AuthActions.registerSuccess),
+        map(({ res }) => res.access_token),
+        tap(accessToken => {
+          this.tokenService.setUser(accessToken);
+          this.toastService.triggerSuccessToast(
+            'AUTH.STORE.REGISTER_SUMMARY',
+            'AUTH.STORE.SUCCESS_MES.REGISTER_DETAIL'
+          );
+        })
+      );
+    },
+    { dispatch: false }
+  );
+
+  public registerFail$ = createEffect(
+    () => {
+      return this.actions$.pipe(
+        ofType(AuthActions.registerFail),
+        tap(() => {
+          this.toastService.triggerErrorToast('AUTH.STORE.REGISTER_SUMMARY', 'AUTH.STORE.ERROR_MES.REGISTER_DETAIL');
+        })
+      );
+    },
+    { dispatch: false }
+  );
+
   constructor(
     private actions$: Actions,
     private service: AuthService,

@@ -19,6 +19,16 @@
     &--slider {
       gap: 0.7rem;
     }
+
+    &--checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+
+      & label {
+        flex-grow: 1;
+      }
+    }
   }
 
   &__content-container {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
-import { SignUpForm } from '@views/auth/components/sign-up/models/sign-up-form.interface';
+
+import { SignUpForm } from '../models/sign-up-form.interface';
 
 @Injectable()
 export class SignUpFormAdapterService {
@@ -15,10 +16,11 @@ export class SignUpFormAdapterService {
         password: this.fb.control('', [Validators.required]),
       }),
       dataGroup: this.fb.group({
-        city: this.fb.control('', [Validators.required]),
-        phoneNumber: this.fb.control('', [Validators.required]),
-        linkLinkedin: this.fb.control('', [Validators.required]),
-        linkGit: this.fb.control('', [Validators.required]),
+        phone: this.fb.control('', [Validators.required]),
+        gitRepoLink: this.fb.control('', [Validators.required]),
+      }),
+      consentsGroup: this.fb.group({
+        acceptedRodo: this.fb.control<boolean[]>([], [Validators.required]),
       }),
     });
   }

@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export interface SignUpForm {
   commonGroup: FormGroup<SignUpFormCommonGroup>;
   dataGroup: FormGroup<SignUpFormDataGroup>;
+  consentsGroup: FormGroup<SignUpFormConsentsGroup>;
 }
 
 export interface SignUpFormCommonGroup {
@@ -13,8 +14,10 @@ export interface SignUpFormCommonGroup {
 }
 
 export interface SignUpFormDataGroup {
-  city: FormControl<string>;
-  phoneNumber: FormControl<string>;
-  linkLinkedin: FormControl<string>;
-  linkGit: FormControl<string>;
+  phone: FormControl<string>;
+  gitRepoLink: FormControl<string>;
+}
+
+export interface SignUpFormConsentsGroup {
+  acceptedRodo: FormControl<boolean[]>;
 }

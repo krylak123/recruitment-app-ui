@@ -10,3 +10,10 @@ export interface UserResponseInterface {
   createAt: Date;
   updatedAt: Date;
 }
+
+export interface UserCandidateResponseInterface extends UserResponseInterface {
+  additionalInfo: {
+    gitRepoLink: string;
+    acceptedRodo: boolean;
+  };
+}

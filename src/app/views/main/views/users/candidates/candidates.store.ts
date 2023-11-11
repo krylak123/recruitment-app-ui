@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UserResponseInterface, UsersService } from '@backend/users';
+import { UserCandidateResponseInterface, UsersService } from '@backend/users';
 import { ToastService } from '@core/services';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { ListResponseInterface } from '@shared/models/list-response.interface';
@@ -9,13 +9,13 @@ import { Observable, exhaustMap, tap } from 'rxjs';
 
 export interface CandidatesState {
   listCallState: CallState;
-  list: ListResponseInterface<UserResponseInterface> | null;
+  list: ListResponseInterface<UserCandidateResponseInterface> | null;
 }
 
 @Injectable()
 export class CandidatesStore extends ComponentStore<CandidatesState> {
   public readonly listCallState$: Observable<CallState> = this.select(state => state.listCallState);
-  public readonly list$: Observable<ListResponseInterface<UserResponseInterface> | null> = this.select(
+  public readonly list$: Observable<ListResponseInterface<UserCandidateResponseInterface> | null> = this.select(
     state => state.list
   );
   constructor(
