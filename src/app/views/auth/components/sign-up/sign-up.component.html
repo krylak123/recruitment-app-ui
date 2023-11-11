@@ -32,7 +32,11 @@
           (click)="handleNextFormBtn()" />
       </div>
       <ng-template #submitBtn>
-        <p-button class="card__btn" [label]="'BUTTON.REGISTER' | translate | uppercase" (click)="handleSubmitForm()" />
+        <p-button
+          class="card__btn"
+          [label]="'BUTTON.REGISTER' | translate | uppercase"
+          [loading]="(loginCallState$ | async) === loadingState.LOADING"
+          (click)="handleSubmitForm()" />
       </ng-template>
       <p-divider />
       <p class="card__footer-text">

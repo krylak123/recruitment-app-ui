@@ -22,6 +22,7 @@ export const authReducer = createReducer(
   initialState,
   on(
     AuthActions.login,
+    AuthActions.register,
     (state): AuthState => ({
       ...state,
       callState: LoadingState.LOADING,
@@ -29,6 +30,7 @@ export const authReducer = createReducer(
   ),
   on(
     AuthActions.loginSuccess,
+    AuthActions.registerSuccess,
     (state, { res }): AuthState => ({
       ...state,
       isLogged: true,
@@ -39,6 +41,7 @@ export const authReducer = createReducer(
   ),
   on(
     AuthActions.loginFail,
+    AuthActions.registerFail,
     (state, { error }): AuthState => ({
       ...state,
       ...initialState,
