@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { UserResponseInterface } from '@backend/users';
+import { UserCandidateResponseInterface } from '@backend/users';
 import { TranslateModule } from '@ngx-translate/core';
 import { DATE_FORMAT_WITH_TIME } from '@shared/constants';
 import { UserNamesPipe } from '@shared/pipes';
@@ -15,7 +15,7 @@ import { DialogModule } from 'primeng/dialog';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CandidateDetailsModalComponent {
-  @Input({ required: true }) public item!: UserResponseInterface;
+  @Input({ required: true }) public item!: UserCandidateResponseInterface;
   @Input({ required: true }) public isVisible = false;
   @Output() public hideModal: EventEmitter<void> = new EventEmitter<void>();
   public readonly dateFormat = DATE_FORMAT_WITH_TIME;

@@ -4,7 +4,7 @@ import { API_URL } from '@providers';
 import { ListResponseInterface } from '@shared/models/list-response.interface';
 import { Observable } from 'rxjs';
 
-import { UserResponseInterface } from './models/user-response.interface';
+import { UserCandidateResponseInterface, UserResponseInterface } from './models/user-response.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -16,8 +16,8 @@ export class UsersService {
     @Inject(API_URL) private apiUrl: string
   ) {}
 
-  public getCandidatesList(): Observable<ListResponseInterface<UserResponseInterface>> {
-    return this.http.get<ListResponseInterface<UserResponseInterface>>(`${this.url}/candidates`);
+  public getCandidatesList(): Observable<ListResponseInterface<UserCandidateResponseInterface>> {
+    return this.http.get<ListResponseInterface<UserCandidateResponseInterface>>(`${this.url}/candidates`);
   }
 
   public getEmployeesList(): Observable<ListResponseInterface<UserResponseInterface>> {

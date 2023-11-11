@@ -52,7 +52,9 @@
     "CREATE_AT": "Data utworzenia",
     "UPDATED_AT": "Data modyfikacji",
     "PHONE": "Nr telefonu",
-    "ROLE": "Rola"
+    "ROLE": "Rola",
+    "RODO": "Zgoda RODO",
+    "LINK_GIT": "GIT repo"
   },
   "ERROR": {
     "FORM": {
