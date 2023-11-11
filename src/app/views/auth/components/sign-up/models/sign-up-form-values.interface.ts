@@ -1,6 +1,7 @@
 export interface SignUpFormValues {
   commonGroup: SignUpFormValuesCommonGroup;
   dataGroup: SignUpFormValuesDataGroup;
+  consentsGroup: SignUpFormValuesConsentsGroup;
 }
 
 export interface SignUpFormValuesCommonGroup {
@@ -11,5 +12,10 @@ export interface SignUpFormValuesCommonGroup {
 }
 
 export interface SignUpFormValuesDataGroup {
-  test: string;
+  phone: string;
+  gitRepoLink: string;
+}
+
+export interface SignUpFormValuesConsentsGroup {
+  acceptedRodo: boolean[];
 }

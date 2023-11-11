@@ -84,7 +84,8 @@
     "SEARCH_QUESTION_OPEN": "Wyszukaj pytanie otwarte po nazwie",
     "SEARCH_QUESTION_CLOSE": "Wyszukaj pytanie zamknięte po nazwie",
     "ANSWERS": "Odpowiedzi",
-    "PHONE": "Nr telefonu"
+    "PHONE": "Nr telefonu",
+    "LINK_GIT": "Link do repozytorium GIT"
   },
   "AUTH": {
     "REGISTER": "Zarejestruj się",
@@ -117,6 +118,9 @@
         "LOGIN_DETAIL": "Nie udało się zalogować",
         "REGISTER_DETAIL": "Nie udało się zarejestrować"
       }
+    },
+    "CONSENTS": {
+      "ACCEPTED_RODO": "Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w powyższym formularzu w celu rejestracji w aplikacji {{appName}} przez CompanyName oraz przez podmioty trzecie."
     }
   },
   "QUESTIONS": {

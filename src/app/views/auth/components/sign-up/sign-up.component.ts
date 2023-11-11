@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RegisterPayloadInterface } from '@backend/auth/models';
+import { ToastService } from '@core/services';
 import { LetDirective } from '@ngrx/component';
 import { TranslateModule } from '@ngx-translate/core';
 import { APP_NAME } from '@shared/constants/app-name.constants';
@@ -55,13 +57,12 @@ export class SignUpComponent implements OnInit {
   constructor(
     private router: Router,
     private aRoute: ActivatedRoute,
-    private formAdapter: SignUpFormAdapterService
+    private formAdapter: SignUpFormAdapterService,
+    private toastService: ToastService
   ) {}
 
   public ngOnInit(): void {
     this.setUpProperties();
-
-    this.form.valueChanges.subscribe(console.log);
   }
 
   public onActiveIdxChange(idx: number): void {
@@ -85,10 +86,11 @@ export class SignUpComponent implements OnInit {
   public handleSubmitForm(): void {
     this.form.markAllAsTouched();
 
-    if (this.form.invalid) return;
+    if (this.form.invalid) {
+      return this.toastService.triggerWarnToast('FORM.FILL_FIELD');
+    }
 
-    // TODO: podmienić na właściwy payload interface
-    const payload: unknown = this.form.value as SignUpFormValues;
+    const payload: RegisterPayloadInterface = this.formatFormValues(this.form.getRawValue());
 
     console.log(payload);
   }
@@ -97,5 +99,27 @@ export class SignUpComponent implements OnInit {
     this.form = this.formAdapter.createForm();
 
     this.activeStepsIdx = 0;
+  }
+
+  private formatFormValues(values: SignUpFormValues): RegisterPayloadInterface {
+    const { firstName, lastName, email, password } = values.commonGroup;
+    const { phone, gitRepoLink } = values.dataGroup;
+    const { acceptedRodo } = values.consentsGroup;
+
+    return {
+      commonGroup: {
+        firstName,
+        lastName,
+        email,
+        password,
+        phone,
+      },
+      additionalGroup: {
+        gitRepoLink,
+      },
+      consentsGroup: {
+        acceptedRodo: acceptedRodo[0],
+      },
+    };
   }
 }

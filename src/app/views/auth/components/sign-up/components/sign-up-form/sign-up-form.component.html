@@ -1,18 +1,29 @@
 <form class="form" [formGroup]="form">
-  <ng-container *ngrxLet="form.controls.commonGroup as commonGroup">
-    <div *ngIf="activeStepsIdx === 0" formGroupName="commonGroup" class="form__group">
-      <div class="form__fields">
-        <app-form-input-text class="form__field" formControlName="firstName" placeholder="FORM.FIRST_NAME" />
-        <app-form-input-text class="form__field" formControlName="lastName" placeholder="FORM.LAST_NAME" />
-      </div>
-      <div class="form__fields">
-        <app-form-input-text class="form__field" formControlName="email" placeholder="FORM.EMAIL" />
-        <app-form-input-password class="form__field" formControlName="password" placeholder="FORM.PASSWORD" />
-      </div>
+  <div *ngIf="activeStepsIdx === 0" formGroupName="commonGroup" class="form__group">
+    <div class="form__fields">
+      <app-form-input-text class="form__field" formControlName="firstName" placeholder="FORM.FIRST_NAME" />
+      <app-form-input-text class="form__field" formControlName="lastName" placeholder="FORM.LAST_NAME" />
     </div>
-  </ng-container>
+    <div class="form__fields">
+      <app-form-input-text class="form__field" formControlName="email" placeholder="FORM.EMAIL" />
+      <app-form-input-password class="form__field" formControlName="password" placeholder="FORM.PASSWORD" />
+    </div>
+  </div>
 
-  <div *ngIf="activeStepsIdx === 1" formGroupName="dataGroup" class="form__group">Form 2</div>
+  <div *ngIf="activeStepsIdx === 1" formGroupName="dataGroup" class="form__group">
+    <div class="form__fields">
+      <app-form-input-text class="form__field" formControlName="phone" placeholder="FORM.PHONE" />
+      <app-form-input-text class="form__field" formControlName="gitRepoLink" placeholder="FORM.LINK_GIT" />
+    </div>
+  </div>
 
-  <div *ngIf="activeStepsIdx === 2" formGroupName="dataGroup" class="form__group">Form 3</div>
+  <div *ngIf="activeStepsIdx === 2" formGroupName="consentsGroup" class="form__group">
+    <div *ngFor="let consent of consents" class="form_field form__field--checkbox">
+      <p-checkbox [formControlName]="consent.formControl" [inputId]="consent.formControl" [value]="true" />
+      <label [for]="consent.formControl">
+        {{ consent.label | translate: { appName } }}
+        <span class="color-required">{{ consent.isRequired && ('ERROR.FORM.REQUIRED' | translate) }}</span>
+      </label>
+    </div>
+  </div>
 </form>
