@@ -14,5 +14,5 @@ export const selectSearchQuestionOpenCallState = createSelector(
 );
 export const selectSearchQuestionOpenResultList = createSelector(
   selectSearchQuestionOpenStoreState,
-  (state: SearchQuestionOpenState) => state.resultList
+  (state: SearchQuestionOpenState) => state.data
 );

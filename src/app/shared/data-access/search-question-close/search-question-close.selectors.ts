@@ -14,5 +14,5 @@ export const selectSearchQuestionCloseCallState = createSelector(
 );
 export const selectSearchQuestionCloseResultList = createSelector(
   selectSearchQuestionCloseStoreState,
-  (state: SearchQuestionCloseState) => state.resultList
+  (state: SearchQuestionCloseState) => state.data
 );
