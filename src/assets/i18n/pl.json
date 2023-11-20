@@ -6,6 +6,7 @@
     "SIGN_UP": "Rejestracja",
     "DASHBOARD": "Główny panel",
     "CREATORS": "Kreatory",
+    "TASKS": "Zadania",
     "QUESTION_ADD": "Dodaj pytanie",
     "EXAM_ADD": "Dodaj egzamin",
     "USERS": "Użytkownicy",
@@ -14,6 +15,7 @@
   },
   "BREADCRUMB": {
     "CREATORS": "Kreatory",
+    "TASKS": "Zadania",
     "QUESTION": "Pytanie",
     "EXAM": "Egzamin",
     "USERS": "Użytkownicy",

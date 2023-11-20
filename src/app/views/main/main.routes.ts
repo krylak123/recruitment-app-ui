@@ -18,6 +18,14 @@ export const mainRoutes: Routes = [
         },
       },
       {
+        path: 'tasks',
+        title: 'TITLE.TASKS',
+        loadChildren: () => import('./views/tasks/tasks.routes').then(r => r.tasksRoutes),
+        data: {
+          breadcrumb: 'BREADCRUMB.TASKS',
+        },
+      },
+      {
         path: 'users',
         title: 'TITLE.USERS',
         loadChildren: () => import('./views/users/users.routes').then(r => r.usersRoutes),

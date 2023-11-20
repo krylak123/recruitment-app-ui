@@ -30,7 +30,7 @@ export class HeaderComponent {
     {
       label: this.translateService.instant('MENU.TASKS'),
       icon: PrimeIcons.TAG,
-      command: (): void => console.log('router'),
+      command: (): Promise<boolean> => this.router.navigate(['main/tasks']),
     },
     {
       label: this.translateService.instant('MENU.RECRUITMENTS'),
