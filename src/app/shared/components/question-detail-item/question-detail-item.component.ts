@@ -22,6 +22,7 @@ type QuestionDetailItemType = 'CLOSE' | 'OPEN';
 export class QuestionDetailItemComponent {
   @Input({ required: true }) public type!: QuestionDetailItemType;
   @Input({ required: true }) public data!: QuestionOpenResponseInterface | QuestionCloseResponseInterface;
+  @Input() public readonly = true;
   @Input() public answers?: QuestionCloseResponseInterfaceAnswer[];
   @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
 }

@@ -1,0 +1,15 @@
+<app-list
+  heading="EXAM.LIST_HEADING"
+  [columns]="columns"
+  [list]="list$ | async"
+  [listCallState]="listCallState$ | async"
+  [handleRowSelect]="true"
+  (rowSelect)="handleShowDetails($event)">
+  <p-button styleClass="p-button-sm" [label]="'BUTTON.ADD' | translate | uppercase" (click)="goAdd()" />
+</app-list>
+
+<app-task-exam-details-modal
+  *ngIf="itemDetails"
+  [item]="itemDetails"
+  [isVisible]="detailsModalIsVisible"
+  (hideModal)="detailsModalIsVisible = false" />

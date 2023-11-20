@@ -9,6 +9,7 @@
     "TASKS": "Zadania",
     "QUESTION_ADD": "Dodaj pytanie",
     "EXAM_ADD": "Dodaj egzamin",
+    "EXAM_LIST": "Lista egzaminów",
     "USERS": "Użytkownicy",
     "CANDIDATES": "Kandydaci",
     "EMPLOYEES": "Pracownicy"
@@ -56,7 +57,12 @@
     "PHONE": "Nr telefonu",
     "ROLE": "Rola",
     "RODO": "Zgoda RODO",
-    "LINK_GIT": "GIT repo"
+    "LINK_GIT": "GIT repo",
+    "EXP_LEVEL": "Poziom",
+    "TIME_LIMIT_SUMMARY": "Łączny czas",
+    "QUESTIONS_QUANTITY": "Liczba pytań",
+    "NAME": "Nazwa",
+    "DESCRIPTION": "Opis"
   },
   "ERROR": {
     "FORM": {
@@ -128,6 +134,10 @@
     }
   },
   "QUESTIONS": {
+    "LIST_HEADING": "Lista pytań",
+    "LIST_OPEN": "Lista pytań otwartych",
+    "LIST_CLOSE": "Lista pytań zamkniętych",
+    "NO_RESULTS": "Brak pytań",
     "MESSAGE": {
       "CLOSE_QUESTION_NOT_SELECTED": "Brak wybranych pytań zamkniętych",
       "OPEN_QUESTION_NOT_SELECTED": "Brak wybranych pytań otwartych"
@@ -145,6 +155,9 @@
     }
   },
   "EXAM": {
+    "LIST_HEADING": "Lista egzaminów",
+    "DETAILS_HEADING": "Podgląd egzaminu",
+    "NO_RESULTS": "Brak egzaminów",
     "ACCEPT_MIN": "Musisz wybrać minimum 1 pytanie zamknięte lub otwarte",
     "ALREADY_ADDED_QUESTION": "Dodano już te pytanie do egzaminu",
     "STORE": {

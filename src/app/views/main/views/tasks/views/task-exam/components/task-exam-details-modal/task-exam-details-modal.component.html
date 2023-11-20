@@ -1,0 +1,69 @@
+<p-dialog
+  [header]="'EXAM.DETAILS_HEADING' | translate"
+  [modal]="true"
+  [dismissableMask]="true"
+  [style]="{ width: '50vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="hideModal.emit()"
+  [(visible)]="isVisible">
+  <article class="modal__content">
+    <div class="modal__details-container">
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.NAME' | translate }}</p>
+        <p class="detail__value">{{ item.name }}</p>
+      </div>
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.EXP_LEVEL' | translate }}</p>
+        <p class="detail__value">{{ item.expLevel }}</p>
+      </div>
+    </div>
+    <div class="detail">
+      <p class="detail__label">{{ 'FIELD.DESCRIPTION' | translate }}</p>
+      <p class="detail__value">{{ item.description }}</p>
+    </div>
+    <div class="modal__details-container">
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.TIME_LIMIT_SUMMARY' | translate }}</p>
+        <p class="detail__value">{{ item.timeLimitSummary }}s</p>
+      </div>
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.QUESTIONS_QUANTITY' | translate }}</p>
+        <p class="detail__value">{{ item.questionQuantity }}</p>
+      </div>
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.CREATE_AT' | translate }}</p>
+        <p class="detail__value">{{ item.createAt | date: dateFormat }}</p>
+      </div>
+    </div>
+    <ul class="modal__details-container modal__details-container--list">
+      <p>{{ 'QUESTIONS.LIST_CLOSE' | translate }}:</p>
+      <ng-container *ngIf="item.questionCloseList.length; else noQuestions">
+        <app-question-detail-item
+          *ngFor="let question of item.questionCloseList"
+          class="questions__item"
+          type="CLOSE"
+          [data]="question"
+          [readonly]="true"
+          [answers]="question.answers"
+          [style.--color-exp-level]="expLevelColor[question.expLevel]" />
+      </ng-container>
+    </ul>
+    <ul class="modal__details-container modal__details-container--list">
+      <p>{{ 'QUESTIONS.LIST_OPEN' | translate }}:</p>
+      <ng-container *ngIf="item.questionOpenList.length; else noQuestions">
+        <app-question-detail-item
+          *ngFor="let question of item.questionOpenList"
+          class="questions__item"
+          type="OPEN"
+          [data]="question"
+          [readonly]="true"
+          [style.--color-exp-level]="expLevelColor[question.expLevel]" />
+      </ng-container>
+    </ul>
+  </article>
+</p-dialog>
+
+<ng-template #noQuestions>
+  <p>{{ 'QUESTIONS.NO_RESULTS' | translate }}</p>
+</ng-template>
