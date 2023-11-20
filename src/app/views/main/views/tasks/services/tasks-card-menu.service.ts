@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
-import { TasksCardMenuInterface } from '../models/tasks-card-menu.interface';
+export interface TasksCardMenuInterface {
+  label: string;
+  routerCommand(): void;
+}
 
 @Injectable()
 export class TasksCardMenuService {

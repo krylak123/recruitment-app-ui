@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { CreatorsCardMenuInterface } from '@views/main/views/creators/models/creators-card-menu.interface';
+
+export interface CreatorsCardMenuInterface {
+  label: string;
+  routerCommand(): void;
+}
 
 @Injectable()
 export class CreatorsCardMenuService {
