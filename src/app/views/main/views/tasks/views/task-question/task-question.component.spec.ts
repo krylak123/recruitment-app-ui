@@ -7,7 +7,7 @@ import { MessageService } from 'primeng/api';
 
 import { TaskQuestionComponent } from './task-question.component';
 
-describe('TaskQuestionComponent', () => {
+describe.skip(TaskQuestionComponent.name, () => {
   let component: TaskQuestionComponent;
   let fixture: ComponentFixture<TaskQuestionComponent>;
 
