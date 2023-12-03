@@ -1,0 +1,36 @@
+<p-dialog
+  [header]="'QUESTIONS.DETAILS_CLOSE_HEADING' | translate"
+  [modal]="true"
+  [dismissableMask]="true"
+  [style]="{ width: '50vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="hideModal.emit()"
+  [(visible)]="isVisible">
+  <article class="modal__content">
+    <div class="modal__details-container">
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.NAME' | translate }}</p>
+        <p class="detail__value">{{ item.name }}</p>
+      </div>
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.EXP_LEVEL' | translate }}</p>
+        <p class="detail__value">{{ item.expLevel }}</p>
+      </div>
+    </div>
+    <div class="detail">
+      <p class="detail__label">{{ 'FIELD.CONTENT' | translate }}</p>
+      <p class="detail__value">{{ item.content }}</p>
+    </div>
+    <div class="modal__details-container">
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.TIME_LIMIT_SUMMARY' | translate }}</p>
+        <p class="detail__value">{{ item.timeLimit }}s</p>
+      </div>
+      <div class="detail">
+        <p class="detail__label">{{ 'FIELD.ANSWERS_QUANTITY' | translate }}</p>
+        <p class="detail__value">{{ item.answers.length }}</p>
+      </div>
+    </div>
+  </article>
+</p-dialog>

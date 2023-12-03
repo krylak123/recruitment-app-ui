@@ -1,0 +1,8 @@
+<p-tabView>
+  <p-tabPanel [header]="'BUTTON.QUESTION_CLOSE' | translate">
+    <app-task-question-close-table [list]="listClose$ | async" [listCallState]="listCloseCallState$ | async" />
+  </p-tabPanel>
+  <p-tabPanel [header]="'BUTTON.QUESTION_CLOSE' | translate">
+    <app-task-question-open-table [list]="listOpen$ | async" [listCallState]="listOpenCallState$ | async" />
+  </p-tabPanel>
+</p-tabView>

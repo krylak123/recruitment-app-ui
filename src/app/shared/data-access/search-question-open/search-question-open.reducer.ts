@@ -5,12 +5,12 @@ import { ItemState, LoadingState } from '@shared/store';
 import { searchQuestionOpenActions } from './search-question-open.actions';
 
 export interface SearchQuestionOpenState extends ItemState {
-  resultList: QuestionOpenResponseInterface[];
+  data: QuestionOpenResponseInterface[];
 }
 
 const initialState: SearchQuestionOpenState = {
   callState: LoadingState.INIT,
-  resultList: [],
+  data: [],
 };
 
 export const searchQuestionOpenReducer = createReducer(
@@ -26,7 +26,7 @@ export const searchQuestionOpenReducer = createReducer(
     searchQuestionOpenActions.searchQuestionOpenSuccess,
     (state, { resultList }): SearchQuestionOpenState => ({
       ...state,
-      resultList,
+      data: resultList.data,
       callState: LoadingState.LOADED,
     })
   ),

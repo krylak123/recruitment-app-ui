@@ -5,12 +5,12 @@ import { ItemState, LoadingState } from '@shared/store';
 import { searchQuestionCloseActions } from './search-question-close.actions';
 
 export interface SearchQuestionCloseState extends ItemState {
-  resultList: QuestionCloseResponseInterface[];
+  data: QuestionCloseResponseInterface[];
 }
 
 const initialState: SearchQuestionCloseState = {
   callState: LoadingState.INIT,
-  resultList: [],
+  data: [],
 };
 
 export const searchQuestionCloseReducer = createReducer(
@@ -26,7 +26,7 @@ export const searchQuestionCloseReducer = createReducer(
     searchQuestionCloseActions.searchQuestionCloseSuccess,
     (state, { resultList }): SearchQuestionCloseState => ({
       ...state,
-      resultList,
+      data: resultList.data,
       callState: LoadingState.LOADED,
     })
   ),

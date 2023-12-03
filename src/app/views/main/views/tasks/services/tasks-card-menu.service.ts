@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
-export interface CreatorsCardMenuInterface {
+export interface TasksCardMenuInterface {
   label: string;
   routerCommand(): void;
 }
 
 @Injectable()
-export class CreatorsCardMenuService {
-  private readonly cardsMenu: CreatorsCardMenuInterface[] = [
+export class TasksCardMenuService {
+  private readonly cardsMenu: TasksCardMenuInterface[] = [
     {
       label: this.translateService.instant('BUTTON.QUESTION'),
       routerCommand: (): Promise<boolean> => this.router.navigate(['questions'], { relativeTo: this.aRoute }),
@@ -26,7 +26,7 @@ export class CreatorsCardMenuService {
     private translateService: TranslateService
   ) {}
 
-  public get getCardMenu(): CreatorsCardMenuInterface[] {
+  public get getCardMenu(): TasksCardMenuInterface[] {
     return this.cardsMenu;
   }
 }
