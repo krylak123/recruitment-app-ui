@@ -12,7 +12,7 @@ export class SearchQuestionCloseEffects {
     return this.actions$.pipe(
       ofType(searchQuestionCloseActions.searchQuestionClose),
       switchMap(({ phrase, expLevel }) =>
-        this.service.getQuestionOCloseList(phrase, expLevel).pipe(
+        this.service.getQuestionCloseList(phrase, expLevel).pipe(
           map(resultList => searchQuestionCloseActions.searchQuestionCloseSuccess({ resultList })),
           catchError(error => of(searchQuestionCloseActions.searchQuestionCloseFail({ error })))
         )

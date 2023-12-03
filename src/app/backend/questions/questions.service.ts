@@ -30,7 +30,7 @@ export class QuestionsService {
     return this.http.get<ListResponseInterface<QuestionOpenResponseInterface>>(`${this.url}/open/all`);
   }
 
-  public getQuestionOCloseList(
+  public getQuestionCloseList(
     phrase: string,
     expLevel?: ExpLevelEnum
   ): Observable<ListResponseInterface<QuestionCloseResponseInterface>> {

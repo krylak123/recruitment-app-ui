@@ -1,0 +1,8 @@
+<app-list
+  heading="QUESTIONS.LIST_OPEN"
+  [columns]="columns"
+  [list]="list"
+  [listCallState]="listCallState"
+  [handleRowSelect]="true">
+  <p-button styleClass="p-button-sm" [label]="'BUTTON.ADD' | translate | uppercase" (click)="goAdd()" />
+</app-list>

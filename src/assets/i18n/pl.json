@@ -8,6 +8,7 @@
     "CREATORS": "Kreatory",
     "TASKS": "Zadania",
     "QUESTION_ADD": "Dodaj pytanie",
+    "QUESTION_LIST": "Lista pytań",
     "EXAM_ADD": "Dodaj egzamin",
     "EXAM_LIST": "Lista egzaminów",
     "USERS": "Użytkownicy",
@@ -18,7 +19,9 @@
     "CREATORS": "Kreatory",
     "TASKS": "Zadania",
     "QUESTION": "Pytanie",
+    "QUESTIONS": "Pytania",
     "EXAM": "Egzamin",
+    "EXAMS": "Egzaminy",
     "USERS": "Użytkownicy",
     "CANDIDATES": "Kandydaci",
     "EMPLOYEES": "Pracownicy"
