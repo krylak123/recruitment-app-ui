@@ -64,8 +64,10 @@
     "EXP_LEVEL": "Poziom",
     "TIME_LIMIT_SUMMARY": "Łączny czas",
     "QUESTIONS_QUANTITY": "Liczba pytań",
+    "ANSWERS_QUANTITY": "Liczba odpowiedzi",
     "NAME": "Nazwa",
-    "DESCRIPTION": "Opis"
+    "DESCRIPTION": "Opis",
+    "CONTENT": "Treść"
   },
   "ERROR": {
     "FORM": {
@@ -138,6 +140,8 @@
   },
   "QUESTIONS": {
     "LIST_HEADING": "Lista pytań",
+    "DETAILS_OPEN_HEADING": "Podgląd pytania otwartego",
+    "DETAILS_CLOSE_HEADING": "Podgląd pytania zamkniętego",
     "LIST_OPEN": "Lista pytań otwartych",
     "LIST_CLOSE": "Lista pytań zamkniętych",
     "NO_RESULTS": "Brak pytań",

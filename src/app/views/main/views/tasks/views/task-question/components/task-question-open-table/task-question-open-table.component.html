@@ -3,6 +3,13 @@
   [columns]="columns"
   [list]="list"
   [listCallState]="listCallState"
-  [handleRowSelect]="true">
+  [handleRowSelect]="true"
+  (rowSelect)="handleShowDetails($event)">
   <p-button styleClass="p-button-sm" [label]="'BUTTON.ADD' | translate | uppercase" (click)="goAdd()" />
 </app-list>
+
+<app-task-question-open-details-modal
+  *ngIf="itemDetails"
+  [item]="itemDetails"
+  [isVisible]="detailsModalIsVisible"
+  (hideModal)="detailsModalIsVisible = false" />
