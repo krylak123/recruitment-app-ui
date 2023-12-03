@@ -11,6 +11,18 @@ export class TaskQuestionCloseTableConfigService {
         type: 'text',
         sort: true,
       },
+      {
+        field: 'expLevel',
+        label: 'FIELD.EXP_LEVEL',
+        type: 'text',
+        sort: true,
+      },
+      {
+        field: 'timeLimit',
+        label: 'FIELD.TIME_LIMIT_SUMMARY',
+        type: 'text',
+        sort: true,
+      },
     ];
   }
 }
